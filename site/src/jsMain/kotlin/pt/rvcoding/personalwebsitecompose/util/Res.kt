@@ -18,6 +18,8 @@ object Res {
     object Icon {
         const val EMAIL_LIGHT = "mail.svg"
         const val EMAIL_DARK = "mail_light.svg"
+        const val LINKEDIN = "linkedin.svg"
+        const val LINKEDIN_LIGHT = "linkedin_light.svg"
         const val GITHUB = "github.svg"
         const val GITHUB_LIGHT = "github_light.svg"
         const val STACKOVERFLOW = "stack_overflow.svg"

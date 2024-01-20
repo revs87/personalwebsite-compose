@@ -1,8 +1,6 @@
 package pt.rvcoding.personalwebsitecompose.components
 
 import androidx.compose.runtime.Composable
-import pt.rvcoding.personalwebsitecompose.util.Res
-import pt.rvcoding.personalwebsitecompose.util.Res.Dimens.BORDER_RADIUS
 import com.varabyte.kobweb.compose.css.Cursor
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -14,6 +12,8 @@ import org.jetbrains.compose.web.css.CSSSizeValue
 import org.jetbrains.compose.web.css.CSSUnit
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.px
+import pt.rvcoding.personalwebsitecompose.util.Res
+import pt.rvcoding.personalwebsitecompose.util.Res.Dimens.BORDER_RADIUS
 
 @Composable
 fun IconButton(
@@ -50,6 +50,14 @@ enum class SocialIcon(
     val icon: String,
     val link: String
 ) {
+    LinkedIn(
+        icon = Res.Icon.LINKEDIN,
+        link = "https://www.linkedin.com/in/revs87"
+    ),
+    LinkedInLight(
+        icon = Res.Icon.LINKEDIN_LIGHT,
+        link = "https://www.linkedin.com/in/revs87"
+    ),
     Github(
         icon = Res.Icon.GITHUB,
         link = "https://github.com/revs87"
