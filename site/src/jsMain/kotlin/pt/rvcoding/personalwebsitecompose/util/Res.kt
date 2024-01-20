@@ -37,16 +37,19 @@ object Res {
     object String {
         const val NAME = "Rui Vieira"
         const val PROFESSION = "Senior Android and KMM Developer"
-        const val ABOUT_ME =
-            "With over a decade of experience, I am offering solid and clean coding principles around the Mobile infrastructure while promoting quality via pair-programming and peer-review.\n" +
-                    "I aim to take a tech lead position along with a specialized development role of short- and long-term impact:" +
-                    ""
-        private const val bullet = "\u2022"
+        const val ABOUT_ME_1 =
+            "With over a decade of experience, " +
+                    "I am offering a comprehensive expertise in software development, spanning from conceptualization to delivery.\n" +
+                    "By adhering to clean coding principles within the mobile infrastructure, I advocate for quality through the implementation of thorough peer reviewing, team standards, pair programming and 2 hours per week for self development.\n"
+        const val ABOUT_ME_2 =
+            "I aspire to secure a tech lead position while concurrently pursuing a specialized development role that promises both short- and long-term impact.\n" +
+                    "Here are the enduring themes that continually drive my professional pursuits:"
+        private const val BULLET = "\u2022"
         val ABOUT_ME_PERKS = listOf(
-            "$bullet Planning and implementing top to bottom full-fledged features;",
-            "$bullet Taking and anticipating challenges according to the company's strategy/vision;",
-            "$bullet Reviewing, maintaining and scaling the current code base;",
-            "$bullet Mentoring, delegating and documenting."
+            "$BULLET Designing and executing comprehensive, end-to-end features;",
+            "$BULLET Proactively identifying and addressing challenges in alignment with the company's strategy and vision;",
+            "$BULLET Conducting thorough reviews, maintaining, and scaling the existing code base;",
+            "$BULLET Providing guidance through mentoring, effectively delegating tasks, and meticulously documenting processes."
         )
 
         const val BUTTON_TEXT = "Get in touch"
@@ -59,7 +62,7 @@ object Res {
     object Dimens {
         const val BORDER_RADIUS = 8
         const val MAX_CARD_WIDTH = 1100
-        const val MAX_CARD_HEIGHT = 750
+        const val MAX_CARD_HEIGHT = 900
         const val ICON_SIZE = 24
         const val ICON_SIZE_LG = 32
     }

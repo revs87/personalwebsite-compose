@@ -84,7 +84,20 @@ fun LeftSide(
                     if (breakpoint <= Breakpoint.SM) TextAlign.Center
                     else TextAlign.Start
                 ),
-            text = Res.String.ABOUT_ME
+            text = Res.String.ABOUT_ME_1
+        )
+        SpanText(
+            modifier = Modifier
+                .fontFamily(Res.String.ROBOTO_REGULAR)
+                .fontSize(14.px)
+                .color(if (colorMode.isLight) Colors.Black else Colors.White)
+                .opacity(50.percent)
+                .lineHeight(2)
+                .textAlign(
+                    if (breakpoint <= Breakpoint.SM) TextAlign.Center
+                    else TextAlign.Start
+                ),
+            text = Res.String.ABOUT_ME_2
         )
         Res.String.ABOUT_ME_PERKS.forEachIndexed { index, text ->
             SpanText(
