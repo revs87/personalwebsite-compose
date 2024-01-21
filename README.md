@@ -1,3 +1,25 @@
+[![Static Badge](https://img.shields.io/badge/release%20-%20v1.0.0%20-%20%231082C3)](https://github.com/revs87/personalwebsite-compose/releases/tag/1.0.0)
+![Static Badge](https://img.shields.io/badge/License%20-%20MIT%20License%20-%20%231082C3)
+
+![image](https://img.shields.io/badge/Kobweb-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white)
+
+## Content
+Rui Vieira's Introduction website with personal contacts
+
+![rvintro](https://github.com/revs87/personalwebsite-compose/blob/main/assets/rvintro.jpg)
+
+
+## Project Requirements
+- Install Java 11+ and define the environment variable JAVA_HOME.
+- Install the latest IntelliJ IDE (for easy install use JetBrains Toolbox)
+- Copy Kobweb's [latest release archive](https://github.com/varabyte/kobweb/releases) and add Kobweb's binary folder to the environment variable PATH.
+
+## Tech Stack
+### Core
+- Kobweb Kotlin
+- Kobweb Compose
+
+## Kobweb Details
 This is a [Kobweb](https://github.com/varabyte/kobweb) project bootstrapped with the `app/empty` template.
 
 This template is useful if you already know what you're doing and just want a clean slate. By default, it
