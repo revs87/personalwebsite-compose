@@ -1,7 +1,6 @@
 package pt.rvcoding.personalwebsitecompose.components
 
 import androidx.compose.runtime.Composable
-import pt.rvcoding.personalwebsitecompose.util.Res
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
@@ -13,6 +12,7 @@ import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
+import pt.rvcoding.personalwebsitecompose.util.Res
 
 @Composable
 fun ProfileCard(colorMode: ColorMode) {

@@ -4,9 +4,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
-import pt.rvcoding.personalwebsitecompose.components.ProfileCard
-import pt.rvcoding.personalwebsitecompose.components.ThemeSwitchButton
-import pt.rvcoding.personalwebsitecompose.util.Res
 import com.varabyte.kobweb.compose.css.functions.LinearGradient
 import com.varabyte.kobweb.compose.css.functions.linearGradient
 import com.varabyte.kobweb.compose.foundation.layout.Box
@@ -17,6 +14,9 @@ import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
 import com.varabyte.kobweb.core.Page
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import kotlinx.browser.localStorage
+import pt.rvcoding.personalwebsitecompose.components.ProfileCard
+import pt.rvcoding.personalwebsitecompose.components.ThemeSwitchButton
+import pt.rvcoding.personalwebsitecompose.util.Res
 
 @Page
 @Composable

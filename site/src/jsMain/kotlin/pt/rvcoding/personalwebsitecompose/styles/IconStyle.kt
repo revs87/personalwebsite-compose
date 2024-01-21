@@ -1,6 +1,5 @@
 package pt.rvcoding.personalwebsitecompose.styles
 
-import pt.rvcoding.personalwebsitecompose.util.Res
 import com.varabyte.kobweb.compose.css.CSSTransition
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
@@ -11,6 +10,7 @@ import com.varabyte.kobweb.silk.components.style.ComponentStyle
 import com.varabyte.kobweb.silk.components.style.hover
 import org.jetbrains.compose.web.css.deg
 import org.jetbrains.compose.web.css.ms
+import pt.rvcoding.personalwebsitecompose.util.Res
 
 val SocialIconStyle by ComponentStyle {
     base {

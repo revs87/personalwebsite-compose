@@ -1,8 +1,7 @@
 package pt.rvcoding.personalwebsitecompose
 
-import androidx.compose.runtime.*
-import pt.rvcoding.personalwebsitecompose.util.Res
-import com.varabyte.kobweb.compose.ui.modifiers.*
+import androidx.compose.runtime.Composable
+import com.varabyte.kobweb.compose.ui.modifiers.minHeight
 import com.varabyte.kobweb.core.App
 import com.varabyte.kobweb.silk.SilkApp
 import com.varabyte.kobweb.silk.components.layout.Surface
@@ -11,7 +10,8 @@ import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.init.InitSilk
 import com.varabyte.kobweb.silk.init.InitSilkContext
 import com.varabyte.kobweb.silk.theme.colors.palette.button
-import org.jetbrains.compose.web.css.*
+import org.jetbrains.compose.web.css.vh
+import pt.rvcoding.personalwebsitecompose.util.Res
 
 @App
 @Composable
