@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.ObjectFit
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.thenIf
 import com.varabyte.kobweb.silk.components.graphics.Image
@@ -25,7 +26,14 @@ fun RightSide(breakpoint: Breakpoint) {
             modifier = Modifier
                 .fillMaxSize()
                 .borderRadius(r = Res.Dimens.BORDER_RADIUS.px)
-                .objectFit(ObjectFit.Cover),
+                .objectFit(ObjectFit.Cover)
+                .boxShadow(
+                    color = Colors.Black.copy(alpha = 70),
+                    blurRadius = Res.Dimens.BORDER_RADIUS.px,
+                    spreadRadius = 3.px,
+                    offsetX = 2.px,
+                    offsetY = 1.px
+                ),
             src = Res.Image.PROFILE_PHOTO
         )
     }
