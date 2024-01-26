@@ -42,7 +42,7 @@ object Res {
         const val ABOUT_ME_1 =
             "With over a decade of experience, " +
                     "I am offering a comprehensive expertise in software development, spanning from conceptualization to delivery.\n" +
-                    "By adhering to clean coding principles within the mobile infrastructure, I advocate for quality through the implementation of thorough peer reviewing, team standards, pair programming and 2 hours per week for self development.\n"
+                    "By adhering to clean coding principles within the mobile infrastructure, I advocate for quality through the implementation of thorough peer reviewing, team standards, pair programming and a couple of hours per week for self development.\n"
         const val ABOUT_ME_2 =
             "I aspire to secure a tech lead position while concurrently pursuing a specialized development role that promises both short- and long-term impact.\n" +
                     "Here are the enduring themes that continually drive my professional pursuits:"
