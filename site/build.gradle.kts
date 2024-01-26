@@ -11,6 +11,10 @@ plugins {
 group = "pt.rvcoding.personalwebsitecompose"
 version = "1.0-SNAPSHOT"
 
+tasks.create("stage") {
+    dependsOn("installDist")
+}
+
 kobweb {
     app {
         index {

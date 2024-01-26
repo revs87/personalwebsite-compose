@@ -1,0 +1,1 @@
+web: build/install/pt.rvcoding.personalwebsitecompose/bin/pt.rvcoding.personalwebsitecompose
