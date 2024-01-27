@@ -21,13 +21,12 @@ task("kobweb") {
             Runtime.getRuntime().exec("./kobweb-0.9.13/bin/kobweb run -p site/")
         }
     }
-    mustRunAfter("stage")
 }
 
-tasks.create("stage") {
-    dependsOn("installDist", "clean")
-    mustRunAfter("clean")
-}
+//tasks.create("stage") {
+//    dependsOn("installDist", "clean")
+//    mustRunAfter("clean")
+//}
 
 
 kobweb {
