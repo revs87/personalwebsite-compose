@@ -14,7 +14,9 @@ version = "1.0-SNAPSHOT"
 
 
 task("kobweb") {
+    println("GRADLE: Schedule task :kobweb")
     doLast {
+        println("GRADLE: Entering task :kobweb")
         if (System.getProperty("os.name").lowercase(Locale.ROOT).contains("windows")) {
             Runtime.getRuntime().exec(".\\kobweb-0.9.13\\bin\\kobweb.bat run -p site/")
         } else {
@@ -24,6 +26,7 @@ task("kobweb") {
 }
 
 tasks.create("stage") {
+    println("GRADLE: Entering task :stage")
     dependsOn("kobweb")
 }
 
