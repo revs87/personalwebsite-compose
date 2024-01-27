@@ -1,5 +1,6 @@
 import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
 import kotlinx.html.link
+import java.util.*
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
@@ -11,9 +12,22 @@ plugins {
 group = "pt.rvcoding.personalwebsitecompose"
 version = "1.0-SNAPSHOT"
 
-tasks.create("stage") {
-    dependsOn("installDist")
+
+task("kobweb") {
+    doLast {
+        if (System.getProperty("os.name").lowercase(Locale.ROOT).contains("windows")) {
+            Runtime.getRuntime().exec(".\\kobweb-0.9.13\\bin\\kobweb.bat run -p site/")
+        } else {
+            Runtime.getRuntime().exec("./kobweb-0.9.13/bin/kobweb run -p site/")
+        }
+    }
 }
+
+tasks.create("stage") {
+    dependsOn("installDist", "clean")
+    mustRunAfter("clean")
+}
+
 
 kobweb {
     app {
