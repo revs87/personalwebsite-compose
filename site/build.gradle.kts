@@ -23,10 +23,9 @@ task("kobweb") {
     }
 }
 
-//tasks.create("stage") {
-//    dependsOn("installDist", "clean")
-//    mustRunAfter("clean")
-//}
+tasks.create("stage") {
+    dependsOn("kobweb")
+}
 
 
 kobweb {
