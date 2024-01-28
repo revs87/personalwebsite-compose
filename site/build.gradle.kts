@@ -1,6 +1,5 @@
 import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
 import kotlinx.html.link
-import java.util.*
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
@@ -13,15 +12,19 @@ group = "pt.rvcoding.personalwebsitecompose"
 version = "1.0-SNAPSHOT"
 
 
-task("kobweb") {
+tasks.create("kobweb") {
     println("GRADLE: Schedule task :kobweb")
     doLast {
         println("GRADLE: Entering task :kobweb")
-        if (System.getProperty("os.name").lowercase(Locale.ROOT).contains("windows")) {
-            Runtime.getRuntime().exec(".\\kobweb-0.9.13\\bin\\kobweb.bat run -p site/")
-        } else {
-            Runtime.getRuntime().exec("./kobweb-0.9.13/bin/kobweb run -p site/")
-        }
+        // Jar method
+        Runtime.getRuntime().exec("java -Dkobweb.version=0.9.13 -jar site/src/jsMain/libs/kobweb-0.9.13-all.jar run -p site/")
+
+        // Kobweb binary method
+        //if (System.getProperty("os.name").lowercase(Locale.ROOT).contains("windows")) {
+        //    Runtime.getRuntime().exec(".\\kobweb-0.9.13\\bin\\kobweb.bat run -p site/")
+        //} else {
+        //    Runtime.getRuntime().exec("./kobweb-0.9.13/bin/kobweb run -p site/")
+        //}
     }
 }
 
@@ -29,7 +32,6 @@ tasks.create("stage") {
     println("GRADLE: Entering task :stage")
     dependsOn("kobweb")
 }
-
 
 kobweb {
     app {
