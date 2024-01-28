@@ -1,1 +1,1 @@
-web: ./gradlew kobweb
+web: java -Dkobweb.version=0.9.13 -jar site/src/jsMain/libs/kobweb-0.9.13-all.jar run -p site/
