@@ -42,7 +42,8 @@ kobweb {
             head.add {
                 link {
                     rel = "stylesheet"
-                    href = "/fonts/faces.css"
+                    href = "/styles/styles.css"
+                    type = "text/css"
                 }
             }
         }
