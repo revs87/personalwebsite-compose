@@ -100,7 +100,7 @@ fun LeftSide(
                 .toModifier()
                 .margin(bottom = 50.px),
             size = ButtonSize.LG,
-            onClick = { window.location.href = Res.String.MY_EMAIL }
+            onClick = { window.location.href = "mailto:${ProfileData.Default.email}" }
         ) {
             Row(
                 modifier = Modifier.fillMaxSize(),
@@ -135,13 +135,15 @@ fun LeftSide(
             SocialIcon.entries.filter {
                 if (colorMode.isLight) !it.name.contains("Light")
                 else it.name.contains("Light")
-            }.forEach {
-                IconButton(
-                    modifier = SocialIconStyle.toModifier(),
-                    colorMode = colorMode,
-                    icon = it.icon,
-                    link = it.link
-                )
+            }.forEach { social ->
+                social.link?.let {
+                    IconButton(
+                        modifier = SocialIconStyle.toModifier(),
+                        colorMode = colorMode,
+                        icon = social.icon,
+                        link = social.link
+                    )
+                }
             }
         }
     }

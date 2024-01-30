@@ -32,7 +32,12 @@ object ProfileData {
             name = "Rui Vieira",
             profession = "Senior Android and Kotlin Multiplatform Developer",
             description = profile,
-            email = "revss87@gmail.com"
+            email = "revss87@gmail.com",
+            linkedin = "https://www.linkedin.com/in/revs87",
+            github = "https://github.com/revs87",
+            stackoverflow = "https://stackoverflow.com/users/2996699/edgar-v",
+            twitterX = "https://x.com/revs87",
+            instagram = "https://www.instagram.com/revs87"
         )
     }
 }

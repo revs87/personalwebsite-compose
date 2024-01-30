@@ -12,6 +12,7 @@ import org.jetbrains.compose.web.css.CSSSizeValue
 import org.jetbrains.compose.web.css.CSSUnit
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.px
+import pt.rvcoding.personalwebsitecompose.models.ProfileData
 import pt.rvcoding.personalwebsitecompose.util.Res
 import pt.rvcoding.personalwebsitecompose.util.Res.Dimens.BORDER_RADIUS
 
@@ -48,46 +49,46 @@ fun IconButton(
 
 enum class SocialIcon(
     val icon: String,
-    val link: String
+    val link: String? = null
 ) {
     LinkedIn(
         icon = Res.Icon.LINKEDIN,
-        link = "https://www.linkedin.com/in/revs87"
+        link = ProfileData.Default.linkedin
     ),
     LinkedInLight(
         icon = Res.Icon.LINKEDIN_LIGHT,
-        link = "https://www.linkedin.com/in/revs87"
+        link = ProfileData.Default.linkedin
     ),
     Github(
         icon = Res.Icon.GITHUB,
-        link = "https://github.com/revs87"
+        link = ProfileData.Default.github
     ),
     GithubLight(
         icon = Res.Icon.GITHUB_LIGHT,
-        link = "https://github.com/revs87"
+        link = ProfileData.Default.github
     ),
     StackOverflow(
         icon = Res.Icon.STACKOVERFLOW,
-        link = "https://stackoverflow.com/users/2996699/edgar-v"
+        link = ProfileData.Default.stackoverflow
     ),
     StackOverflowLight(
         icon = Res.Icon.STACKOVERFLOW_LIGHT,
-        link = "https://stackoverflow.com/users/2996699/edgar-v"
+        link = ProfileData.Default.stackoverflow
     ),
     X(
         icon = Res.Icon.X,
-        link = "https://x.com/revs87"
+        link = ProfileData.Default.twitterX
     ),
     XLight(
         icon = Res.Icon.X_LIGHT,
-        link = "https://x.com/revs87"
+        link = ProfileData.Default.twitterX
     ),
     Instagram(
         icon = Res.Icon.INSTAGRAM,
-        link = "https://www.instagram.com/revs87"
+        link = ProfileData.Default.instagram
     ),
     InstagramLight(
         icon = Res.Icon.INSTAGRAM_LIGHT,
-        link = "https://www.instagram.com/revs87"
+        link = ProfileData.Default.instagram
     )
 }

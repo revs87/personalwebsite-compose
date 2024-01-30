@@ -10,6 +10,11 @@ data class Profile(
     val profession: String,
     val description: List<PersonalContent>,
     val email: String,
+    val linkedin: String? = null,
+    val github: String? = null,
+    val stackoverflow: String? = null,
+    val twitterX: String? = null,
+    val instagram: String? = null
 )
 
 @Serializable
