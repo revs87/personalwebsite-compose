@@ -19,7 +19,7 @@ data class Profile(
 
 @Serializable
 data class PersonalContent(
-    val type: ContentType,
+    val contentType: ContentType,
     val content: String,
 )
 

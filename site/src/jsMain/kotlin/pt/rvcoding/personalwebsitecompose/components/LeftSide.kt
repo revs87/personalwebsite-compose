@@ -84,7 +84,7 @@ fun LeftSide(
                     .opacity(50.percent)
                     .lineHeight(2)
                     .margin(
-                        left = if (content.type == ContentType.BulletText) 25.px else 0.px,
+                        left = if (content.contentType == ContentType.BulletText) 25.px else 0.px,
                         bottom = if (index == ProfileData.Default.description.size - 1) 36.px else 0.px
                     )
                     .textAlign(
