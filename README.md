@@ -1,4 +1,4 @@
-[![Static Badge](https://img.shields.io/badge/release%20-%20v1.0.0%20-%20%231082C3)](https://github.com/revs87/personalwebsite-compose/releases/tag/1.0.0)
+[![Static Badge](https://img.shields.io/badge/release%20-%20v1.0%20-%20%231082C3)](https://github.com/revs87/personalwebsite-compose/releases/tag/1.0)
 ![Static Badge](https://img.shields.io/badge/License%20-%20MIT%20License%20-%20%231082C3)
 
 ![image](https://img.shields.io/badge/Kobweb-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white)
@@ -16,8 +16,9 @@ Rui Vieira's Introduction website with personal contacts
 
 ## Tech Stack
 ### Core
+- Kobweb Framework
 - Kobweb Kotlin
-- Kobweb Compose
+- Kobweb Compose HTML
 
 ## Kobweb Details
 This is a [Kobweb](https://github.com/varabyte/kobweb) project bootstrapped with the `app/empty` template.
