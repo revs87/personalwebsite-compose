@@ -12,3 +12,9 @@ server:
       siteRoot: ".kobweb/site"
 
   port: 80
+
+  cors:
+    hosts:
+      - name: "personalwebsite-5b1m.onrender.com"
+        schemes:
+          - "https"
