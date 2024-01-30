@@ -38,7 +38,7 @@ object Res {
 
     object String {
         const val NAME = "Rui Vieira"
-        const val PROFESSION = "Senior Android and KMM Developer"
+        const val PROFESSION = "Senior Android and Kotlin Multiplatform Developer"
         const val ABOUT_ME_1 =
             "With over a decade of experience, " +
                     "I am offering a comprehensive expertise in software development, spanning from conceptualization to delivery.\n" +
