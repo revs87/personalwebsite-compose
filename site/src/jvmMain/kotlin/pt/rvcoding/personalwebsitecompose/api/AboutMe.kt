@@ -34,7 +34,7 @@ private val personalData = PersonalData(
     email = "revss87@gmail.com"
 )
 
-@Api
+@Api(routeOverride = "aboutme")
 suspend fun aboutMe(context: ApiContext) {
     try {
         context.res.setBodyText(
