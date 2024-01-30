@@ -1,4 +1,4 @@
-package pt.rvcoding.personalwebsitecompose.components
+package pt.rvcoding.personalwebsitecomposehtml.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -16,10 +16,10 @@ import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.Position
 import org.jetbrains.compose.web.css.px
-import pt.rvcoding.personalwebsitecompose.styles.ThemeIconStyle
-import pt.rvcoding.personalwebsitecompose.util.Res
-import pt.rvcoding.personalwebsitecompose.util.Res.Dimens.ICON_SIZE
-import pt.rvcoding.personalwebsitecompose.util.Res.Dimens.ICON_SIZE_LG
+import pt.rvcoding.personalwebsitecomposehtml.styles.ThemeIconStyle
+import pt.rvcoding.personalwebsitecomposehtml.util.Res
+import pt.rvcoding.personalwebsitecomposehtml.util.Res.Dimens.ICON_SIZE
+import pt.rvcoding.personalwebsitecomposehtml.util.Res.Dimens.ICON_SIZE_LG
 
 @Composable
 fun ThemeSwitchButton(

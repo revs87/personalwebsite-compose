@@ -1,4 +1,4 @@
-package pt.rvcoding.personalwebsitecompose.components
+package pt.rvcoding.personalwebsitecomposehtml.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.ObjectFit
@@ -10,7 +10,7 @@ import com.varabyte.kobweb.compose.ui.thenIf
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import org.jetbrains.compose.web.css.px
-import pt.rvcoding.personalwebsitecompose.util.Res
+import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 @Composable
 fun RightSide(breakpoint: Breakpoint) {

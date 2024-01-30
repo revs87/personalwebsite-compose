@@ -1,4 +1,4 @@
-package pt.rvcoding.personalwebsitecompose.util
+package pt.rvcoding.personalwebsitecomposehtml.util
 
 import com.varabyte.kobweb.compose.ui.graphics.Color
 

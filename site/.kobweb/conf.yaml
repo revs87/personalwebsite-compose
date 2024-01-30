@@ -5,10 +5,10 @@ server:
   files:
     dev:
       contentRoot: "build/processedResources/js/main/public"
-      script: "build/dist/js/developmentExecutable/personalwebsitecompose.js"
-      api: "build/libs/personalwebsitecompose.jar"
+      script: "build/dist/js/developmentExecutable/personalwebsitecomposehtml.js"
+      api: "build/libs/personalwebsitecomposehtml.jar"
     prod:
-      script: "build/dist/js/productionExecutable/personalwebsitecompose.js"
+      script: "build/dist/js/productionExecutable/personalwebsitecomposehtml.js"
       siteRoot: ".kobweb/site"
 
   port: 80

@@ -6,7 +6,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = "personalwebsitecompose"
+rootProject.name = "personalwebsitecomposehtml"
 
 include(":site")
 

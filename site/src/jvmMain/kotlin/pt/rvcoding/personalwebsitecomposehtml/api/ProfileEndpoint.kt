@@ -1,12 +1,12 @@
-package pt.rvcoding.personalwebsitecompose.api
+package pt.rvcoding.personalwebsitecomposehtml.api
 
 import com.varabyte.kobweb.api.Api
 import com.varabyte.kobweb.api.ApiContext
 import com.varabyte.kobweb.api.http.setBodyText
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
-import pt.rvcoding.personalwebsitecompose.models.ApiResponse
-import pt.rvcoding.personalwebsitecompose.models.ProfileData
+import pt.rvcoding.personalwebsitecomposehtml.models.ApiResponse
+import pt.rvcoding.personalwebsitecomposehtml.models.ProfileData
 
 
 @Api(routeOverride = "profile")

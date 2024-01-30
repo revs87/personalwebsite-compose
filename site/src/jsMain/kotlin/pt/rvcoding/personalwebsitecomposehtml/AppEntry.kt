@@ -1,4 +1,4 @@
-package pt.rvcoding.personalwebsitecompose
+package pt.rvcoding.personalwebsitecomposehtml
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.ui.modifiers.minHeight
@@ -11,7 +11,7 @@ import com.varabyte.kobweb.silk.init.InitSilk
 import com.varabyte.kobweb.silk.init.InitSilkContext
 import com.varabyte.kobweb.silk.theme.colors.palette.button
 import org.jetbrains.compose.web.css.vh
-import pt.rvcoding.personalwebsitecompose.util.Res
+import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 @App
 @Composable

@@ -1,4 +1,4 @@
-package pt.rvcoding.personalwebsitecompose.components
+package pt.rvcoding.personalwebsitecomposehtml.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.Cursor
@@ -12,9 +12,9 @@ import org.jetbrains.compose.web.css.CSSSizeValue
 import org.jetbrains.compose.web.css.CSSUnit
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.px
-import pt.rvcoding.personalwebsitecompose.models.ProfileData
-import pt.rvcoding.personalwebsitecompose.util.Res
-import pt.rvcoding.personalwebsitecompose.util.Res.Dimens.BORDER_RADIUS
+import pt.rvcoding.personalwebsitecomposehtml.models.ProfileData
+import pt.rvcoding.personalwebsitecomposehtml.util.Res
+import pt.rvcoding.personalwebsitecomposehtml.util.Res.Dimens.BORDER_RADIUS
 
 @Composable
 fun IconButton(

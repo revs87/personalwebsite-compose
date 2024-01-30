@@ -1,4 +1,4 @@
-package pt.rvcoding.personalwebsitecompose.pages
+package pt.rvcoding.personalwebsitecomposehtml.pages
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -14,9 +14,9 @@ import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
 import com.varabyte.kobweb.core.Page
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import kotlinx.browser.localStorage
-import pt.rvcoding.personalwebsitecompose.components.ProfileCard
-import pt.rvcoding.personalwebsitecompose.components.ThemeSwitchButton
-import pt.rvcoding.personalwebsitecompose.util.Res
+import pt.rvcoding.personalwebsitecomposehtml.components.ProfileCard
+import pt.rvcoding.personalwebsitecomposehtml.components.ThemeSwitchButton
+import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 @Page
 @Composable

@@ -1,4 +1,4 @@
-package pt.rvcoding.personalwebsitecompose.styles
+package pt.rvcoding.personalwebsitecomposehtml.styles
 
 import com.varabyte.kobweb.compose.css.CSSTransition
 import com.varabyte.kobweb.compose.css.TransitionProperty

@@ -1,4 +1,4 @@
-package pt.rvcoding.personalwebsitecompose.components
+package pt.rvcoding.personalwebsitecomposehtml.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.FontWeight
@@ -21,11 +21,11 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import kotlinx.browser.window
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
-import pt.rvcoding.personalwebsitecompose.models.ContentType
-import pt.rvcoding.personalwebsitecompose.models.ProfileData
-import pt.rvcoding.personalwebsitecompose.styles.ButtonStyle
-import pt.rvcoding.personalwebsitecompose.styles.SocialIconStyle
-import pt.rvcoding.personalwebsitecompose.util.Res
+import pt.rvcoding.personalwebsitecomposehtml.models.ContentType
+import pt.rvcoding.personalwebsitecomposehtml.models.ProfileData
+import pt.rvcoding.personalwebsitecomposehtml.styles.ButtonStyle
+import pt.rvcoding.personalwebsitecomposehtml.styles.SocialIconStyle
+import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 @Composable
 fun LeftSide(

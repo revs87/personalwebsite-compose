@@ -1,7 +1,7 @@
-package pt.rvcoding.personalwebsitecompose.models
+package pt.rvcoding.personalwebsitecomposehtml.models
 
-import pt.rvcoding.personalwebsitecompose.models.ContentType.BulletText
-import pt.rvcoding.personalwebsitecompose.models.ContentType.Text
+import pt.rvcoding.personalwebsitecomposehtml.models.ContentType.BulletText
+import pt.rvcoding.personalwebsitecomposehtml.models.ContentType.Text
 
 const val ABOUT_ME_1 =
     "With over a decade of experience, " +
