@@ -10,8 +10,8 @@ plugins {
 }
 
 group = "pt.rvcoding.personalwebsitecomposehtml"
-version = "1.0"
-//version = "1.1-SNAPSHOT"
+//version = "1.0"
+version = "1.1-SNAPSHOT"
 
 
 //tasks.create("kobweb") {
