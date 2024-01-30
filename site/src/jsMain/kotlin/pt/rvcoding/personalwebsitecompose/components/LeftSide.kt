@@ -21,6 +21,8 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import kotlinx.browser.window
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
+import pt.rvcoding.personalwebsitecompose.models.ContentType
+import pt.rvcoding.personalwebsitecompose.models.ProfileData
 import pt.rvcoding.personalwebsitecompose.styles.ButtonStyle
 import pt.rvcoding.personalwebsitecompose.styles.SocialIconStyle
 import pt.rvcoding.personalwebsitecompose.util.Res
@@ -39,7 +41,7 @@ fun LeftSide(
             Alignment.CenterHorizontally else Alignment.Start
     ) {
         SpanText(
-            text = Res.String.NAME,
+            text = ProfileData.Default.name,
             modifier = Modifier
                 .margin(bottom = 12.px)
                 .fontFamily(Res.String.ROBOTO_CONDENSED)
@@ -52,7 +54,7 @@ fun LeftSide(
                 )
         )
         SpanText(
-            text = Res.String.PROFESSION,
+            text = ProfileData.Default.profession,
             modifier = Modifier
                 .margin(bottom = 24.px)
                 .fontFamily(Res.String.ROBOTO_REGULAR)
@@ -73,33 +75,7 @@ fun LeftSide(
                     else Alignment.Start
                 )
         ) {}
-        SpanText(
-            modifier = Modifier
-                .fontFamily(Res.String.ROBOTO_REGULAR)
-                .fontSize(14.px)
-                .color(if (colorMode.isLight) Colors.Black else Colors.White)
-                .opacity(50.percent)
-                .lineHeight(2)
-                .textAlign(
-                    if (breakpoint <= Breakpoint.SM) TextAlign.Center
-                    else TextAlign.Start
-                ),
-            text = Res.String.ABOUT_ME_1
-        )
-        SpanText(
-            modifier = Modifier
-                .fontFamily(Res.String.ROBOTO_REGULAR)
-                .fontSize(14.px)
-                .color(if (colorMode.isLight) Colors.Black else Colors.White)
-                .opacity(50.percent)
-                .lineHeight(2)
-                .textAlign(
-                    if (breakpoint <= Breakpoint.SM) TextAlign.Center
-                    else TextAlign.Start
-                ),
-            text = Res.String.ABOUT_ME_2
-        )
-        Res.String.ABOUT_ME_PERKS.forEachIndexed { index, text ->
+        ProfileData.Default.description.forEachIndexed { index, content ->
             SpanText(
                 modifier = Modifier
                     .fontFamily(Res.String.ROBOTO_REGULAR)
@@ -108,14 +84,14 @@ fun LeftSide(
                     .opacity(50.percent)
                     .lineHeight(2)
                     .margin(
-                        left = 25.px,
-                        bottom = if (index == Res.String.ABOUT_ME_PERKS.size - 1) 36.px else 0.px
+                        left = if (content.type == ContentType.BulletText) 25.px else 0.px,
+                        bottom = if (index == ProfileData.Default.description.size - 1) 36.px else 0.px
                     )
                     .textAlign(
                         if (breakpoint <= Breakpoint.SM) TextAlign.Center
                         else TextAlign.Start
                     ),
-                text = text
+                text = content.content
             )
         }
 

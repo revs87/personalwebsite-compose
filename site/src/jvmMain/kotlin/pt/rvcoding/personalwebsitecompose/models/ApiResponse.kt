@@ -7,7 +7,8 @@ import kotlinx.serialization.Serializable
 sealed class ApiResponse {
     @Serializable
     @SerialName("success")
-    data class Success(val data: PersonalData) : ApiResponse()
+    data class Success(val data: Profile) : ApiResponse()
+    
     @Serializable
     @SerialName("error")
     data class Error(val errorMessage: String) : ApiResponse()

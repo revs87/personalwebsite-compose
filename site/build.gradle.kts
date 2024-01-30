@@ -61,6 +61,7 @@ kotlin {
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.ui)
+            implementation(libs.kotlinx.serialization.json)
         }
         jsMain.dependencies {
             implementation(compose.html.core)
@@ -71,8 +72,6 @@ kotlin {
         }
         jvmMain.dependencies {
             implementation(libs.kobweb.api)
-//            implementation(libs.kotlinx.serialization.core)
-            implementation(libs.kotlinx.serialization.json)
         }
     }
 }

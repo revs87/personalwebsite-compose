@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 
 
 @Serializable
-data class PersonalData(
+data class Profile(
     val name: String,
     val profession: String,
     val description: List<PersonalContent>,
@@ -23,6 +23,7 @@ sealed class ContentType {
     @Serializable
     @SerialName("Text")
     data object Text : ContentType()
+
     @Serializable
     @SerialName("BulletText")
     data object BulletText : ContentType()
