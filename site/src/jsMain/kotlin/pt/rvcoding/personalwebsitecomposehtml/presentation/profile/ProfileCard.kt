@@ -1,4 +1,4 @@
-package pt.rvcoding.personalwebsitecomposehtml.components
+package pt.rvcoding.personalwebsitecomposehtml.presentation.profile
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.ui.Modifier

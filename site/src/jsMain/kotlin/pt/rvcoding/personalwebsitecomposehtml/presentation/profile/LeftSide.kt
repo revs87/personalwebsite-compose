@@ -1,4 +1,4 @@
-package pt.rvcoding.personalwebsitecomposehtml.components
+package pt.rvcoding.personalwebsitecomposehtml.presentation.profile
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.FontWeight
@@ -21,6 +21,8 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import kotlinx.browser.window
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
+import pt.rvcoding.personalwebsitecomposehtml.components.IconButton
+import pt.rvcoding.personalwebsitecomposehtml.components.SocialIcon
 import pt.rvcoding.personalwebsitecomposehtml.models.ContentType
 import pt.rvcoding.personalwebsitecomposehtml.models.ProfileData
 import pt.rvcoding.personalwebsitecomposehtml.styles.ButtonStyle
