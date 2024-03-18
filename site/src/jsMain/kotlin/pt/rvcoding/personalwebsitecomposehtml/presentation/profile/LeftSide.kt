@@ -69,10 +69,14 @@ fun LeftSide(
                 .fontFamily(Res.String.ROBOTO_REGULAR)
                 .color(if (colorMode.isLight) Colors.Black else Colors.White)
                 .fontSize(18.px)
+                .textAlign(
+                    if (breakpoint <= Breakpoint.SM) TextAlign.Center
+                    else TextAlign.Start
+                )
         )
         Surface(
             modifier = Modifier
-                .height(4.px)
+                .height(28.px)
                 .width(40.px)
                 .margin(bottom = 24.px)
                 .background(
@@ -90,14 +94,14 @@ fun LeftSide(
                     .fontFamily(Res.String.ROBOTO_REGULAR)
                     .fontSize(14.px)
                     .color(if (colorMode.isLight) Colors.Black else Colors.White)
-                    .opacity(50.percent)
+                    .opacity(60.percent)
                     .lineHeight(2)
                     .margin(
                         left = if (content.contentType == ContentType.BulletText) 25.px else 0.px,
                         bottom = if (index == ProfileData.Default.description.size - 1) 36.px else 0.px
                     )
                     .textAlign(
-                        if (breakpoint <= Breakpoint.SM) TextAlign.Center
+                        if (breakpoint <= Breakpoint.SM) TextAlign.Justify
                         else TextAlign.Start
                     ),
                 text = content.content
