@@ -76,7 +76,7 @@ fun LeftSide(
         )
         Surface(
             modifier = Modifier
-                .height(28.px)
+                .height(4.px)
                 .width(40.px)
                 .margin(bottom = 24.px)
                 .background(
