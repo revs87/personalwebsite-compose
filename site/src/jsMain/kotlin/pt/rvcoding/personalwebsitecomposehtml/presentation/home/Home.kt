@@ -1,25 +1,31 @@
 package pt.rvcoding.personalwebsitecomposehtml.presentation.home
 
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
+import androidx.compose.runtime.*
+import com.varabyte.kobweb.compose.css.Overflow
 import com.varabyte.kobweb.compose.css.functions.LinearGradient
 import com.varabyte.kobweb.compose.css.functions.linearGradient
 import com.varabyte.kobweb.compose.foundation.layout.Box
+import com.varabyte.kobweb.compose.foundation.layout.Column
+import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.backgroundImage
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
+import com.varabyte.kobweb.compose.ui.modifiers.overflow
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import kotlinx.browser.localStorage
+import org.jetbrains.compose.web.dom.Text
+import pt.rvcoding.personalwebsitecomposehtml.components.ThemeButton
 import pt.rvcoding.personalwebsitecomposehtml.components.ThemeSwitchButton
+import pt.rvcoding.personalwebsitecomposehtml.models.Menu
+import pt.rvcoding.personalwebsitecomposehtml.models.Menu.*
 import pt.rvcoding.personalwebsitecomposehtml.presentation.profile.ProfileCard
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 @Composable
 fun HomePage() {
     var colorMode by ColorMode.currentState
+    var menuSelected by remember { mutableStateOf(Menu.Default) }
 
     LaunchedEffect(colorMode) {
         val savedTheme = localStorage.getItem(Res.String.SAVED_THEME) ?: ColorMode.LIGHT.name
@@ -48,6 +54,29 @@ fun HomePage() {
             ),
         contentAlignment = Alignment.Center
     ) {
-        ProfileCard(colorMode = colorMode)
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .overflow { y(Overflow.Auto) },
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Row {
+                Menu.entries.forEach {
+                    ThemeButton(
+                        text = it.title.uppercase(),
+                        colorMode = colorMode,
+                        selected = it == menuSelected,
+                        onClick = {
+                            menuSelected = it
+                        }
+                    )
+                }
+            }
+            when (menuSelected) {
+                PROFILE -> ProfileCard(colorMode = colorMode)
+                PORTFOLIO -> Text("Portfolio")
+                HISTORY -> Text("History")
+            }
+        }
     }
 }
