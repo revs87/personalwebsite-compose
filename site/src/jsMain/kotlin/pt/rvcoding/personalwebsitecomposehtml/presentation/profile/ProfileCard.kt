@@ -1,6 +1,6 @@
 package pt.rvcoding.personalwebsitecomposehtml.presentation.profile
 
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
@@ -15,7 +15,8 @@ import org.jetbrains.compose.web.css.px
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 @Composable
-fun ProfileCard(colorMode: ColorMode) {
+fun ProfileCard(colorMode: ColorMode = ColorMode.LIGHT) {
+    var expanded by remember { mutableStateOf(true) }
     val breakpoint = rememberBreakpoint()
     SimpleGrid(
         numColumns = numColumns(base = 1, md = 2),
@@ -26,7 +27,11 @@ fun ProfileCard(colorMode: ColorMode) {
             )
             .thenIf(
                 condition = breakpoint > Breakpoint.MD,
-                other = Modifier.height(Res.Dimens.MAX_CARD_HEIGHT.px)
+                other = Modifier
+                    .height(
+                        if (expanded) Res.Dimens.MAX_CARD_HEIGHT.px
+                        else Res.Dimens.MAX_CARD_HEIGHT_COLLAPSED.px
+                    )
             )
             .boxShadow(
                 color = Colors.Black.copy(alpha = 10),
@@ -35,12 +40,14 @@ fun ProfileCard(colorMode: ColorMode) {
             )
             .padding(all = 12.px)
             .borderRadius(r = Res.Dimens.BORDER_RADIUS.px)
+            .margin(bottom = if (breakpoint <= Breakpoint.MD) 24.px else 32.px,)
             .background(
                 if (colorMode.isLight) Colors.White else
                     Res.Theme.DARK_BLUE.color
             )
+            .onClick { expanded = !expanded }
     ) {
-        LeftSide(colorMode = colorMode, breakpoint = breakpoint)
-        RightSide(breakpoint = breakpoint)
+        LeftSide(colorMode = colorMode, breakpoint = breakpoint, expanded = expanded)
+        RightSide(breakpoint = breakpoint, expanded = expanded)
     }
 }

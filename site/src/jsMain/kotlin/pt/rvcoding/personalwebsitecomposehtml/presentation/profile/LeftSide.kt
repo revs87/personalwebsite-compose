@@ -10,6 +10,8 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.compose.ui.styleModifier
+import com.varabyte.kobweb.compose.ui.thenIf
 import com.varabyte.kobweb.silk.components.forms.Button
 import com.varabyte.kobweb.silk.components.forms.ButtonSize
 import com.varabyte.kobweb.silk.components.graphics.Image
@@ -32,11 +34,20 @@ import pt.rvcoding.personalwebsitecomposehtml.util.Res
 @Composable
 fun LeftSide(
     colorMode: ColorMode,
-    breakpoint: Breakpoint
+    breakpoint: Breakpoint,
+    expanded: Boolean
 ) {
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .thenIf(
+                condition = !expanded,
+                other = Modifier
+                    .height(
+                        size = (Res.Dimens.MAX_CARD_HEIGHT_COLLAPSED - 24).px
+                    )
+            )
+            .styleModifier { property("overflow", "hidden") }
             .padding(
                 top = 50.px,
                 bottom = 50.px,
@@ -74,6 +85,9 @@ fun LeftSide(
                     else TextAlign.Start
                 )
         )
+
+        if (!expanded) return@Column
+
         Surface(
             modifier = Modifier
                 .height(4.px)

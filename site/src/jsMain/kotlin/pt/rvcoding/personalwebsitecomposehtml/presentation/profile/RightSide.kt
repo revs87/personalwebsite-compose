@@ -13,13 +13,21 @@ import org.jetbrains.compose.web.css.px
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 @Composable
-fun RightSide(breakpoint: Breakpoint) {
+fun RightSide(
+    breakpoint: Breakpoint = Breakpoint.XL,
+    expanded: Boolean = true
+) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .thenIf(
                 condition = breakpoint > Breakpoint.MD,
-                other = Modifier.height((Res.Dimens.MAX_CARD_HEIGHT - 24).px)
+                other = Modifier
+                    .height(size = ((
+                            if (expanded) Res.Dimens.MAX_CARD_HEIGHT
+                            else Res.Dimens.MAX_CARD_HEIGHT_COLLAPSED
+                         ) - 24).px
+                    )
             )
     ) {
         Image(

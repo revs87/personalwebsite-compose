@@ -11,7 +11,10 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.backgroundImage
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
+import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.overflow
+import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import kotlinx.browser.localStorage
 import org.jetbrains.compose.web.dom.Text
@@ -26,6 +29,7 @@ import pt.rvcoding.personalwebsitecomposehtml.util.Res
 fun HomePage() {
     var colorMode by ColorMode.currentState
     var menuSelected by remember { mutableStateOf(Menu.Default) }
+    val breakpoint = rememberBreakpoint()
 
     LaunchedEffect(colorMode) {
         val savedTheme = localStorage.getItem(Res.String.SAVED_THEME) ?: ColorMode.LIGHT.name
@@ -56,20 +60,22 @@ fun HomePage() {
     ) {
         Column(
             modifier = Modifier
-                .fillMaxSize()
+                .fillMaxWidth()
                 .overflow { y(Overflow.Auto) },
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Row {
-                Menu.entries.forEach {
-                    ThemeButton(
-                        text = it.title.uppercase(),
-                        colorMode = colorMode,
-                        selected = it == menuSelected,
-                        onClick = {
-                            menuSelected = it
-                        }
-                    )
+            if (breakpoint > Breakpoint.SM) {
+                Row {
+                    Menu.entries.forEach {
+                        ThemeButton(
+                            text = it.title.uppercase(),
+                            colorMode = colorMode,
+                            selected = it == menuSelected,
+                            onClick = {
+                                menuSelected = it
+                            }
+                        )
+                    }
                 }
             }
             when (menuSelected) {
