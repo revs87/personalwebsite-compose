@@ -35,12 +35,12 @@ fun ProfileCard(colorMode: ColorMode = ColorMode.LIGHT) {
             )
             .boxShadow(
                 color = Colors.Black.copy(alpha = 10),
-                blurRadius = 50.px,
-                spreadRadius = 50.px
+                blurRadius = if (breakpoint <= Breakpoint.MD) 18.px else 24.px,
+                spreadRadius = if (breakpoint <= Breakpoint.MD) 18.px else 24.px
             )
             .padding(all = 12.px)
             .borderRadius(r = Res.Dimens.BORDER_RADIUS.px)
-            .margin(bottom = if (breakpoint <= Breakpoint.MD) 24.px else 32.px,)
+            .margin(bottom = if (breakpoint <= Breakpoint.MD) 24.px else 32.px)
             .background(
                 if (colorMode.isLight) Colors.White else
                     Res.Theme.DARK_BLUE.color
