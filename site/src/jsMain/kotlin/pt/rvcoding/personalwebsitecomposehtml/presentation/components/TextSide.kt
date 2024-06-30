@@ -1,4 +1,4 @@
-package pt.rvcoding.personalwebsitecomposehtml.presentation.profile
+package pt.rvcoding.personalwebsitecomposehtml.presentation.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.FontWeight
@@ -7,37 +7,33 @@ import com.varabyte.kobweb.compose.css.UserSelect
 import com.varabyte.kobweb.compose.css.userSelect
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
-import com.varabyte.kobweb.compose.foundation.layout.Row
+import com.varabyte.kobweb.compose.foundation.layout.ColumnScope
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.compose.ui.thenIf
-import com.varabyte.kobweb.silk.components.forms.Button
-import com.varabyte.kobweb.silk.components.forms.ButtonSize
-import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.layout.Surface
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
-import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
-import kotlinx.browser.window
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
-import pt.rvcoding.personalwebsitecomposehtml.components.IconButton
-import pt.rvcoding.personalwebsitecomposehtml.components.SocialIcon
 import pt.rvcoding.personalwebsitecomposehtml.models.ContentType
+import pt.rvcoding.personalwebsitecomposehtml.models.PersonalContent
 import pt.rvcoding.personalwebsitecomposehtml.models.content.ProfileData
-import pt.rvcoding.personalwebsitecomposehtml.styles.ButtonStyle
-import pt.rvcoding.personalwebsitecomposehtml.styles.SocialIconStyle
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 @Composable
-fun LeftSide(
+fun TextSide(
     colorMode: ColorMode,
     breakpoint: Breakpoint,
-    expanded: Boolean
+    expanded: Boolean,
+    title: String,
+    subTitle: String,
+    description: List<PersonalContent>,
+    extra: @Composable (ColumnScope) -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -63,7 +59,7 @@ fun LeftSide(
             Alignment.CenterHorizontally else Alignment.Start
     ) {
         SpanText(
-            text = ProfileData.Default.name,
+            text = title,
             modifier = Modifier
                 .margin(bottom = 12.px)
                 .fontFamily(Res.String.ROBOTO_CONDENSED)
@@ -79,7 +75,7 @@ fun LeftSide(
                 }
         )
         SpanText(
-            text = ProfileData.Default.profession,
+            text = subTitle,
             modifier = Modifier
                 .margin(bottom = 24.px)
                 .fontFamily(Res.String.ROBOTO_REGULAR)
@@ -110,7 +106,7 @@ fun LeftSide(
                     else Alignment.Start
                 )
         ) {}
-        ProfileData.Default.description.forEachIndexed { index, content ->
+        description.forEachIndexed { index, content ->
             SpanText(
                 modifier = Modifier
                     .fontFamily(Res.String.ROBOTO_REGULAR)
@@ -133,59 +129,6 @@ fun LeftSide(
             )
         }
 
-        Button(
-            modifier = ButtonStyle
-                .toModifier()
-                .margin(bottom = 50.px),
-            size = ButtonSize.LG,
-            onClick = { window.location.href = "mailto:${ProfileData.Default.email}" }
-        ) {
-            Row(
-                modifier = Modifier.fillMaxSize(),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Image(
-                    modifier = Modifier.margin(right = 12.px),
-                    src = if (colorMode.isLight) Res.Icon.EMAIL_LIGHT
-                    else Res.Icon.EMAIL_DARK
-                )
-                SpanText(
-                    modifier = Modifier
-                        .fontSize(14.px)
-                        .color(
-                            if (colorMode.isLight) Colors.White
-                            else Res.Theme.GRADIENT_ONE_DARK.color
-                        )
-                        .fontWeight(FontWeight.Bold)
-                        .fontFamily(Res.String.ROBOTO_REGULAR)
-                        .styleModifier {
-                            userSelect(UserSelect.None)
-                        },
-                    text = Res.String.BUTTON_TEXT
-                )
-            }
-        }
-
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .gap(12.px),
-            horizontalArrangement = if (breakpoint <= Breakpoint.SM)
-                Arrangement.Center else Arrangement.Start
-        ) {
-            SocialIcon.Active.filter {
-                if (colorMode.isLight) !it.name.contains("Light")
-                else it.name.contains("Light")
-            }.forEach { social ->
-                social.link?.let {
-                    IconButton(
-                        modifier = SocialIconStyle.toModifier(),
-                        colorMode = colorMode,
-                        icon = social.icon,
-                        link = social.link
-                    )
-                }
-            }
-        }
+        extra.invoke(this)
     }
 }

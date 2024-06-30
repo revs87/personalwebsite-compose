@@ -1,4 +1,4 @@
-package pt.rvcoding.personalwebsitecomposehtml.presentation.profile
+package pt.rvcoding.personalwebsitecomposehtml.presentation.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.ObjectFit
@@ -13,9 +13,10 @@ import org.jetbrains.compose.web.css.px
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 @Composable
-fun RightSide(
+fun ImageSide(
     breakpoint: Breakpoint = Breakpoint.XL,
-    expanded: Boolean = true
+    expanded: Boolean = true,
+    imageSrc: String = Res.Image.PROFILE_PHOTO
 ) {
     Box(
         modifier = Modifier
@@ -42,7 +43,7 @@ fun RightSide(
                     offsetX = 2.px,
                     offsetY = 1.px
                 ),
-            src = Res.Image.PROFILE_PHOTO
+            src = imageSrc
         )
     }
 }
