@@ -79,6 +79,7 @@ fun HomePage() {
                         PROFILE -> ProfileCard(colorMode = colorMode)
                         PORTFOLIO -> Text("Portfolio")
                         HISTORY -> Text("History")
+                        ABOUT_ME -> Text("About me")
                     }
                 }
             }

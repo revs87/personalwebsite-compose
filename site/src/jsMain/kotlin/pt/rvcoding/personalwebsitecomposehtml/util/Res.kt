@@ -32,12 +32,14 @@ object Res {
         const val MOON = "moon.svg"
         const val MENU = "menu.svg"
         const val MENU_LIGHT = "menu_light.svg"
-        const val PROFILE = "profile.svg"
-        const val PROFILE_LIGHT = "profile_light.svg"
+        const val HOME = "home.svg"
+        const val HOME_LIGHT = "home_light.svg"
         const val PORTFOLIO = "portfolio.svg"
         const val PORTFOLIO_LIGHT = "portfolio_light.svg"
         const val HISTORY = "history.svg"
         const val HISTORY_LIGHT = "history_light.svg"
+        const val ABOUTME = "aboutme.svg"
+        const val ABOUTME_LIGHT = "aboutme_light.svg"
     }
 
     object Image {

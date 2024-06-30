@@ -86,7 +86,8 @@ private fun iconButton(
 
 private fun menuIcon(colorMode: ColorMode, menu: Menu): String =
     when (menu) {
-        PROFILE -> if (colorMode.isLight) Res.Icon.PROFILE else Res.Icon.PROFILE_LIGHT
+        PROFILE -> if (colorMode.isLight) Res.Icon.HOME else Res.Icon.HOME_LIGHT
         PORTFOLIO -> if (colorMode.isLight) Res.Icon.PORTFOLIO else Res.Icon.PORTFOLIO_LIGHT
         HISTORY -> if (colorMode.isLight) Res.Icon.HISTORY else Res.Icon.HISTORY_LIGHT
+        ABOUT_ME -> if (colorMode.isLight) Res.Icon.ABOUTME else Res.Icon.ABOUTME_LIGHT
     }
