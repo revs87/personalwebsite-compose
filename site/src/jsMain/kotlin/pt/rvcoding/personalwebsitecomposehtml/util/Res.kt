@@ -30,6 +30,8 @@ object Res {
         const val X_LIGHT = "twitter_x_light.svg"
         const val SUN = "sun.svg"
         const val MOON = "moon.svg"
+        const val GOTOTOP = "gototop.svg"
+        const val GOTOTOP_LIGHT = "gototop_light.svg"
         const val MENU = "menu.svg"
         const val MENU_LIGHT = "menu_light.svg"
         const val HOME = "home.svg"

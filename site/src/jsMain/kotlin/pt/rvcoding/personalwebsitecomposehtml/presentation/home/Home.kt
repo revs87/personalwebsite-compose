@@ -14,7 +14,9 @@ import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.overflow
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import kotlinx.browser.localStorage
+import kotlinx.browser.window
 import org.jetbrains.compose.web.dom.Text
+import pt.rvcoding.personalwebsitecomposehtml.components.ThemeGoToTopButton
 import pt.rvcoding.personalwebsitecomposehtml.components.ThemeMenuHorizontalButtons
 import pt.rvcoding.personalwebsitecomposehtml.components.ThemeMenuVerticalButtons
 import pt.rvcoding.personalwebsitecomposehtml.components.ThemeModeSwitchButton
@@ -27,10 +29,17 @@ import pt.rvcoding.personalwebsitecomposehtml.util.Res
 fun HomePage() {
     var colorMode by ColorMode.currentState
     var menuSelected by remember { mutableStateOf(Menu.Default) }
+    var goToTop by remember { mutableStateOf(false) }
 
     LaunchedEffect(colorMode) {
         val savedTheme = localStorage.getItem(Res.String.SAVED_THEME) ?: ColorMode.LIGHT.name
         colorMode = ColorMode.valueOf(savedTheme)
+    }
+    LaunchedEffect(Unit) {
+        window.addEventListener(
+            type = "scroll",
+            { goToTop = window.scrollY > 100 }
+        )
     }
 
     ThemeModeSwitchButton(
@@ -39,6 +48,11 @@ fun HomePage() {
             colorMode = colorMode.opposite
             localStorage.setItem(Res.String.SAVED_THEME, colorMode.name)
         }
+    )
+    ThemeGoToTopButton(
+        colorMode = colorMode,
+        visible = goToTop,
+        onClick = { window.scrollTo(x = 0.0, y = 0.0) }
     )
 
     Box(
