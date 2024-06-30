@@ -28,7 +28,7 @@ import org.jetbrains.compose.web.css.px
 import pt.rvcoding.personalwebsitecomposehtml.components.IconButton
 import pt.rvcoding.personalwebsitecomposehtml.components.SocialIcon
 import pt.rvcoding.personalwebsitecomposehtml.models.ContentType
-import pt.rvcoding.personalwebsitecomposehtml.models.ProfileData
+import pt.rvcoding.personalwebsitecomposehtml.models.content.ProfileData
 import pt.rvcoding.personalwebsitecomposehtml.styles.ButtonStyle
 import pt.rvcoding.personalwebsitecomposehtml.styles.SocialIconStyle
 import pt.rvcoding.personalwebsitecomposehtml.util.Res

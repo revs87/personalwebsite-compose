@@ -2,6 +2,7 @@ package pt.rvcoding.personalwebsitecomposehtml.models
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import pt.rvcoding.personalwebsitecomposehtml.models.content.Profile
 
 @Serializable
 sealed class ApiResponse {

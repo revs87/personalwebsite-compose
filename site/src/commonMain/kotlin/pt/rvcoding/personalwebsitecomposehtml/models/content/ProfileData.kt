@@ -1,9 +1,12 @@
-package pt.rvcoding.personalwebsitecomposehtml.models
+package pt.rvcoding.personalwebsitecomposehtml.models.content
 
+import pt.rvcoding.personalwebsitecomposehtml.models.BULLET
 import pt.rvcoding.personalwebsitecomposehtml.models.ContentType.BulletText
 import pt.rvcoding.personalwebsitecomposehtml.models.ContentType.Text
+import pt.rvcoding.personalwebsitecomposehtml.models.PersonalContent
 
-const val ABOUT_ME =
+
+private const val PROFILE_INTRO =
     "With over a decade of experience, " +
             "I am offering a comprehensive expertise in software development, spanning from conceptualization to delivery. " +
 
@@ -17,10 +20,8 @@ const val ABOUT_ME =
 
             "Here are the enduring themes that continually drive my professional pursuits:"
 
-private const val BULLET = "\u2022"
-
 private val profile = listOf(
-    PersonalContent(Text, ABOUT_ME),
+    PersonalContent(Text, PROFILE_INTRO),
     PersonalContent(BulletText, "$BULLET Designing and executing comprehensive, end-to-end features;"),
     PersonalContent(BulletText, "$BULLET Proactively identifying and addressing challenges in alignment with the company's strategy and vision;"),
     PersonalContent(BulletText, "$BULLET Conducting thorough reviews, maintaining, and scaling the existing code base;"),

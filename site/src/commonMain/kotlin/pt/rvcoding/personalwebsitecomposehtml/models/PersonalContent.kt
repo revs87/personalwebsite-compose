@@ -5,19 +5,6 @@ import kotlinx.serialization.Serializable
 
 
 @Serializable
-data class Profile(
-    val name: String,
-    val profession: String,
-    val description: List<PersonalContent>,
-    val email: String,
-    val linkedin: String? = null,
-    val github: String? = null,
-    val stackoverflow: String? = null,
-    val twitterX: String? = null,
-    val instagram: String? = null
-)
-
-@Serializable
 data class PersonalContent(
     val contentType: ContentType,
     val content: String,
@@ -33,3 +20,5 @@ sealed class ContentType {
     @SerialName("BulletText")
     data object BulletText : ContentType()
 }
+
+internal const val BULLET = "\u2022"
