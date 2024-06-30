@@ -173,7 +173,7 @@ fun LeftSide(
             horizontalArrangement = if (breakpoint <= Breakpoint.SM)
                 Arrangement.Center else Arrangement.Start
         ) {
-            SocialIcon.entries.filter {
+            SocialIcon.Active.filter {
                 if (colorMode.isLight) !it.name.contains("Light")
                 else it.name.contains("Light")
             }.forEach { social ->

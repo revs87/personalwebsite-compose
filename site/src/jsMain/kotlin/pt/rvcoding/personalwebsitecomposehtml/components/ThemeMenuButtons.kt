@@ -38,7 +38,7 @@ fun ThemeMenuVerticalButtons(
     ) {
         if (breakpoint > Breakpoint.SM) {
             Column {
-                Menu.entries.forEach { iconButton(breakpoint, colorMode, it, onMenuSelect) }
+                Menu.Companion.Active.forEach { iconButton(breakpoint, colorMode, it, onMenuSelect) }
             }
         }
     }
@@ -52,7 +52,7 @@ fun ThemeMenuHorizontalButtons(
     val breakpoint = rememberBreakpoint()
     if (breakpoint <= Breakpoint.SM) {
         Row {
-            Menu.entries.forEach { iconButton(breakpoint, colorMode, it, onMenuSelect) }
+            Menu.Companion.Active.forEach { iconButton(breakpoint, colorMode, it, onMenuSelect) }
         }
     }
 }

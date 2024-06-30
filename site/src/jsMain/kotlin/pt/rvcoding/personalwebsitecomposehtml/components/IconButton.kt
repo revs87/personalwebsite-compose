@@ -90,5 +90,18 @@ enum class SocialIcon(
     InstagramLight(
         icon = Res.Icon.INSTAGRAM_LIGHT,
         link = ProfileData.Default.instagram
-    )
+    );
+
+    companion object {
+        val Active by lazy { listOf(
+            LinkedIn,
+            LinkedInLight,
+            Github,
+            GithubLight,
+            StackOverflow,
+            StackOverflowLight,
+            X,
+            XLight
+        ) }
+    }
 }
