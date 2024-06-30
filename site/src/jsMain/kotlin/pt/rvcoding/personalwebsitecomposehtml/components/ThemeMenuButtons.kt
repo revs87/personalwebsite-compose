@@ -29,17 +29,15 @@ fun ThemeMenuVerticalButtons(
     onMenuSelect: (Menu) -> Unit,
 ) {
     val breakpoint = rememberBreakpoint()
-    Column(
-        modifier = Modifier
-            .position(Position.Fixed)
-            .zIndex(1),
-        verticalArrangement = Arrangement.Top,
-        horizontalAlignment = Alignment.Start
-    ) {
-        if (breakpoint > Breakpoint.SM) {
-            Column {
-                Menu.Companion.Active.forEach { iconButton(breakpoint, colorMode, it, onMenuSelect) }
-            }
+    if (breakpoint > Breakpoint.SM) {
+        Column(
+            modifier = Modifier
+                .position(Position.Fixed)
+                .zIndex(1),
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.Start
+        ) {
+            Menu.Companion.Active.forEach { iconButton(breakpoint, colorMode, it, onMenuSelect) }
         }
     }
 }
