@@ -2,8 +2,6 @@ package pt.rvcoding.personalwebsitecomposehtml.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.FontWeight
-import com.varabyte.kobweb.compose.foundation.layout.Row
-import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
@@ -39,21 +37,17 @@ fun ThemeButton(
         size = ButtonSize.LG,
         onClick = { onClick.invoke() }
     ) {
-        Row(
-            modifier = Modifier.fillMaxSize(),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            SpanText(
-                modifier = Modifier
-                    .fontSize(14.px)
-                    .color(
-                        if (colorMode.isLight) Colors.White
-                        else Res.Theme.GRADIENT_ONE_DARK.color
-                    )
-                    .fontWeight(FontWeight.Bold)
-                    .fontFamily(Res.String.ROBOTO_CONDENSED),
-                text = text
-            )
-        }
+        SpanText(
+            modifier = Modifier
+                .fillMaxSize()
+                .fontSize(14.px)
+                .color(
+                    if (colorMode.isLight) Colors.White
+                    else Res.Theme.GRADIENT_ONE_DARK.color
+                )
+                .fontWeight(FontWeight.Bold)
+                .fontFamily(Res.String.ROBOTO_CONDENSED),
+            text = text
+        )
     }
 }

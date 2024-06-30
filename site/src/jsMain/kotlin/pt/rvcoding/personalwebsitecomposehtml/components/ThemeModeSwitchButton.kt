@@ -22,7 +22,7 @@ import pt.rvcoding.personalwebsitecomposehtml.util.Res.Dimens.ICON_SIZE
 import pt.rvcoding.personalwebsitecomposehtml.util.Res.Dimens.ICON_SIZE_LG
 
 @Composable
-fun ThemeSwitchButton(
+fun ThemeModeSwitchButton(
     colorMode: ColorMode,
     onClick: () -> Unit
 ) {

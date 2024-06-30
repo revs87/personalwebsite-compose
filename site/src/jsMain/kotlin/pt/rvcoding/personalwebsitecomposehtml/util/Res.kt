@@ -4,8 +4,8 @@ import com.varabyte.kobweb.compose.ui.graphics.Color
 
 object Res {
     enum class Theme(val color: Color) {
-        BLUE(color = Color.rgb(r = 33, g = 150, b = 243)),
-        LIGHT_BLUE(color = Color.rgb(r = 168, g = 236, b = 255)),
+        BLUE(color = Color.rgb(r = 33, g = 150, b = 243)), //#2196F3
+        LIGHT_BLUE(color = Color.rgb(r = 168, g = 236, b = 255)), //#A8ECFF
         DARK_BLUE(color = Color.rgb(r = 34, g = 63, b = 94)),
         SOCIAL_ICON_BACKGROUND_LIGHT(color = Color.rgb(r = 230, g = 230, b = 230)),
         SOCIAL_ICON_BACKGROUND_DARK(color = Color.rgb(r = 48, g = 82, b = 118)),
@@ -30,6 +30,14 @@ object Res {
         const val X_LIGHT = "twitter_x_light.svg"
         const val SUN = "sun.svg"
         const val MOON = "moon.svg"
+        const val MENU = "menu.svg"
+        const val MENU_LIGHT = "menu_light.svg"
+        const val PROFILE = "profile.svg"
+        const val PROFILE_LIGHT = "profile_light.svg"
+        const val PORTFOLIO = "portfolio.svg"
+        const val PORTFOLIO_LIGHT = "portfolio_light.svg"
+        const val HISTORY = "history.svg"
+        const val HISTORY_LIGHT = "history_light.svg"
     }
 
     object Image {
