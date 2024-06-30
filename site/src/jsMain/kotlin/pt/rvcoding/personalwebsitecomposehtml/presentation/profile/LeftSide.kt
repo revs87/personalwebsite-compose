@@ -3,6 +3,8 @@ package pt.rvcoding.personalwebsitecomposehtml.presentation.profile
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextAlign
+import com.varabyte.kobweb.compose.css.UserSelect
+import com.varabyte.kobweb.compose.css.userSelect
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
@@ -72,6 +74,9 @@ fun LeftSide(
                     if (breakpoint <= Breakpoint.SM) TextAlign.Center
                     else TextAlign.Start
                 )
+                .styleModifier {
+                    userSelect(UserSelect.None)
+                }
         )
         SpanText(
             text = ProfileData.Default.profession,
@@ -84,6 +89,9 @@ fun LeftSide(
                     if (breakpoint <= Breakpoint.SM) TextAlign.Center
                     else TextAlign.Start
                 )
+                .styleModifier {
+                    userSelect(UserSelect.None)
+                }
         )
 
         if (!expanded) return@Column
@@ -117,7 +125,10 @@ fun LeftSide(
                     .textAlign(
                         if (breakpoint <= Breakpoint.SM) TextAlign.Justify
                         else TextAlign.Start
-                    ),
+                    )
+                    .styleModifier {
+                        userSelect(UserSelect.None)
+                    },
                 text = content.content
             )
         }
@@ -146,7 +157,10 @@ fun LeftSide(
                             else Res.Theme.GRADIENT_ONE_DARK.color
                         )
                         .fontWeight(FontWeight.Bold)
-                        .fontFamily(Res.String.ROBOTO_REGULAR),
+                        .fontFamily(Res.String.ROBOTO_REGULAR)
+                        .styleModifier {
+                            userSelect(UserSelect.None)
+                        },
                     text = Res.String.BUTTON_TEXT
                 )
             }
