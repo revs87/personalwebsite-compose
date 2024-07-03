@@ -1,6 +1,7 @@
 package pt.rvcoding.personalwebsitecomposehtml.presentation.history
 
 import androidx.compose.runtime.*
+import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
@@ -13,12 +14,13 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import pt.rvcoding.personalwebsitecomposehtml.models.content.ContentData
+import pt.rvcoding.personalwebsitecomposehtml.presentation.components.EmptySide
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ImageSide
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.TextSide
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 @Composable
-fun HistorySensormaticCard(colorMode: ColorMode = ColorMode.LIGHT) {
+fun HistoryTheFloowCard(colorMode: ColorMode = ColorMode.LIGHT) {
     var expanded by remember { mutableStateOf(false) }
     val breakpoint = rememberBreakpoint()
     SimpleGrid(
@@ -56,31 +58,31 @@ fun HistorySensormaticCard(colorMode: ColorMode = ColorMode.LIGHT) {
             colorMode = colorMode,
             breakpoint = breakpoint,
             expanded = expanded,
-            title = ContentData.HistorySensormatic.main.title,
-            subTitle = ContentData.HistorySensormatic.main.subTitle,
-            subSubTitle = ContentData.HistorySensormatic.main.period,
-            description = ContentData.HistorySensormatic.main.description,
+            title = ContentData.HistoryTheFloow.main.title,
+            subTitle = ContentData.HistoryTheFloow.main.subTitle,
+            subSubTitle = ContentData.HistoryTheFloow.main.period,
+            description = ContentData.HistoryTheFloow.main.description,
             extra = {}
         )
         ImageSide(
             breakpoint = breakpoint,
             expanded = expanded,
-            imageSrc = if (expanded) Res.Image.SENSORMATIC_PHOTO_1 else Res.Image.SENSORMATIC_PHOTO_2
+            imageSrc = if (expanded) Res.Image.THEFLOOW_PHOTO_2 else Res.Image.THEFLOOW_PHOTO_1
         )
         if (expanded) {
             ImageSide(
                 breakpoint = breakpoint,
                 expanded = expanded,
-                imageSrc = Res.Image.SENSORMATIC_PHOTO_2
+                imageSrc = Res.Image.THEFLOOW_PHOTO_1
             )
             TextSide(
                 colorMode = colorMode,
                 breakpoint = breakpoint,
                 expanded = expanded,
-                title = ContentData.HistorySensormatic.content1.title,
-                subTitle = ContentData.HistorySensormatic.content1.subTitle,
-                subSubTitle = ContentData.HistorySensormatic.content1.period,
-                description = ContentData.HistorySensormatic.content1.description,
+                title = ContentData.HistoryTheFloow.main.title,
+                subTitle = ContentData.HistoryTheFloow.main.subTitle,
+                subSubTitle = ContentData.HistoryTheFloow.main.period,
+                description = ContentData.HistoryTheFloow.main.description,
                 extra = {}
             )
         }

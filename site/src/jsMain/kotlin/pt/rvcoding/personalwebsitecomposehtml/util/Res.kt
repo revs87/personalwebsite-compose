@@ -48,7 +48,10 @@ object Res {
 
     object Image {
         const val PROFILE_PHOTO = "img_profile.jpg"
-        const val SENSORMATIC_PHOTO = "img_sensormatic.jpeg"
+        const val SENSORMATIC_PHOTO_1 = "img_sensormatic1.jpeg"
+        const val SENSORMATIC_PHOTO_2 = "img_sensormatic2.jpeg"
+        const val THEFLOOW_PHOTO_1 = "img_thefloow1.jpg"
+        const val THEFLOOW_PHOTO_2 = "img_thefloow2.jpg"
     }
 
     object String {

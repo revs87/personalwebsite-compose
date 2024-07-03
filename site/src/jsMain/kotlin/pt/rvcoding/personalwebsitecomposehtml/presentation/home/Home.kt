@@ -23,6 +23,7 @@ import pt.rvcoding.personalwebsitecomposehtml.components.ThemeModeSwitchButton
 import pt.rvcoding.personalwebsitecomposehtml.models.Menu
 import pt.rvcoding.personalwebsitecomposehtml.models.Menu.*
 import pt.rvcoding.personalwebsitecomposehtml.presentation.history.HistorySensormaticCard
+import pt.rvcoding.personalwebsitecomposehtml.presentation.history.HistoryTheFloowCard
 import pt.rvcoding.personalwebsitecomposehtml.presentation.profile.ProfileCard
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
@@ -93,7 +94,10 @@ fun HomePage() {
                     when (menuSelected) {
                         PROFILE -> ProfileCard(colorMode = colorMode)
                         PORTFOLIO -> Text("Portfolio")
-                        HISTORY -> HistorySensormaticCard(colorMode = colorMode)
+                        HISTORY -> {
+                            HistorySensormaticCard(colorMode = colorMode)
+                            HistoryTheFloowCard(colorMode = colorMode)
+                        }
                         ABOUT_ME -> Text("About me")
                     }
                 }
