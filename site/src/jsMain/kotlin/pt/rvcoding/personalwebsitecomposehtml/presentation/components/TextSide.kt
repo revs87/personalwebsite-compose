@@ -21,7 +21,7 @@ import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.px
 import pt.rvcoding.personalwebsitecomposehtml.components.composables.PxSpacer
-import pt.rvcoding.personalwebsitecomposehtml.components.utils.SpanTextLink
+import pt.rvcoding.personalwebsitecomposehtml.components.SpanTextLink
 import pt.rvcoding.personalwebsitecomposehtml.models.ContentType
 import pt.rvcoding.personalwebsitecomposehtml.models.PersonalContent
 import pt.rvcoding.personalwebsitecomposehtml.styles.MyTextStyle

@@ -1,4 +1,4 @@
-package pt.rvcoding.personalwebsitecomposehtml.components.utils
+package pt.rvcoding.personalwebsitecomposehtml.components
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
