@@ -2,10 +2,13 @@ package pt.rvcoding.personalwebsitecomposehtml.presentation.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.ObjectFit
+import com.varabyte.kobweb.compose.css.UserSelect
+import com.varabyte.kobweb.compose.css.userSelect
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.compose.ui.thenIf
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
@@ -24,10 +27,11 @@ fun ImageSide(
             .thenIf(
                 condition = breakpoint > Breakpoint.MD,
                 other = Modifier
-                    .height(size = ((
+                    .padding(bottom = 24.px)
+                    .height(size = (
                             if (expanded) Res.Dimens.MAX_CARD_HEIGHT
                             else Res.Dimens.MAX_CARD_HEIGHT_COLLAPSED
-                         ) - 24).px
+                         ).px
                     )
             )
     ) {
@@ -42,7 +46,10 @@ fun ImageSide(
                     spreadRadius = 3.px,
                     offsetX = 2.px,
                     offsetY = 1.px
-                ),
+                )
+                .styleModifier {
+                    userSelect(UserSelect.None)
+                },
             src = imageSrc
         )
     }

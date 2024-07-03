@@ -7,7 +7,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class PersonalContent(
     val contentType: ContentType,
-    val content: String,
+    val content: String = "",
 )
 
 @Serializable
@@ -19,6 +19,10 @@ sealed class ContentType {
     @Serializable
     @SerialName("BulletText")
     data object BulletText : ContentType()
+
+    @Serializable
+    @SerialName("Paragraph")
+    data object Paragraph : ContentType()
 }
 
 internal const val BULLET = "\u2022"

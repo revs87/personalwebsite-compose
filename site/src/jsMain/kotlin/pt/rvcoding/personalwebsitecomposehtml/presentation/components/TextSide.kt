@@ -6,6 +6,7 @@ import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.css.UserSelect
 import com.varabyte.kobweb.compose.css.userSelect
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
+import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.ColumnScope
 import com.varabyte.kobweb.compose.ui.Alignment
@@ -14,15 +15,16 @@ import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.compose.ui.thenIf
-import com.varabyte.kobweb.silk.components.layout.Surface
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
-import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
+import pt.rvcoding.personalwebsitecomposehtml.components.composables.PxSpacer
+import pt.rvcoding.personalwebsitecomposehtml.components.utils.SpanTextLink
 import pt.rvcoding.personalwebsitecomposehtml.models.ContentType
 import pt.rvcoding.personalwebsitecomposehtml.models.PersonalContent
-import pt.rvcoding.personalwebsitecomposehtml.models.content.ProfileData
+import pt.rvcoding.personalwebsitecomposehtml.styles.MyTextStyle
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 @Composable
@@ -92,7 +94,7 @@ fun TextSide(
 
         if (!expanded) return@Column
 
-        Surface(
+        Box(
             modifier = Modifier
                 .height(4.px)
                 .width(40.px)
@@ -107,25 +109,16 @@ fun TextSide(
                 )
         ) {}
         description.forEachIndexed { index, content ->
-            SpanText(
-                modifier = Modifier
-                    .fontFamily(Res.String.ROBOTO_REGULAR)
-                    .fontSize(14.px)
-                    .color(if (colorMode.isLight) Colors.Black else Colors.White)
-                    .opacity(60.percent)
-                    .lineHeight(2)
+            if (content.contentType == ContentType.Paragraph) { PxSpacer(16) }
+            SpanTextLink(
+                modifier = MyTextStyle
+                    .toModifier()
                     .margin(
                         left = if (content.contentType == ContentType.BulletText) 25.px else 0.px,
-                        bottom = if (index == ProfileData.Default.description.size - 1) 36.px else 0.px
-                    )
-                    .textAlign(
-                        if (breakpoint <= Breakpoint.SM) TextAlign.Justify
-                        else TextAlign.Start
-                    )
-                    .styleModifier {
-                        userSelect(UserSelect.None)
-                    },
-                text = content.content
+                        bottom = if (index == description.size - 1) 36.px else 0.px
+                    ),
+                text = content.content,
+                breakpoint = breakpoint
             )
         }
 

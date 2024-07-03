@@ -4,6 +4,8 @@ import com.varabyte.kobweb.compose.ui.graphics.Color
 
 object Res {
     enum class Theme(val color: Color) {
+        BLACK(color = Color.rgb(r = 0, g = 0, b = 0)),
+        WHITE(color = Color.rgb(r = 255, g = 255, b = 255)),
         BLUE(color = Color.rgb(r = 33, g = 150, b = 243)), //#2196F3
         LIGHT_BLUE(color = Color.rgb(r = 168, g = 236, b = 255)), //#A8ECFF
         DARK_BLUE(color = Color.rgb(r = 34, g = 63, b = 94)),
@@ -45,7 +47,8 @@ object Res {
     }
 
     object Image {
-        const val PROFILE_PHOTO = "photo.jpg"
+        const val PROFILE_PHOTO = "img_profile.jpg"
+        const val SENSORMATIC_PHOTO = "img_sensormatic.jpeg"
     }
 
     object String {

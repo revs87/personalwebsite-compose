@@ -27,7 +27,7 @@ import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import pt.rvcoding.personalwebsitecomposehtml.components.IconButton
 import pt.rvcoding.personalwebsitecomposehtml.components.SocialIcon
-import pt.rvcoding.personalwebsitecomposehtml.models.content.ProfileData
+import pt.rvcoding.personalwebsitecomposehtml.models.content.ContentData
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ImageSide
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.TextSide
 import pt.rvcoding.personalwebsitecomposehtml.styles.ButtonStyle
@@ -73,9 +73,9 @@ fun ProfileCard(colorMode: ColorMode = ColorMode.LIGHT) {
             colorMode = colorMode,
             breakpoint = breakpoint,
             expanded = expanded,
-            title = ProfileData.Default.name,
-            subTitle = ProfileData.Default.profession,
-            description = ProfileData.Default.description,
+            title = ContentData.Profile.name,
+            subTitle = ContentData.Profile.profession,
+            description = ContentData.Profile.description,
             extra = {
                 MyEmailButton(colorMode)
                 SocialIcons(breakpoint, colorMode)
@@ -95,7 +95,7 @@ private fun MyEmailButton(colorMode: ColorMode) {
             .toModifier()
             .margin(bottom = 50.px),
         size = ButtonSize.LG,
-        onClick = { window.location.href = "mailto:${ProfileData.Default.email}" }
+        onClick = { window.location.href = "mailto:${ContentData.Profile.email}" }
     ) {
         Row(
             modifier = Modifier.fillMaxSize(),

@@ -12,7 +12,7 @@ import org.jetbrains.compose.web.css.CSSSizeValue
 import org.jetbrains.compose.web.css.CSSUnit
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.px
-import pt.rvcoding.personalwebsitecomposehtml.models.content.ProfileData
+import pt.rvcoding.personalwebsitecomposehtml.models.content.ContentData
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 import pt.rvcoding.personalwebsitecomposehtml.util.Res.Dimens.BORDER_RADIUS
 
@@ -53,43 +53,43 @@ enum class SocialIcon(
 ) {
     LinkedIn(
         icon = Res.Icon.LINKEDIN,
-        link = ProfileData.Default.linkedin
+        link = ContentData.Profile.linkedin
     ),
     LinkedInLight(
         icon = Res.Icon.LINKEDIN_LIGHT,
-        link = ProfileData.Default.linkedin
+        link = ContentData.Profile.linkedin
     ),
     Github(
         icon = Res.Icon.GITHUB,
-        link = ProfileData.Default.github
+        link = ContentData.Profile.github
     ),
     GithubLight(
         icon = Res.Icon.GITHUB_LIGHT,
-        link = ProfileData.Default.github
+        link = ContentData.Profile.github
     ),
     StackOverflow(
         icon = Res.Icon.STACKOVERFLOW,
-        link = ProfileData.Default.stackoverflow
+        link = ContentData.Profile.stackoverflow
     ),
     StackOverflowLight(
         icon = Res.Icon.STACKOVERFLOW_LIGHT,
-        link = ProfileData.Default.stackoverflow
+        link = ContentData.Profile.stackoverflow
     ),
     X(
         icon = Res.Icon.X,
-        link = ProfileData.Default.twitterX
+        link = ContentData.Profile.twitterX
     ),
     XLight(
         icon = Res.Icon.X_LIGHT,
-        link = ProfileData.Default.twitterX
+        link = ContentData.Profile.twitterX
     ),
     Instagram(
         icon = Res.Icon.INSTAGRAM,
-        link = ProfileData.Default.instagram
+        link = ContentData.Profile.instagram
     ),
     InstagramLight(
         icon = Res.Icon.INSTAGRAM_LIGHT,
-        link = ProfileData.Default.instagram
+        link = ContentData.Profile.instagram
     );
 
     companion object {
