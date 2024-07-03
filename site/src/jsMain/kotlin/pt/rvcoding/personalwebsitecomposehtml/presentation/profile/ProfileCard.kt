@@ -73,9 +73,9 @@ fun ProfileCard(colorMode: ColorMode = ColorMode.LIGHT) {
             colorMode = colorMode,
             breakpoint = breakpoint,
             expanded = expanded,
-            title = ContentData.Profile.name,
-            subTitle = ContentData.Profile.profession,
-            description = ContentData.Profile.description,
+            title = ContentData.Profile.main.name,
+            subTitle = ContentData.Profile.main.profession,
+            description = ContentData.Profile.main.description,
             extra = {
                 MyEmailButton(colorMode)
                 SocialIcons(breakpoint, colorMode)
@@ -95,7 +95,7 @@ private fun MyEmailButton(colorMode: ColorMode) {
             .toModifier()
             .margin(bottom = 50.px),
         size = ButtonSize.LG,
-        onClick = { window.location.href = "mailto:${ContentData.Profile.email}" }
+        onClick = { window.location.href = "mailto:${ContentData.Profile.main.email}" }
     ) {
         Row(
             modifier = Modifier.fillMaxSize(),

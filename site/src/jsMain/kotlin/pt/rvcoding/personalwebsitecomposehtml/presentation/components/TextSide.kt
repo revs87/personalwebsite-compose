@@ -34,6 +34,7 @@ fun TextSide(
     expanded: Boolean,
     title: String,
     subTitle: String,
+    subSubTitle: String = "",
     description: List<PersonalContent>,
     extra: @Composable (ColumnScope) -> Unit
 ) {
@@ -91,6 +92,13 @@ fun TextSide(
                     userSelect(UserSelect.None)
                 }
         )
+        if (subSubTitle.isNotBlank()) {
+            SpanText(
+                text = subSubTitle,
+                modifier = MyTextStyle.toModifier()
+            )
+            PxSpacer(20)
+        }
 
         if (!expanded) return@Column
 

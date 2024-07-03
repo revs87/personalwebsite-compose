@@ -53,43 +53,43 @@ enum class SocialIcon(
 ) {
     LinkedIn(
         icon = Res.Icon.LINKEDIN,
-        link = ContentData.Profile.linkedin
+        link = ContentData.Profile.main.linkedin
     ),
     LinkedInLight(
         icon = Res.Icon.LINKEDIN_LIGHT,
-        link = ContentData.Profile.linkedin
+        link = ContentData.Profile.main.linkedin
     ),
     Github(
         icon = Res.Icon.GITHUB,
-        link = ContentData.Profile.github
+        link = ContentData.Profile.main.github
     ),
     GithubLight(
         icon = Res.Icon.GITHUB_LIGHT,
-        link = ContentData.Profile.github
+        link = ContentData.Profile.main.github
     ),
     StackOverflow(
         icon = Res.Icon.STACKOVERFLOW,
-        link = ContentData.Profile.stackoverflow
+        link = ContentData.Profile.main.stackoverflow
     ),
     StackOverflowLight(
         icon = Res.Icon.STACKOVERFLOW_LIGHT,
-        link = ContentData.Profile.stackoverflow
+        link = ContentData.Profile.main.stackoverflow
     ),
     X(
         icon = Res.Icon.X,
-        link = ContentData.Profile.twitterX
+        link = ContentData.Profile.main.twitterX
     ),
     XLight(
         icon = Res.Icon.X_LIGHT,
-        link = ContentData.Profile.twitterX
+        link = ContentData.Profile.main.twitterX
     ),
     Instagram(
         icon = Res.Icon.INSTAGRAM,
-        link = ContentData.Profile.instagram
+        link = ContentData.Profile.main.instagram
     ),
     InstagramLight(
         icon = Res.Icon.INSTAGRAM_LIGHT,
-        link = ContentData.Profile.instagram
+        link = ContentData.Profile.main.instagram
     );
 
     companion object {

@@ -1,7 +1,8 @@
 package pt.rvcoding.personalwebsitecomposehtml.models.content
 
 import pt.rvcoding.personalwebsitecomposehtml.models.BULLET
-import pt.rvcoding.personalwebsitecomposehtml.models.ContentType.*
+import pt.rvcoding.personalwebsitecomposehtml.models.ContentType.BulletText
+import pt.rvcoding.personalwebsitecomposehtml.models.ContentType.Text
 import pt.rvcoding.personalwebsitecomposehtml.models.PersonalContent
 
 
@@ -27,8 +28,6 @@ private val profile = listOf(
 )
 
 private val historySensormatic = listOf(
-    PersonalContent(Text, "February 2023 – now"),
-    PersonalContent(Paragraph),
     PersonalContent(Text, "Within a DDD architecture, I run B2B Android apps and libraries influent to the INDITEX group retail flow (Retail sector – Zara, Bershka, " +
             "Pull&Bear, Massimo Dutti, Oysho, Stradivarius, Lefties and Zara Home) embracing +40k devices all around the world."),
     PersonalContent(BulletText, "$BULLET Physical tech used: Barcode readers, Active (Sleds) RSSI/RFID readers and passive RFID circuits."),
@@ -39,24 +38,38 @@ private val historySensormatic = listOf(
 )
 
 object ContentData {
-    val Profile by lazy {
-        Profile(
-            name = "Rui Vieira",
-            profession = "Android Lead, Senior Android Developer and Kotlin Multiplatform Developer",
-            description = profile,
-            email = "revss87@gmail.com",
-            linkedin = "https://www.linkedin.com/in/revs87",
-            github = "https://github.com/revs87",
-            stackoverflow = "https://stackoverflow.com/users/2996699/edgar-v",
-            twitterX = "https://x.com/revs87",
-            instagram = "https://www.instagram.com/revs87"
-        )
+    object Profile {
+        val main by lazy {
+            Profile(
+                name = "Rui Vieira",
+                profession = "Android Lead, Senior Android Developer and Kotlin Multiplatform Developer",
+                description = profile,
+                email = "revss87@gmail.com",
+                linkedin = "https://www.linkedin.com/in/revs87",
+                github = "https://github.com/revs87",
+                stackoverflow = "https://stackoverflow.com/users/2996699/edgar-v",
+                twitterX = "https://x.com/revs87",
+                instagram = "https://www.instagram.com/revs87"
+            )
+        }
     }
-    val HistorySensormatic by lazy {
-        History(
-            title = "Sensormatic by Johnson Controls",
-            subTitle = "Android Lead",
-            description = historySensormatic,
-        )
+
+    object HistorySensormatic {
+        val main by lazy {
+            History(
+                title = "Sensormatic by Johnson Controls",
+                subTitle = "Android Lead",
+                period = "February 2023 – now",
+                description = historySensormatic,
+            )
+        }
+        val content1 by lazy {
+            History(
+                title = "SINT Picking",
+                subTitle = "Android B2B App",
+                period = "",
+                description = emptyList(),
+            )
+        }
     }
 }

@@ -14,6 +14,7 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import pt.rvcoding.personalwebsitecomposehtml.models.content.ContentData
+import pt.rvcoding.personalwebsitecomposehtml.presentation.components.EmptySide
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ImageSide
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.TextSide
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
@@ -57,9 +58,10 @@ fun HistorySensormaticCard(colorMode: ColorMode = ColorMode.LIGHT) {
             colorMode = colorMode,
             breakpoint = breakpoint,
             expanded = expanded,
-            title = ContentData.HistorySensormatic.title,
-            subTitle = ContentData.HistorySensormatic.subTitle,
-            description = ContentData.HistorySensormatic.description,
+            title = ContentData.HistorySensormatic.main.title,
+            subTitle = ContentData.HistorySensormatic.main.subTitle,
+            subSubTitle = ContentData.HistorySensormatic.main.period,
+            description = ContentData.HistorySensormatic.main.description,
             extra = {}
         )
         ImageSide(
@@ -77,9 +79,10 @@ fun HistorySensormaticCard(colorMode: ColorMode = ColorMode.LIGHT) {
                 colorMode = colorMode,
                 breakpoint = breakpoint,
                 expanded = expanded,
-                title = ContentData.HistorySensormatic.title,
-                subTitle = ContentData.HistorySensormatic.subTitle,
-                description = ContentData.HistorySensormatic.description,
+                title = ContentData.HistorySensormatic.content1.title,
+                subTitle = ContentData.HistorySensormatic.content1.subTitle,
+                subSubTitle = ContentData.HistorySensormatic.content1.period,
+                description = ContentData.HistorySensormatic.content1.description,
                 extra = {}
             )
         }

@@ -8,5 +8,6 @@ import pt.rvcoding.personalwebsitecomposehtml.models.PersonalContent
 data class History(
     val title: String,
     val subTitle: String,
+    val period: String,
     val description: List<PersonalContent>,
 )
