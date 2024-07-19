@@ -20,10 +20,13 @@ import pt.rvcoding.personalwebsitecomposehtml.util.Res
 fun ImageSide(
     breakpoint: Breakpoint = Breakpoint.XL,
     expanded: Boolean = true,
-    cropped: Boolean = true,
+    croppedOnCollapsed: Boolean = true,
+    croppedOnExpanded: Boolean = true,
     shadowed: Boolean = true,
     imageSrc: String = Res.Image.PROFILE_PHOTO
 ) {
+    val cropped = if (expanded) croppedOnExpanded else croppedOnCollapsed
+
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -46,14 +49,11 @@ fun ImageSide(
             Image(
                 modifier = Modifier
                     .then(
-                        if (cropped || !expanded) { Modifier.fillMaxSize() }
+                        if (cropped) { Modifier.fillMaxSize() }
                         else { Modifier.fillMaxWidth() }
                     )
                     .borderRadius(r = Res.Dimens.BORDER_RADIUS.px)
-                    .objectFit(if (cropped || !expanded) ObjectFit.Cover else ObjectFit.Contain)
-                    .styleModifier {
-                        userSelect(UserSelect.None)
-                    }
+                    .objectFit(if (cropped) ObjectFit.Cover else ObjectFit.Contain)
                     .thenIf(
                         condition = shadowed,
                         other = Modifier
@@ -64,7 +64,10 @@ fun ImageSide(
                                 offsetX = 2.px,
                                 offsetY = 1.px
                             )
-                    ),
+                    )
+                    .styleModifier {
+                        userSelect(UserSelect.None)
+                    },
                 src = imageSrc
             )
         }

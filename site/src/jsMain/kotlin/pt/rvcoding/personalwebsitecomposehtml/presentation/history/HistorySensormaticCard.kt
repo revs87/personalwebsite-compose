@@ -13,6 +13,7 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import pt.rvcoding.personalwebsitecomposehtml.models.content.ContentData
+import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ContentAlignment
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ImageSide
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.TextSide
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
@@ -52,9 +53,18 @@ fun HistorySensormaticCard(colorMode: ColorMode = ColorMode.LIGHT) {
             )
             .onClick { expanded = !expanded }
     ) {
+        ImageSide(
+            breakpoint = breakpoint,
+            expanded = expanded,
+            croppedOnCollapsed = true,
+            croppedOnExpanded = false,
+            shadowed = if (expanded) false else true,
+            imageSrc = if (expanded) Res.Image.SENSORMATIC_LOGO else Res.Image.SENSORMATIC_PHOTO_2
+        )
         TextSide(
             colorMode = colorMode,
             breakpoint = breakpoint,
+            contentAlignment = ContentAlignment.Left,
             expanded = expanded,
             title = ContentData.HistorySensormatic.main.title,
             subTitle = ContentData.HistorySensormatic.main.subTitle,
@@ -62,26 +72,20 @@ fun HistorySensormaticCard(colorMode: ColorMode = ColorMode.LIGHT) {
             description = ContentData.HistorySensormatic.main.description,
             extra = {}
         )
-        ImageSide(
-            breakpoint = breakpoint,
-            expanded = expanded,
-            cropped = false,
-            shadowed = if (expanded) false else true,
-            imageSrc = if (expanded) Res.Image.SENSORMATIC_LOGO else Res.Image.SENSORMATIC_PHOTO_2
-        )
         if (expanded) {
             ImageSide(
                 breakpoint = breakpoint,
                 expanded = expanded,
-                imageSrc = Res.Image.SENSORMATIC_PHOTO_2
+                imageSrc = Res.Image.SENSORMATIC_PHOTO_1
             )
             TextSide(
                 colorMode = colorMode,
                 breakpoint = breakpoint,
+                contentAlignment = ContentAlignment.Left,
                 expanded = expanded,
-                title = ContentData.HistorySensormatic.content1.title,
-                subTitle = ContentData.HistorySensormatic.content1.subTitle,
-                subSubTitle = ContentData.HistorySensormatic.content1.period,
+                title = "",
+                subTitle = "",
+                subSubTitle = "",
                 description = ContentData.HistorySensormatic.content1.description,
                 extra = {}
             )

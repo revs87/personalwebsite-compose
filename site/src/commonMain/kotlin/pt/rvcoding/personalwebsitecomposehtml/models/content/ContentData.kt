@@ -12,7 +12,7 @@ object ContentData {
         val main by lazy {
             Profile(
                 name = "Rui Vieira",
-                profession = "Android Lead, Senior Android Developer and Kotlin Multiplatform Developer",
+                profession = "Android and KMP Engineer",
                 description = mainDescription,
                 email = "revss87@gmail.com",
                 linkedin = "https://www.linkedin.com/in/revs87",

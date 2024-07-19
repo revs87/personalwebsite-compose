@@ -14,6 +14,7 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import pt.rvcoding.personalwebsitecomposehtml.models.content.ContentData
+import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ContentAlignment
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.EmptySide
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ImageSide
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.TextSide
@@ -57,6 +58,7 @@ fun HistoryTheFloowCard(colorMode: ColorMode = ColorMode.LIGHT) {
         TextSide(
             colorMode = colorMode,
             breakpoint = breakpoint,
+            contentAlignment = ContentAlignment.Right,
             expanded = expanded,
             title = ContentData.HistoryTheFloow.main.title,
             subTitle = ContentData.HistoryTheFloow.main.subTitle,
@@ -67,21 +69,24 @@ fun HistoryTheFloowCard(colorMode: ColorMode = ColorMode.LIGHT) {
         ImageSide(
             breakpoint = breakpoint,
             expanded = expanded,
-            imageSrc = if (expanded) Res.Image.THEFLOOW_PHOTO_2 else Res.Image.THEFLOOW_PHOTO_1
+            croppedOnCollapsed = true,
+            croppedOnExpanded = false,
+            shadowed = true,
+            imageSrc = if (expanded) Res.Image.THEFLOOW_LOGO else Res.Image.THEFLOOW_PHOTO_1
         )
         if (expanded) {
             ImageSide(
                 breakpoint = breakpoint,
                 expanded = expanded,
-                imageSrc = Res.Image.THEFLOOW_PHOTO_1
+                imageSrc = Res.Image.THEFLOOW_PHOTO_2
             )
             TextSide(
                 colorMode = colorMode,
                 breakpoint = breakpoint,
                 expanded = expanded,
-                title = ContentData.HistoryTheFloow.main.title,
-                subTitle = ContentData.HistoryTheFloow.main.subTitle,
-                subSubTitle = ContentData.HistoryTheFloow.main.period,
+                title = "",
+                subTitle = "",
+                subSubTitle = "",
                 description = ContentData.HistoryTheFloow.main.description,
                 extra = {}
             )

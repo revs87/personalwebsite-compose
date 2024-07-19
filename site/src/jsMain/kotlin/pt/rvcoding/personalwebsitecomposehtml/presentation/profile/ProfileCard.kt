@@ -5,6 +5,8 @@ import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.UserSelect
 import com.varabyte.kobweb.compose.css.userSelect
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
+import com.varabyte.kobweb.compose.foundation.layout.Box
+import com.varabyte.kobweb.compose.foundation.layout.ColumnScope
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -28,6 +30,7 @@ import org.jetbrains.compose.web.css.px
 import pt.rvcoding.personalwebsitecomposehtml.components.IconButton
 import pt.rvcoding.personalwebsitecomposehtml.components.SocialIcon
 import pt.rvcoding.personalwebsitecomposehtml.models.content.ContentData
+import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ContentAlignment
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ImageSide
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.TextSide
 import pt.rvcoding.personalwebsitecomposehtml.styles.ButtonStyle
@@ -72,6 +75,7 @@ fun ProfileCard(colorMode: ColorMode = ColorMode.LIGHT) {
         TextSide(
             colorMode = colorMode,
             breakpoint = breakpoint,
+            contentAlignment = ContentAlignment.Right,
             expanded = expanded,
             title = ContentData.Profile.main.name,
             subTitle = ContentData.Profile.main.profession,

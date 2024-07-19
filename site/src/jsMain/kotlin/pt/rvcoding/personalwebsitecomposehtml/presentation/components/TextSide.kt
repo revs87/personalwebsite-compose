@@ -2,7 +2,6 @@ package pt.rvcoding.personalwebsitecomposehtml.presentation.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.FontWeight
-import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.css.UserSelect
 import com.varabyte.kobweb.compose.css.userSelect
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -20,17 +19,23 @@ import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.px
-import pt.rvcoding.personalwebsitecomposehtml.components.composables.PxSpacer
 import pt.rvcoding.personalwebsitecomposehtml.components.SpanTextLink
+import pt.rvcoding.personalwebsitecomposehtml.components.composables.PxSpacer
 import pt.rvcoding.personalwebsitecomposehtml.models.ContentType
 import pt.rvcoding.personalwebsitecomposehtml.models.PersonalContent
 import pt.rvcoding.personalwebsitecomposehtml.styles.MyTextStyle
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
+sealed class ContentAlignment {
+    data object Left : ContentAlignment()
+    data object Right : ContentAlignment()
+}
+
 @Composable
 fun TextSide(
     colorMode: ColorMode,
     breakpoint: Breakpoint,
+    contentAlignment: ContentAlignment = ContentAlignment.Left,
     expanded: Boolean,
     title: String,
     subTitle: String,
@@ -58,44 +63,63 @@ fun TextSide(
                 }
             ),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = if (breakpoint <= Breakpoint.SM)
-            Alignment.CenterHorizontally else Alignment.Start
+        horizontalAlignment =
+            if (breakpoint <= Breakpoint.SM) Alignment.CenterHorizontally
+            else Alignment.Start
     ) {
-        SpanText(
-            text = title,
-            modifier = Modifier
-                .margin(bottom = 12.px)
-                .fontFamily(Res.String.ROBOTO_CONDENSED)
-                .color(if (colorMode.isLight) Colors.Black else Colors.White)
-                .fontSize(50.px)
-                .fontWeight(FontWeight.Bold)
-                .textAlign(
-                    if (breakpoint <= Breakpoint.SM) TextAlign.Center
-                    else TextAlign.Start
-                )
-                .styleModifier {
-                    userSelect(UserSelect.None)
-                }
-        )
-        SpanText(
-            text = subTitle,
-            modifier = Modifier
-                .margin(bottom = 24.px)
-                .fontFamily(Res.String.ROBOTO_REGULAR)
-                .color(if (colorMode.isLight) Colors.Black else Colors.White)
-                .fontSize(18.px)
-                .textAlign(
-                    if (breakpoint <= Breakpoint.SM) TextAlign.Center
-                    else TextAlign.Start
-                )
-                .styleModifier {
-                    userSelect(UserSelect.None)
-                }
-        )
+        if (title.isNotBlank()) {
+            SpanText(
+                text = title,
+                modifier = Modifier
+                    .margin(bottom = 12.px)
+                    .fontFamily(Res.String.ROBOTO_CONDENSED)
+                    .color(if (colorMode.isLight) Colors.Black else Colors.White)
+                    .fontSize(50.px)
+                    .fontWeight(FontWeight.Bold)
+                    .align(
+                        if (breakpoint <= Breakpoint.SM) Alignment.CenterHorizontally
+                        else when (contentAlignment) {
+                            ContentAlignment.Left -> Alignment.Start
+                            ContentAlignment.Right -> Alignment.End
+                        }
+                    )
+                    .styleModifier {
+                        userSelect(UserSelect.None)
+                    }
+            )
+        }
+        if (subTitle.isNotBlank()) {
+            SpanText(
+                text = subTitle,
+                modifier = Modifier
+                    .margin(bottom = 24.px)
+                    .fontFamily(Res.String.ROBOTO_REGULAR)
+                    .color(if (colorMode.isLight) Colors.Black else Colors.White)
+                    .fontSize(18.px)
+                    .align(
+                        if (breakpoint <= Breakpoint.SM) Alignment.CenterHorizontally
+                        else when (contentAlignment) {
+                            ContentAlignment.Left -> Alignment.Start
+                            ContentAlignment.Right -> Alignment.End
+                        }
+                    )
+                    .styleModifier {
+                        userSelect(UserSelect.None)
+                    }
+            )
+        }
         if (subSubTitle.isNotBlank()) {
             SpanText(
                 text = subSubTitle,
-                modifier = MyTextStyle.toModifier()
+                modifier = MyTextStyle
+                    .toModifier()
+                    .align(
+                        if (breakpoint <= Breakpoint.SM) Alignment.CenterHorizontally
+                        else when (contentAlignment) {
+                            ContentAlignment.Left -> Alignment.Start
+                            ContentAlignment.Right -> Alignment.End
+                        }
+                    )
             )
             PxSpacer(20)
         }
@@ -113,7 +137,10 @@ fun TextSide(
                 )
                 .align(
                     if (breakpoint <= Breakpoint.SM) Alignment.CenterHorizontally
-                    else Alignment.Start
+                    else when (contentAlignment) {
+                        ContentAlignment.Left -> Alignment.Start
+                        ContentAlignment.Right -> Alignment.End
+                    }
                 )
         ) {}
         description.forEachIndexed { index, content ->
