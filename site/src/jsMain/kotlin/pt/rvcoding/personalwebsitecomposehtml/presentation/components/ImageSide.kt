@@ -21,6 +21,7 @@ fun ImageSide(
     breakpoint: Breakpoint = Breakpoint.XL,
     expanded: Boolean = true,
     cropped: Boolean = true,
+    shadowed: Boolean = true,
     imageSrc: String = Res.Image.PROFILE_PHOTO
 ) {
     Box(
@@ -50,16 +51,20 @@ fun ImageSide(
                     )
                     .borderRadius(r = Res.Dimens.BORDER_RADIUS.px)
                     .objectFit(if (cropped || !expanded) ObjectFit.Cover else ObjectFit.Contain)
-                    .boxShadow(
-                        color = Colors.Black.copy(alpha = 70),
-                        blurRadius = Res.Dimens.BORDER_RADIUS.px,
-                        spreadRadius = 3.px,
-                        offsetX = 2.px,
-                        offsetY = 1.px
-                    )
                     .styleModifier {
                         userSelect(UserSelect.None)
-                    },
+                    }
+                    .thenIf(
+                        condition = shadowed,
+                        other = Modifier
+                            .boxShadow(
+                                color = Colors.Black.copy(alpha = 70),
+                                blurRadius = Res.Dimens.BORDER_RADIUS.px,
+                                spreadRadius = 3.px,
+                                offsetX = 2.px,
+                                offsetY = 1.px
+                            )
+                    ),
                 src = imageSrc
             )
         }

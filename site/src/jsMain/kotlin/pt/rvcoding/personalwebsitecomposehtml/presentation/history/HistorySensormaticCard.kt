@@ -65,7 +65,9 @@ fun HistorySensormaticCard(colorMode: ColorMode = ColorMode.LIGHT) {
         ImageSide(
             breakpoint = breakpoint,
             expanded = expanded,
-            imageSrc = if (expanded) Res.Image.SENSORMATIC_PHOTO_1 else Res.Image.SENSORMATIC_PHOTO_2
+            cropped = false,
+            shadowed = if (expanded) false else true,
+            imageSrc = if (expanded) Res.Image.SENSORMATIC_LOGO else Res.Image.SENSORMATIC_PHOTO_2
         )
         if (expanded) {
             ImageSide(
