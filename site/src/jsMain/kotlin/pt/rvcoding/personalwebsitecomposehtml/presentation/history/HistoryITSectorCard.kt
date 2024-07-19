@@ -21,7 +21,7 @@ import pt.rvcoding.personalwebsitecomposehtml.presentation.components.TextSide
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 @Composable
-fun HistoryTheFloowCard(colorMode: ColorMode = ColorMode.LIGHT) {
+fun HistoryITSectorCard(colorMode: ColorMode = ColorMode.LIGHT) {
     var expanded by remember { mutableStateOf(false) }
     val breakpoint = rememberBreakpoint()
     SimpleGrid(
@@ -55,31 +55,26 @@ fun HistoryTheFloowCard(colorMode: ColorMode = ColorMode.LIGHT) {
             )
             .onClick { expanded = !expanded }
     ) {
-        TextSide(
-            colorMode = colorMode,
-            breakpoint = breakpoint,
-            contentAlignment = ContentAlignment.Right,
-            expanded = expanded,
-            title = ContentData.HistoryTheFloow.main.title,
-            subTitle = ContentData.HistoryTheFloow.main.subTitle,
-            subSubTitle = ContentData.HistoryTheFloow.main.period,
-            description = ContentData.HistoryTheFloow.main.description,
-            extra = {}
-        )
         ImageSide(
             breakpoint = breakpoint,
             expanded = expanded,
-            croppedOnCollapsed = true,
+            croppedOnCollapsed = false,
             croppedOnExpanded = false,
-            shadowed = true,
-            imageSrc = if (expanded) Res.Image.THEFLOOW_LOGO else Res.Image.THEFLOOW_PHOTO_1
+            shadowed = if (expanded) false else true,
+            imageSrc = if (expanded) Res.Image.ITSECTOR_LOGO else Res.Image.ITSECTOR_PHOTO_1
+        )
+        TextSide(
+            colorMode = colorMode,
+            breakpoint = breakpoint,
+            contentAlignment = ContentAlignment.Left,
+            expanded = expanded,
+            title = ContentData.HistoryITSector.main.title,
+            subTitle = ContentData.HistoryITSector.main.subTitle,
+            subSubTitle = ContentData.HistoryITSector.main.period,
+            description = ContentData.HistoryITSector.main.description,
+            extra = {}
         )
         if (expanded) {
-            ImageSide(
-                breakpoint = breakpoint,
-                expanded = expanded,
-                imageSrc = Res.Image.THEFLOOW_PHOTO_2
-            )
             TextSide(
                 colorMode = colorMode,
                 breakpoint = breakpoint,
@@ -88,8 +83,13 @@ fun HistoryTheFloowCard(colorMode: ColorMode = ColorMode.LIGHT) {
                 title = "",
                 subTitle = "",
                 subSubTitle = "",
-                description = ContentData.HistoryTheFloow.main.description,
+                description = ContentData.HistoryITSector.main.description,
                 extra = {}
+            )
+            ImageSide(
+                breakpoint = breakpoint,
+                expanded = expanded,
+                imageSrc = Res.Image.ITSECTOR_PHOTO_1
             )
         }
     }

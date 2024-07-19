@@ -22,6 +22,7 @@ import pt.rvcoding.personalwebsitecomposehtml.components.ThemeMenuVerticalButton
 import pt.rvcoding.personalwebsitecomposehtml.components.ThemeModeSwitchButton
 import pt.rvcoding.personalwebsitecomposehtml.models.Menu
 import pt.rvcoding.personalwebsitecomposehtml.models.Menu.*
+import pt.rvcoding.personalwebsitecomposehtml.presentation.history.HistoryITSectorCard
 import pt.rvcoding.personalwebsitecomposehtml.presentation.history.HistorySensormaticCard
 import pt.rvcoding.personalwebsitecomposehtml.presentation.history.HistoryTheFloowCard
 import pt.rvcoding.personalwebsitecomposehtml.presentation.profile.ProfileCard
@@ -97,6 +98,7 @@ fun HomePage() {
                         HISTORY -> {
                             HistorySensormaticCard(colorMode = colorMode)
                             HistoryTheFloowCard(colorMode = colorMode)
+                            HistoryITSectorCard(colorMode = colorMode)
                         }
                         ABOUT_ME -> Text("About me")
                     }

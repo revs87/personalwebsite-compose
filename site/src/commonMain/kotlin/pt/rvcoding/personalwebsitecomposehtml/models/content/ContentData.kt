@@ -4,7 +4,6 @@ import pt.rvcoding.personalwebsitecomposehtml.models.BULLET
 import pt.rvcoding.personalwebsitecomposehtml.models.ContentType.BulletText
 import pt.rvcoding.personalwebsitecomposehtml.models.ContentType.Text
 import pt.rvcoding.personalwebsitecomposehtml.models.PersonalContent
-import pt.rvcoding.personalwebsitecomposehtml.models.content.ContentData.HistorySensormatic.mainDescription
 
 
 object ContentData {
@@ -101,6 +100,26 @@ object ContentData {
                     "multiple device brands and multiple Android versions (source: https://dontkillmyapp.com)."),
             PersonalContent(BulletText, "$BULLET Shell and Python scripting: for multiple AARs flattening and to exploit automation under a CI/CD custom integration."),
             PersonalContent(BulletText, "$BULLET Collaboration frameworks and tools: Firebase, Jira, Agile Scrum, Git, Bitbucket, Bamboo, Jenkins, Miro, ZeroHeight, Crowdin, ZenDesk."),
+        )
+    }
+
+    object HistoryITSector {
+        val main by lazy {
+            History(
+                title = "ITsector",
+                subTitle = "Android Developer",
+                period = "October 2013 – April 2016",
+                description = mainDescription,
+            )
+        }
+        private val mainDescription = listOf(
+            PersonalContent(Text, "Designed, developed, debugged, modified and deployed Android banking apps (Fintech sector) to thousands of users in Africa and PT."),
+            PersonalContent(BulletText, "$BULLET Provided mentorship and collaborative environment supplying continuous assistance for development and issue resolution."),
+            PersonalContent(BulletText, "$BULLET Led productive team of 2 developers in Android app creation."),
+            PersonalContent(BulletText, "$BULLET Modelling RESTful web services and convey offline data availability."),
+            PersonalContent(BulletText, "$BULLET Developed controllers and components from scratch."),
+            PersonalContent(BulletText, "$BULLET Worked as Outsourcer in partnership with Bank Millennium in Warsaw, Poland."),
+            PersonalContent(BulletText, "$BULLET Handled keystore and app deployments through alpha, beta and prod."),
         )
     }
 }
