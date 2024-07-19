@@ -5,6 +5,7 @@ import com.varabyte.kobweb.compose.css.ObjectFit
 import com.varabyte.kobweb.compose.css.UserSelect
 import com.varabyte.kobweb.compose.css.userSelect
 import com.varabyte.kobweb.compose.foundation.layout.Box
+import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
@@ -19,6 +20,7 @@ import pt.rvcoding.personalwebsitecomposehtml.util.Res
 fun ImageSide(
     breakpoint: Breakpoint = Breakpoint.XL,
     expanded: Boolean = true,
+    cropped: Boolean = true,
     imageSrc: String = Res.Image.PROFILE_PHOTO
 ) {
     Box(
@@ -35,22 +37,31 @@ fun ImageSide(
                     )
             )
     ) {
-        Image(
+        Box(
             modifier = Modifier
-                .fillMaxSize()
-                .borderRadius(r = Res.Dimens.BORDER_RADIUS.px)
-                .objectFit(ObjectFit.Cover)
-                .boxShadow(
-                    color = Colors.Black.copy(alpha = 70),
-                    blurRadius = Res.Dimens.BORDER_RADIUS.px,
-                    spreadRadius = 3.px,
-                    offsetX = 2.px,
-                    offsetY = 1.px
-                )
-                .styleModifier {
-                    userSelect(UserSelect.None)
-                },
-            src = imageSrc
-        )
+                .fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            Image(
+                modifier = Modifier
+                    .then(
+                        if (cropped || !expanded) { Modifier.fillMaxSize() }
+                        else { Modifier.fillMaxWidth() }
+                    )
+                    .borderRadius(r = Res.Dimens.BORDER_RADIUS.px)
+                    .objectFit(if (cropped || !expanded) ObjectFit.Cover else ObjectFit.Contain)
+                    .boxShadow(
+                        color = Colors.Black.copy(alpha = 70),
+                        blurRadius = Res.Dimens.BORDER_RADIUS.px,
+                        spreadRadius = 3.px,
+                        offsetX = 2.px,
+                        offsetY = 1.px
+                    )
+                    .styleModifier {
+                        userSelect(UserSelect.None)
+                    },
+                src = imageSrc
+            )
+        }
     }
 }
