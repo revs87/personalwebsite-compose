@@ -17,6 +17,10 @@ sealed class ContentType {
     data object Text : ContentType()
 
     @Serializable
+    @SerialName("BoldText")
+    data object BoldText : ContentType()
+
+    @Serializable
     @SerialName("BulletText")
     data object BulletText : ContentType()
 

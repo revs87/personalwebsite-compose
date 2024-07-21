@@ -8,8 +8,10 @@ import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.css.WordBreak
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.modifiers.fontFamily
 import com.varabyte.kobweb.compose.ui.modifiers.textAlign
 import com.varabyte.kobweb.compose.ui.modifiers.wordBreak
+import com.varabyte.kobweb.compose.ui.thenIf
 import com.varabyte.kobweb.navigation.OpenLinkStrategy
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
@@ -17,12 +19,14 @@ import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.components.text.SpanText
 import org.jetbrains.compose.web.dom.Span
 import pt.rvcoding.personalwebsitecomposehtml.styles.MyLinkStyle
+import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 
 @Composable
 fun SpanTextLink(
     modifier: Modifier = Modifier,
     text: String,
+    bold: Boolean,
     breakpoint: Breakpoint
 ) {
     val list by remember { mutableStateOf(extractContentToList(text)) }
@@ -39,6 +43,10 @@ fun SpanTextLink(
                             if (breakpoint <= Breakpoint.SM) TextAlign.Justify
                             else TextAlign.Start
                         )
+                        .thenIf(
+                            condition = bold,
+                            other = Modifier.fontFamily(Res.String.ROBOTO_CONDENSED)
+                        )
                 )
             } else {
                 Span {
@@ -50,6 +58,10 @@ fun SpanTextLink(
                             .textAlign(
                                 if (breakpoint <= Breakpoint.SM) TextAlign.Justify
                                 else TextAlign.Start
+                            )
+                            .thenIf(
+                                condition = bold,
+                                other = Modifier.fontFamily(Res.String.ROBOTO_CONDENSED)
                             ),
                         openInternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB,
                         openExternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB,

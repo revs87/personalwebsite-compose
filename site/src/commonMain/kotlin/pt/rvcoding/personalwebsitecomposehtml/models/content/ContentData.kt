@@ -1,8 +1,7 @@
 package pt.rvcoding.personalwebsitecomposehtml.models.content
 
 import pt.rvcoding.personalwebsitecomposehtml.models.BULLET
-import pt.rvcoding.personalwebsitecomposehtml.models.ContentType.BulletText
-import pt.rvcoding.personalwebsitecomposehtml.models.ContentType.Text
+import pt.rvcoding.personalwebsitecomposehtml.models.ContentType.*
 import pt.rvcoding.personalwebsitecomposehtml.models.PersonalContent
 
 
@@ -128,13 +127,15 @@ object ContentData {
             History(
                 title = "INESCTec + CRACS",
                 subTitle = "Researcher",
-                period = "October 2011 – August 2013",
+                period = "November 2011 – August 2013",
                 description = mainDescription,
             )
         }
         private val mainDescription = listOf(
-            PersonalContent(Text, "Designed, developed, debugged, modified and deployed Android banking apps (Fintech sector) to thousands of users in Africa and PT."),
-            PersonalContent(BulletText, "$BULLET Provided mentorship and collaborative environment supplying continuous assistance for development and issue resolution."),
+            PersonalContent(Text, "Streamlined research processes for concurrency and implicit parallelism."),
+            PersonalContent(BulletText, "$BULLET Collaborated with leadership partners to identify relevant challenges and determine best strategies against exercise at hand."),
+            PersonalContent(BulletText, "$BULLET Performed research into study topics to increase knowledge and to provide valuable contributions."),
+            PersonalContent(BulletText, "$BULLET Interpreted data analysis results to draw inferences and conclusions."),
         )
     }
 
@@ -143,13 +144,67 @@ object ContentData {
             History(
                 title = "Faculty of Sciences - University of Porto",
                 subTitle = "Student",
-                period = "September 2005 – September 2011",
+                period = "September 2005 – November 2011",
                 description = mainDescription,
             )
         }
         private val mainDescription = listOf(
-            PersonalContent(Text, "Designed, developed, debugged, modified and deployed Android banking apps (Fintech sector) to thousands of users in Africa and PT."),
-            PersonalContent(BulletText, "$BULLET Provided mentorship and collaborative environment supplying continuous assistance for development and issue resolution."),
+            PersonalContent(Text, "" +
+                    "At Faculty of Sciences (Computer Science Department), I not only established a solid foundation in programming fundamentals but also became proficient in a diverse range of languages, including Bash, C, Java, Python, HTML, PHP, MySQL, Perl, Haskell, and Prolog. I honed my skills in networks, compilers, distributed systems, and servers.\n" +
+                    "These achievements culminated in my completion of an MSc in Networks and Information Systems Engineering, with a focus on Communication Networks (major) and Distributed Systems (minor). My thesis research in implicit parallelism further solidified my expertise in this field.\n" +
+                    "Additionally, my academic performance was recognized with a scholarship, highlighting my dedication and success throughout my studies and publications."),
         )
+        val content01 by lazy {
+            History(
+                title = "Thesis",
+                subTitle = "",
+                period = "November 2011",
+                description = listOf(
+                    PersonalContent(BoldText, "Or-Parallel Prolog Execution on Multicores Based on Stack Splitting"),
+                    PersonalContent(Text, "[[THESIS][https://www.dcc.fc.up.pt/~ricroc/homepage/alumni/2011-vieiraMSc.html]]"),
+                    PersonalContent(Text, "Prolog is a popular logic programming language that provides a declarative approach to programming, being thus highly amenable for implicit parallelism. There are many efficient sequential implementations of Prolog, mostly based on the Warren Abstract Machine (WAM). Prolog is currently much used by machine learning and natural language practitioners, but its applicability is much wider in scope.\n" +
+                            "Implicit parallel implementations of Prolog have been proposed in the past. The Muse and YapOr systems are arguably two of the most efficient systems for shared memory architectures, both based on the environment copying model. Stack splitting emerged as an alternative model specially geared to distributed shared memory architectures as it basically splits the computation in such a way that no further, or just minimal, synchronization is required."),
+                )
+            )
+        }
+        val content02 by lazy {
+            History(
+                title = "",
+                subTitle = "",
+                period = "",
+                description = listOf(
+                    PersonalContent(Text,
+                            "With the new multicore architectures, it just makes sense to recover the body of knowledge there is in this area and either devise newer computational models that fit best recent parallel architectures, or to reengineer prior computational models to evaluate their performance on newer architectures. Here, we take the second path.\n" +
+                            "In this thesis, we focus on the design and implementation of the stack splitting strategy in the YapOr system. Our aim is to take advantage of its robustness to efficiently implement stack splitting support using shared memory, and then be able to directly compare the YapOr based on environment copying with the YapOr based on stack splitting. We devised two splitting schemes, the vertical splitting and the half splitting, and have adapted data structures, scheduling and incremental copying procedures in YapOr to cope with the new schemes. Finally, we evaluate their performance on a set of known benchmarks on a multicore machine with up to 24 cores. Our initial results confirm that YapOr with the stack splitting schemes is, in general, comparable to YapOr with environment copying, obtaining in some cases better performance than with environment copying."),
+                )
+            )
+        }
+        val content1 by lazy {
+            History(
+                title = "Publications",
+                subTitle = "2012-DAMP",
+                period = "January 2012",
+                description = listOf(
+                    PersonalContent(BoldText, "Or-Parallel Prolog Execution on Multicores Based on Stack Splitting"),
+                    PersonalContent(Text, "[[2012-DAMP][https://www.dcc.fc.up.pt/~ricroc/homepage/publications/2012-DAMP-A.html]]"),
+                    PersonalContent(Text, "" +
+                            "Many or-parallel Prolog computational models exploiting implicit parallelism have been proposed in the past. The Muse and YapOr systems are arguably two of the most efficient systems exploiting or-parallelism on shared memory architectures, both based on the environment copying model. Stack splitting emerged as an alternative model specially geared to distributed memory architectures as it basically splits the computation in such a way that no further, or just minimal, synchronization is required.\n" +
+                            "With the new multicore architectures, it just makes sense to recover the body of knowledge there is in this area and reengineer prior computational models to evaluate their performance on newer architectures. In this paper, we focus on the design and implementation of stack splitting in the YapOr system. Our aim is to take advantage of its robustness to efficiently implement stack splitting support using shared memory, and then be able to directly compare the original YapOr with the YapOr using stack splitting. We consider two splitting models, vertical splitting and half splitting, and have adapted data structures, scheduling and incremental copy procedures in YapOr to cope with the new models. Experimental results, on a multicore machine with 24 cores, show that YapOr using stack splitting is, in general, comparable to the original YapOr, obtaining in some cases better performance than with only environment copying."),
+                ),
+            )
+        }
+        val content2 by lazy {
+            History(
+                title = "",
+                subTitle = "2012-CICLOPS",
+                period = "September 2012",
+                description = listOf(
+                    PersonalContent(BoldText, "On Comparing Alternative Splitting Strategies for Or-Parallel Prolog Execution on Multicores"),
+                    PersonalContent(Text, "[[2012-CICLOPS][https://www.dcc.fc.up.pt/~ricroc/homepage/publications/2012-CICLOPS-A.html]]"),
+                    PersonalContent(Text, "" +
+                            "Many or-parallel Prolog models exploiting implicit parallelism have been proposed in the past. Arguably, one of the most successful models is environment copying for shared memory architectures. With the increasing availability and popularity of multicore architectures, it makes sense to recover the body of knowledge there is in this area and re-engineer prior computational models to evaluate their performance on newer architectures. In this work, we focus on the implementation of splitting strategies for or-parallel Prolog execution on multicores and, for that, we develop a framework, on top of the YapOr system, that integrates and supports five alternative splitting strategies. Our implementation shares the underlying execution environment and most of the data structures used to implement or-parallelism in YapOr. In particular, we took advantage of YapOr's infrastructure for incremental copying and scheduling support, which we used with minimal modifications. We thus argue that all these common support features allow us to make a first and fair comparison between these five alternative splitting strategies and, therefore, better understand their advantages and weaknesses."),
+                ),
+            )
+        }
     }
 }

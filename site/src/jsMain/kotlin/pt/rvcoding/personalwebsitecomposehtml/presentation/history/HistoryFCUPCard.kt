@@ -1,7 +1,6 @@
 package pt.rvcoding.personalwebsitecomposehtml.presentation.history
 
 import androidx.compose.runtime.*
-import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
@@ -15,13 +14,12 @@ import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import pt.rvcoding.personalwebsitecomposehtml.models.content.ContentData
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ContentAlignment
-import pt.rvcoding.personalwebsitecomposehtml.presentation.components.EmptySide
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ImageSide
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.TextSide
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 @Composable
-fun HistoryFCUPCard(colorMode: ColorMode = ColorMode.LIGHT) {
+fun HistoryFCUPCard(colorMode: ColorMode = ColorMode.LIGHT, gridLines: Int = 3) {
     var expanded by remember { mutableStateOf(false) }
     val breakpoint = rememberBreakpoint()
     SimpleGrid(
@@ -35,7 +33,7 @@ fun HistoryFCUPCard(colorMode: ColorMode = ColorMode.LIGHT) {
                 condition = breakpoint > Breakpoint.MD,
                 other = Modifier
                     .height(
-                        if (expanded) (Res.Dimens.MAX_CARD_HEIGHT * 2).px
+                        if (expanded) (Res.Dimens.MAX_CARD_HEIGHT * gridLines).px
                         else Res.Dimens.MAX_CARD_HEIGHT_COLLAPSED.px
                     )
             )
@@ -78,18 +76,47 @@ fun HistoryFCUPCard(colorMode: ColorMode = ColorMode.LIGHT) {
             TextSide(
                 colorMode = colorMode,
                 breakpoint = breakpoint,
-                contentAlignment = ContentAlignment.Left,
+                contentAlignment = ContentAlignment.Right,
                 expanded = expanded,
-                title = "",
-                subTitle = "",
-                subSubTitle = "",
-                description = ContentData.HistoryFCUP.main.description,
+                title = ContentData.HistoryFCUP.content01.title,
+                subTitle = ContentData.HistoryFCUP.content01.subTitle,
+                subSubTitle = ContentData.HistoryFCUP.content01.period,
+                description = ContentData.HistoryFCUP.content01.description,
                 extra = {}
             )
-            ImageSide(
+            TextSide(
+                colorMode = colorMode,
                 breakpoint = breakpoint,
+                contentAlignment = ContentAlignment.Left,
                 expanded = expanded,
-                imageSrc = Res.Image.FCUP_PHOTO_1
+                title = ContentData.HistoryFCUP.content02.title,
+                subTitle = ContentData.HistoryFCUP.content02.subTitle,
+                subSubTitle = ContentData.HistoryFCUP.content02.period,
+                description = ContentData.HistoryFCUP.content02.description,
+                extra = {}
+            )
+
+            TextSide(
+                colorMode = colorMode,
+                breakpoint = breakpoint,
+                contentAlignment = ContentAlignment.Right,
+                expanded = expanded,
+                title = ContentData.HistoryFCUP.content1.title,
+                subTitle = ContentData.HistoryFCUP.content1.subTitle,
+                subSubTitle = ContentData.HistoryFCUP.content1.period,
+                description = ContentData.HistoryFCUP.content1.description,
+                extra = {}
+            )
+            TextSide(
+                colorMode = colorMode,
+                breakpoint = breakpoint,
+                contentAlignment = ContentAlignment.Left,
+                expanded = expanded,
+                title = ContentData.HistoryFCUP.content2.title,
+                subTitle = ContentData.HistoryFCUP.content2.subTitle,
+                subSubTitle = ContentData.HistoryFCUP.content2.period,
+                description = ContentData.HistoryFCUP.content2.description,
+                extra = {}
             )
         }
     }
