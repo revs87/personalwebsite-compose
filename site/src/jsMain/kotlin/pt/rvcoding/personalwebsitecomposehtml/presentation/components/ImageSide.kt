@@ -13,7 +13,9 @@ import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.compose.ui.thenIf
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.components.style.toModifier
 import org.jetbrains.compose.web.css.px
+import pt.rvcoding.personalwebsitecomposehtml.styles.ImageStyle
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 @Composable
@@ -42,7 +44,8 @@ fun ImageSide(
             )
     ) {
         Box(
-            modifier = Modifier
+            modifier = ImageStyle
+                .toModifier()
                 .fillMaxSize(),
             contentAlignment = Alignment.Center
         ) {

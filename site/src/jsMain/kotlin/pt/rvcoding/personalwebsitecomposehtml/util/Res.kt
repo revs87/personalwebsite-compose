@@ -56,6 +56,11 @@ object Res {
         const val THEFLOOW_PHOTO_2 = "img_thefloow2.jpg"
         const val ITSECTOR_LOGO = "logo_itsector.jpg"
         const val ITSECTOR_PHOTO_1 = "img_itsector1.jpg"
+        const val INESC_LOGO = "logo_inesc.png"
+        const val INESC_LOGO_LIGHT = "logo_inesc_light.svg"
+        const val FCUP_LOGO = "logo_fcup.jpeg"
+        const val FCUP_LOGO_LIGHT = "logo_fcup_light.png"
+        const val FCUP_PHOTO_1 = "img_fcup1.jpg"
     }
 
     object String {

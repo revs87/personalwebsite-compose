@@ -11,7 +11,7 @@ object ContentData {
         val main by lazy {
             Profile(
                 name = "Rui Vieira",
-                profession = "Android and KMP Engineer",
+                profession = "Android Engineer",
                 description = mainDescription,
                 email = "revss87@gmail.com",
                 linkedin = "https://www.linkedin.com/in/revs87",
@@ -120,6 +120,36 @@ object ContentData {
             PersonalContent(BulletText, "$BULLET Developed controllers and components from scratch."),
             PersonalContent(BulletText, "$BULLET Worked as Outsourcer in partnership with Bank Millennium in Warsaw, Poland."),
             PersonalContent(BulletText, "$BULLET Handled keystore and app deployments through alpha, beta and prod."),
+        )
+    }
+
+    object HistoryINESC {
+        val main by lazy {
+            History(
+                title = "INESCTec + CRACS",
+                subTitle = "Researcher",
+                period = "October 2011 – August 2013",
+                description = mainDescription,
+            )
+        }
+        private val mainDescription = listOf(
+            PersonalContent(Text, "Designed, developed, debugged, modified and deployed Android banking apps (Fintech sector) to thousands of users in Africa and PT."),
+            PersonalContent(BulletText, "$BULLET Provided mentorship and collaborative environment supplying continuous assistance for development and issue resolution."),
+        )
+    }
+
+    object HistoryFCUP {
+        val main by lazy {
+            History(
+                title = "Faculty of Sciences - University of Porto",
+                subTitle = "Student",
+                period = "September 2005 – September 2011",
+                description = mainDescription,
+            )
+        }
+        private val mainDescription = listOf(
+            PersonalContent(Text, "Designed, developed, debugged, modified and deployed Android banking apps (Fintech sector) to thousands of users in Africa and PT."),
+            PersonalContent(BulletText, "$BULLET Provided mentorship and collaborative environment supplying continuous assistance for development and issue resolution."),
         )
     }
 }
