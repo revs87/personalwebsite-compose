@@ -32,15 +32,23 @@ fun ImageSide(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .thenIf(
-                condition = breakpoint > Breakpoint.MD,
-                other = Modifier
-                    .padding(bottom = 24.px)
-                    .height(size = (
-                            if (expanded) Res.Dimens.MAX_CARD_HEIGHT
-                            else Res.Dimens.MAX_CARD_HEIGHT_COLLAPSED
-                         ).px
-                    )
+            .then(
+                when {
+                    breakpoint > Breakpoint.MD -> {
+                        Modifier
+                            .padding(bottom = 24.px)
+                            .height(size = (
+                                    if (expanded) Res.Dimens.MAX_CARD_HEIGHT
+                                    else Res.Dimens.MAX_CARD_HEIGHT_COLLAPSED
+                                    ).px
+                            )
+                    }
+                    !expanded -> {
+                        Modifier
+                            .height(size = Res.Dimens.MAX_CARD_HEIGHT_COLLAPSED_MOBILE.px)
+                    }
+                    else -> Modifier
+                }
             )
     ) {
         Box(
