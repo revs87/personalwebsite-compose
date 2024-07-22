@@ -19,7 +19,7 @@ import pt.rvcoding.personalwebsitecomposehtml.presentation.components.TextSide
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 @Composable
-fun HistoryINESCCard(colorMode: ColorMode = ColorMode.LIGHT) {
+fun HistoryINESCCard(colorMode: ColorMode = ColorMode.LIGHT, gridLines: Int = 2) {
     var expanded by remember { mutableStateOf(false) }
     val breakpoint = rememberBreakpoint()
     SimpleGrid(
@@ -33,7 +33,7 @@ fun HistoryINESCCard(colorMode: ColorMode = ColorMode.LIGHT) {
                 condition = breakpoint > Breakpoint.MD,
                 other = Modifier
                     .height(
-                        if (expanded) (Res.Dimens.MAX_CARD_HEIGHT * 2).px
+                        if (expanded) (Res.Dimens.MAX_CARD_HEIGHT * gridLines).px
                         else Res.Dimens.MAX_CARD_HEIGHT_COLLAPSED.px
                     )
             )
@@ -78,16 +78,22 @@ fun HistoryINESCCard(colorMode: ColorMode = ColorMode.LIGHT) {
                 breakpoint = breakpoint,
                 contentAlignment = ContentAlignment.Right,
                 expanded = expanded,
-                title = "",
-                subTitle = "",
-                subSubTitle = "",
-                description = ContentData.HistoryINESC.main.description,
+                title = ContentData.HistoryINESC.content1.title,
+                subTitle = ContentData.HistoryINESC.content1.subTitle,
+                subSubTitle = ContentData.HistoryINESC.content1.period,
+                description = ContentData.HistoryINESC.content1.description,
                 extra = {}
             )
-            ImageSide(
+            TextSide(
+                colorMode = colorMode,
                 breakpoint = breakpoint,
+                contentAlignment = ContentAlignment.Left,
                 expanded = expanded,
-                imageSrc = Res.Image.INESC_LOGO
+                title = ContentData.HistoryINESC.content2.title,
+                subTitle = ContentData.HistoryINESC.content2.subTitle,
+                subSubTitle = ContentData.HistoryINESC.content2.period,
+                description = ContentData.HistoryINESC.content2.description,
+                extra = {}
             )
         }
     }

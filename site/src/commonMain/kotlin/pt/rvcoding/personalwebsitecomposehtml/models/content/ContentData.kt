@@ -125,60 +125,18 @@ object ContentData {
     object HistoryINESC {
         val main by lazy {
             History(
-                title = "INESCTec + CRACS",
+                title = "INESCTec",
                 subTitle = "Researcher",
                 period = "November 2011 – August 2013",
                 description = mainDescription,
             )
         }
         private val mainDescription = listOf(
-            PersonalContent(Text, "Streamlined research processes for concurrency and implicit parallelism."),
-            PersonalContent(BulletText, "$BULLET Collaborated with leadership partners to identify relevant challenges and determine best strategies against exercise at hand."),
-            PersonalContent(BulletText, "$BULLET Performed research into study topics to increase knowledge and to provide valuable contributions."),
-            PersonalContent(BulletText, "$BULLET Interpreted data analysis results to draw inferences and conclusions."),
+            PersonalContent(Text, "At INESCTec, I streamlined research processes for concurrency and implicit parallelism, contributing to the scientific community with documented proof of guided execution hypothesis thus performance enhancements. " +
+                    "I collaborated effectively with my leadership partners to pinpoint the challenges and define the development of key optimal strategies to address with. " +
+                    "Through in-depth research on new implicit strategies, I expanded my knowledge base on how to tackle different execution trees with different implicit parallelism strategies. " +
+                    "Additionally, multiple scenario data analysis allowed me to interpret complex results, drawing meaningful conclusions that provided valuable data and further research directions in the scientific community."),
         )
-    }
-
-    object HistoryFCUP {
-        val main by lazy {
-            History(
-                title = "Faculty of Sciences - University of Porto",
-                subTitle = "Student",
-                period = "September 2005 – November 2011",
-                description = mainDescription,
-            )
-        }
-        private val mainDescription = listOf(
-            PersonalContent(Text, "" +
-                    "At Faculty of Sciences (Computer Science Department), I not only established a solid foundation in programming fundamentals but also became proficient in a diverse range of languages, including Bash, C, Java, Python, HTML, PHP, MySQL, Perl, Haskell, and Prolog. I honed my skills in networks, compilers, distributed systems, and servers.\n" +
-                    "These achievements culminated in my completion of an MSc in Networks and Information Systems Engineering, with a focus on Communication Networks (major) and Distributed Systems (minor). My thesis research in implicit parallelism further solidified my expertise in this field.\n" +
-                    "Additionally, my academic performance was recognized with a scholarship, highlighting my dedication and success throughout my studies and publications."),
-        )
-        val content01 by lazy {
-            History(
-                title = "Thesis",
-                subTitle = "",
-                period = "November 2011",
-                description = listOf(
-                    PersonalContent(BoldText, "Or-Parallel Prolog Execution on Multicores Based on Stack Splitting"),
-                    PersonalContent(Text, "[[THESIS][https://www.dcc.fc.up.pt/~ricroc/homepage/alumni/2011-vieiraMSc.html]]"),
-                    PersonalContent(Text, "Prolog is a popular logic programming language that provides a declarative approach to programming, being thus highly amenable for implicit parallelism. There are many efficient sequential implementations of Prolog, mostly based on the Warren Abstract Machine (WAM). Prolog is currently much used by machine learning and natural language practitioners, but its applicability is much wider in scope.\n" +
-                            "Implicit parallel implementations of Prolog have been proposed in the past. The Muse and YapOr systems are arguably two of the most efficient systems for shared memory architectures, both based on the environment copying model. Stack splitting emerged as an alternative model specially geared to distributed shared memory architectures as it basically splits the computation in such a way that no further, or just minimal, synchronization is required."),
-                )
-            )
-        }
-        val content02 by lazy {
-            History(
-                title = "",
-                subTitle = "",
-                period = "",
-                description = listOf(
-                    PersonalContent(Text,
-                            "With the new multicore architectures, it just makes sense to recover the body of knowledge there is in this area and either devise newer computational models that fit best recent parallel architectures, or to reengineer prior computational models to evaluate their performance on newer architectures. Here, we take the second path.\n" +
-                            "In this thesis, we focus on the design and implementation of the stack splitting strategy in the YapOr system. Our aim is to take advantage of its robustness to efficiently implement stack splitting support using shared memory, and then be able to directly compare the YapOr based on environment copying with the YapOr based on stack splitting. We devised two splitting schemes, the vertical splitting and the half splitting, and have adapted data structures, scheduling and incremental copying procedures in YapOr to cope with the new schemes. Finally, we evaluate their performance on a set of known benchmarks on a multicore machine with up to 24 cores. Our initial results confirm that YapOr with the stack splitting schemes is, in general, comparable to YapOr with environment copying, obtaining in some cases better performance than with environment copying."),
-                )
-            )
-        }
         val content1 by lazy {
             History(
                 title = "Publications",
@@ -204,6 +162,48 @@ object ContentData {
                     PersonalContent(Text, "" +
                             "Many or-parallel Prolog models exploiting implicit parallelism have been proposed in the past. Arguably, one of the most successful models is environment copying for shared memory architectures. With the increasing availability and popularity of multicore architectures, it makes sense to recover the body of knowledge there is in this area and re-engineer prior computational models to evaluate their performance on newer architectures. In this work, we focus on the implementation of splitting strategies for or-parallel Prolog execution on multicores and, for that, we develop a framework, on top of the YapOr system, that integrates and supports five alternative splitting strategies. Our implementation shares the underlying execution environment and most of the data structures used to implement or-parallelism in YapOr. In particular, we took advantage of YapOr's infrastructure for incremental copying and scheduling support, which we used with minimal modifications. We thus argue that all these common support features allow us to make a first and fair comparison between these five alternative splitting strategies and, therefore, better understand their advantages and weaknesses."),
                 ),
+            )
+        }
+    }
+
+    object HistoryFCUP {
+        val main by lazy {
+            History(
+                title = "Faculty of Sciences - University of Porto",
+                subTitle = "Student",
+                period = "September 2005 – November 2011",
+                description = mainDescription,
+            )
+        }
+        private val mainDescription = listOf(
+            PersonalContent(Text, "" +
+                    "At Faculty of Sciences (Computer Science Department), I not only established a solid foundation in programming fundamentals but also became proficient in a diverse range of languages, including Bash, C, Java, Python, HTML, PHP, MySQL, Perl, Haskell, and Prolog. I honed my skills in networks, compilers, distributed systems, and servers.\n" +
+                    "These achievements culminated in my completion of an MSc in Networks and Information Systems Engineering, with a focus on Communication Networks (major) and Distributed Systems (minor). My thesis research in implicit parallelism further solidified my expertise in this field.\n" +
+                    "Additionally, my academic performance was recognized with a scholarship, highlighting my dedication and success throughout my studies and further publications @INESCTec."),
+        )
+        val content01 by lazy {
+            History(
+                title = "Thesis",
+                subTitle = "",
+                period = "November 2011",
+                description = listOf(
+                    PersonalContent(BoldText, "Or-Parallel Prolog Execution on Multicores Based on Stack Splitting"),
+                    PersonalContent(Text, "[[THESIS][https://www.dcc.fc.up.pt/~ricroc/homepage/alumni/2011-vieiraMSc.html]]"),
+                    PersonalContent(Text, "Prolog is a popular logic programming language that provides a declarative approach to programming, being thus highly amenable for implicit parallelism. There are many efficient sequential implementations of Prolog, mostly based on the Warren Abstract Machine (WAM). Prolog is currently much used by machine learning and natural language practitioners, but its applicability is much wider in scope.\n" +
+                            "Implicit parallel implementations of Prolog have been proposed in the past. The Muse and YapOr systems are arguably two of the most efficient systems for shared memory architectures, both based on the environment copying model. Stack splitting emerged as an alternative model specially geared to distributed shared memory architectures as it basically splits the computation in such a way that no further, or just minimal, synchronization is required."),
+                )
+            )
+        }
+        val content02 by lazy {
+            History(
+                title = "",
+                subTitle = "",
+                period = "",
+                description = listOf(
+                    PersonalContent(Text,
+                            "With the new multicore architectures, it just makes sense to recover the body of knowledge there is in this area and either devise newer computational models that fit best recent parallel architectures, or to reengineer prior computational models to evaluate their performance on newer architectures. Here, we take the second path.\n" +
+                            "In this thesis, we focus on the design and implementation of the stack splitting strategy in the YapOr system. Our aim is to take advantage of its robustness to efficiently implement stack splitting support using shared memory, and then be able to directly compare the YapOr based on environment copying with the YapOr based on stack splitting. We devised two splitting schemes, the vertical splitting and the half splitting, and have adapted data structures, scheduling and incremental copying procedures in YapOr to cope with the new schemes. Finally, we evaluate their performance on a set of known benchmarks on a multicore machine with up to 24 cores. Our initial results confirm that YapOr with the stack splitting schemes is, in general, comparable to YapOr with environment copying, obtaining in some cases better performance than with environment copying."),
+                )
             )
         }
     }

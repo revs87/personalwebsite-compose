@@ -19,7 +19,7 @@ import pt.rvcoding.personalwebsitecomposehtml.presentation.components.TextSide
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 @Composable
-fun HistoryFCUPCard(colorMode: ColorMode = ColorMode.LIGHT, gridLines: Int = 3) {
+fun HistoryFCUPCard(colorMode: ColorMode = ColorMode.LIGHT, gridLines: Int = 2) {
     var expanded by remember { mutableStateOf(false) }
     val breakpoint = rememberBreakpoint()
     SimpleGrid(
@@ -93,29 +93,6 @@ fun HistoryFCUPCard(colorMode: ColorMode = ColorMode.LIGHT, gridLines: Int = 3) 
                 subTitle = ContentData.HistoryFCUP.content02.subTitle,
                 subSubTitle = ContentData.HistoryFCUP.content02.period,
                 description = ContentData.HistoryFCUP.content02.description,
-                extra = {}
-            )
-
-            TextSide(
-                colorMode = colorMode,
-                breakpoint = breakpoint,
-                contentAlignment = ContentAlignment.Right,
-                expanded = expanded,
-                title = ContentData.HistoryFCUP.content1.title,
-                subTitle = ContentData.HistoryFCUP.content1.subTitle,
-                subSubTitle = ContentData.HistoryFCUP.content1.period,
-                description = ContentData.HistoryFCUP.content1.description,
-                extra = {}
-            )
-            TextSide(
-                colorMode = colorMode,
-                breakpoint = breakpoint,
-                contentAlignment = ContentAlignment.Left,
-                expanded = expanded,
-                title = ContentData.HistoryFCUP.content2.title,
-                subTitle = ContentData.HistoryFCUP.content2.subTitle,
-                subSubTitle = ContentData.HistoryFCUP.content2.period,
-                description = ContentData.HistoryFCUP.content2.description,
                 extra = {}
             )
         }
