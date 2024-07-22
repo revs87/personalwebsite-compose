@@ -105,7 +105,7 @@ object ContentData {
     object HistoryITSector {
         val main by lazy {
             History(
-                title = "ITsector",
+                title = "IT sector",
                 subTitle = "Android Developer",
                 period = "October 2013 – April 2016",
                 description = mainDescription,
