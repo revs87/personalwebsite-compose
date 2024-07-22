@@ -177,7 +177,7 @@ object ContentData {
         }
         private val mainDescription = listOf(
             PersonalContent(Text, "" +
-                    "At Faculty of Sciences (Computer Science Department), I not only established a solid foundation in programming fundamentals but also became proficient in a diverse range of languages, including Bash, C, Java, JS, Python, HTML, PHP, MySQL, Perl, Haskell, and Prolog. I honed my skills in networks, compilers, distributed systems, and servers.\n" +
+                    "At Faculty of Sciences (Computer Science Department), I not only established a solid foundation in programming fundamentals but also became proficient in a diverse range of languages, including Bash, C, Java, JS, Python, HTML, PHP, MySQL, Perl, Haskell, and Prolog. I honed my skills in compilers, distributed systems, concurrency, networks, and servers.\n" +
                     "These achievements culminated in my completion of an MSc in Networks and Information Systems Engineering, with a focus on Communication Networks (major) and Distributed Systems (minor). My thesis research in implicit parallelism further solidified my expertise in this field.\n" +
                     "Additionally, my academic performance was recognized with a scholarship, highlighting my dedication and success throughout my studies and further publications @INESCTec."),
         )
