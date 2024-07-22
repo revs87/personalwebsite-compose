@@ -46,7 +46,7 @@ object ContentData {
         val main by lazy {
             History(
                 title = "Sensormatic by Johnson Controls",
-                subTitle = "Android Lead",
+                subTitle = "Android Lead  @Porto, PT",
                 period = "February 2023 – now",
                 description = mainDescription,
             )
@@ -82,7 +82,7 @@ object ContentData {
         val main by lazy {
             History(
                 title = "The Floow",
-                subTitle = "Senior Android Developer",
+                subTitle = "Senior Android Developer  @Sheffield, UK",
                 period = "May 2016 – February 2023",
                 description = mainDescription,
             )
@@ -106,7 +106,7 @@ object ContentData {
         val main by lazy {
             History(
                 title = "IT sector",
-                subTitle = "Android Developer",
+                subTitle = "Android Developer  @Porto, PT",
                 period = "October 2013 – April 2016",
                 description = mainDescription,
             )
@@ -126,7 +126,7 @@ object ContentData {
         val main by lazy {
             History(
                 title = "INESCTec",
-                subTitle = "Researcher",
+                subTitle = "Researcher  @Porto, PT",
                 period = "November 2011 – August 2013",
                 description = mainDescription,
             )
