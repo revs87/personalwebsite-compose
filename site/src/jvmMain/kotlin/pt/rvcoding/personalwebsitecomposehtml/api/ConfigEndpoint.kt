@@ -36,10 +36,18 @@ suspend fun getFigConfig(): FigConfig {
 
     val config = FigConfig(
         msgHelloWorld = mFig.getValue("msg_hello_world", "") ?: "",
-        menuHistoryWorkEnabled = mFig.getValue("menu_history_work_enabled", null).toBoolean(),
-        menuHistoryProjectsEnabled = mFig.getValue("menu_history_projects_enabled", null).toBoolean(),
-        menuAboutMeEnabled = mFig.getValue("menu_about_me_enabled", null).toBoolean()
+        menuHistoryWorkEnabled = mFig.getValue("menu_history_work_enabled", null).asBoolean(),
+        menuHistoryProjectsEnabled = mFig.getValue("menu_history_projects_enabled", null).asBoolean(),
+        menuAboutMeEnabled = mFig.getValue("menu_about_me_enabled", null).asBoolean()
     )
     println(config)
     return config
+}
+
+private fun String?.asBoolean(): Boolean {
+    return when {
+        this == null -> false
+        this.lowercase() == "true" -> true
+        else -> false
+    }
 }
