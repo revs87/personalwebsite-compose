@@ -71,6 +71,10 @@ kotlin {
             // implementation(libs.kobwebx.markdown)
         }
         jvmMain.dependencies {
+            implementation(libs.ktor.server.core)
+            implementation(libs.ktor.server.netty)
+            implementation(libs.ktor.client.okhttp)
+            implementation(libs.ktor.serialization.kotlinx.json)
             implementation(libs.kobweb.api)
             implementation(libs.config.fig)
         }

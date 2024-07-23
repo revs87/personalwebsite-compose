@@ -12,7 +12,6 @@ import pt.rvcoding.personalwebsitecomposehtml.models.FigConfig
 
 @Api(routeOverride = "config")
 suspend fun config(context: ApiContext) {
-
     try {
         context.res.setBodyText(
             Json.encodeToString<ApiResponse>(
@@ -28,17 +27,15 @@ suspend fun config(context: ApiContext) {
     }
 }
 
-private lateinit var mFig: Fig
-
 suspend fun getFigConfig(): FigConfig {
-    if (::mFig.isInitialized.not()) { mFig = Fig() }
-    mFig.init(sheetUrl = "https://docs.google.com/spreadsheets/d/1csA2uKp2_8DyjpnCr0ehK7RQHWGLGFTITHOAozK9zZ0/edit?usp=sharing")
+    val fig = Fig()
+    fig.init(sheetUrl = "https://docs.google.com/spreadsheets/d/1csA2uKp2_8DyjpnCr0ehK7RQHWGLGFTITHOAozK9zZ0/edit?usp=sharing")
 
     val config = FigConfig(
-        msgHelloWorld = mFig.getValue("msg_hello_world", "") ?: "",
-        menuHistoryWorkEnabled = mFig.getValue("menu_history_work_enabled", null).asBoolean(),
-        menuHistoryProjectsEnabled = mFig.getValue("menu_history_projects_enabled", null).asBoolean(),
-        menuAboutMeEnabled = mFig.getValue("menu_about_me_enabled", null).asBoolean()
+        msgHelloWorld = fig.getValue(key = "msg_hello_world", defaultValue = "") ?: "",
+        menuHistoryWorkEnabled = fig.getValue(key = "menu_history_work_enabled", defaultValue = null).asBoolean(),
+        menuHistoryProjectsEnabled = fig.getValue(key = "menu_history_projects_enabled", defaultValue = null).asBoolean(),
+        menuAboutMeEnabled = fig.getValue(key = "menu_about_me_enabled", defaultValue = null).asBoolean()
     )
     println(config)
     return config
