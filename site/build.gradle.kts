@@ -72,6 +72,7 @@ kotlin {
         }
         jvmMain.dependencies {
             implementation(libs.kobweb.api)
+            implementation(libs.config.fig)
         }
     }
 }

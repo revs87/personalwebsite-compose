@@ -3,6 +3,7 @@ jetbrains-compose = "1.5.11"
 kobweb = "0.15.4"
 kotlin = "1.9.21"
 kotlinx = "1.6.2"
+fig = "0.0.3"
 #https://github.com/Kotlin/kotlinx.serialization
 
 [libraries]
@@ -16,6 +17,7 @@ silk-icons-fa = { module = "com.varabyte.kobwebx:silk-icons-fa", version.ref = "
 silk-icons-mdi = { module = "com.varabyte.kobwebx:silk-icons-mdi", version.ref = "kobweb" }
 kotlinx-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlinx" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx" }
+config-fig = { module = "com.github.theapache64:fig", version.ref = "fig" }
 
 [plugins]
 jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "jetbrains-compose" }

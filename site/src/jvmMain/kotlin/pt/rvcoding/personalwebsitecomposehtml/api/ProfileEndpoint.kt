@@ -14,7 +14,7 @@ suspend fun profile(context: ApiContext) {
     try {
         context.res.setBodyText(
             Json.encodeToString<ApiResponse>(
-                ApiResponse.Success(data = ContentData.Profile.main)
+                ApiResponse.ProfileSuccess(data = ContentData.Profile.main)
             )
         )
     } catch (e: Exception) {
