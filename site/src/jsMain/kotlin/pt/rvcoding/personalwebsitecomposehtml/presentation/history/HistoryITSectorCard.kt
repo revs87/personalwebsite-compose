@@ -1,7 +1,6 @@
 package pt.rvcoding.personalwebsitecomposehtml.presentation.history
 
 import androidx.compose.runtime.*
-import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
@@ -13,11 +12,10 @@ import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
+import pt.rvcoding.personalwebsitecomposehtml.domain.ImageConfig
+import pt.rvcoding.personalwebsitecomposehtml.domain.ImageRowConfig
 import pt.rvcoding.personalwebsitecomposehtml.models.content.ContentData
-import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ContentAlignment
-import pt.rvcoding.personalwebsitecomposehtml.presentation.components.EmptySide
-import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ImageSide
-import pt.rvcoding.personalwebsitecomposehtml.presentation.components.TextSide
+import pt.rvcoding.personalwebsitecomposehtml.presentation.components.*
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 @Composable
@@ -86,10 +84,34 @@ fun HistoryITSectorCard(colorMode: ColorMode = ColorMode.LIGHT) {
                 description = ContentData.HistoryITSector.content1.description,
                 extra = {}
             )
-            ImageSide(
+            ImageSideWithRowOfImages(
                 breakpoint = breakpoint,
                 expanded = expanded,
-                imageSrc = Res.Image.ITSECTOR_PHOTO_1
+                imageRowConfig = ImageRowConfig(
+                    imageSrc = listOf(
+                        Res.Image.ITSECTOR_LOGO_1,
+                        Res.Image.ITSECTOR_LOGO_2,
+                        Res.Image.ITSECTOR_LOGO_3,
+                        Res.Image.ITSECTOR_LOGO_4,
+                        Res.Image.ITSECTOR_LOGO_5,
+                        Res.Image.ITSECTOR_LOGO_6,
+                        Res.Image.ITSECTOR_LOGO_7,
+                        Res.Image.ITSECTOR_LOGO_8,
+                        Res.Image.ITSECTOR_LOGO_9,
+                    ),
+                    imageLink = listOf(
+                        Res.Image.ITSECTOR_LOGO_1_LINK,
+                        Res.Image.ITSECTOR_LOGO_2_LINK,
+                        Res.Image.ITSECTOR_LOGO_3_LINK,
+                        Res.Image.ITSECTOR_LOGO_4_LINK,
+                        Res.Image.ITSECTOR_LOGO_5_LINK,
+                        Res.Image.ITSECTOR_LOGO_6_LINK,
+                        Res.Image.ITSECTOR_LOGO_7_LINK,
+                        Res.Image.ITSECTOR_LOGO_8_LINK,
+                        Res.Image.ITSECTOR_LOGO_9_LINK,
+                    )
+                ),
+                imageConfig = ImageConfig(imageSrc = Res.Image.ITSECTOR_PHOTO_1),
             )
         }
     }

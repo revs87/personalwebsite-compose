@@ -48,16 +48,40 @@ object Res {
 
     object Image {
         const val PROFILE_PHOTO = "img_profile.jpg"
+
         const val SENSORMATIC_LOGO = "logo_sensormatic.svg"
         const val SENSORMATIC_PHOTO_1 = "img_sensormatic1.jpeg"
         const val SENSORMATIC_PHOTO_2 = "img_sensormatic2.jpeg"
+
         const val THEFLOOW_LOGO = "logo_thefloow.jpg"
         const val THEFLOOW_PHOTO_1 = "img_thefloow1.jpg"
         const val THEFLOOW_PHOTO_2 = "img_thefloow2.jpg"
+        const val THEFLOOW_PHOTO_3 = "img_thefloow3.jpg"
+
         const val ITSECTOR_LOGO = "logo_itsector.jpg"
         const val ITSECTOR_PHOTO_1 = "img_itsector1.jpg"
+        const val ITSECTOR_LOGO_1 = "logo_ao_atlantico.png"
+        const val ITSECTOR_LOGO_1_LINK = "https://play.google.com/store/apps/details?id=com.exictos.mbanka.atlantico"
+        const val ITSECTOR_LOGO_2 = "logo_ao_standard_bank.png"
+        const val ITSECTOR_LOGO_2_LINK = "http://www.standardbank.co.mz/"
+        const val ITSECTOR_LOGO_3 = "logo_mz_millennium_bim.png"
+        const val ITSECTOR_LOGO_3_LINK = "https://play.google.com/store/apps/details?id=com.ebankit.android.millenniumbim"
+        const val ITSECTOR_LOGO_4 = "logo_mz_moza.png"
+        const val ITSECTOR_LOGO_4_LINK = "https://play.google.com/store/apps/details?id=com.ebankit.android.moza"
+        const val ITSECTOR_LOGO_5 = "logo_mz_unico.png"
+        const val ITSECTOR_LOGO_5_LINK = "https://play.google.com/store/apps/details?id=com.ebankit.android.bunico"
+        const val ITSECTOR_LOGO_6 = "logo_pl_millennium.png"
+        const val ITSECTOR_LOGO_6_LINK = "https://play.google.com/store/apps/details?id=wit.android.bcpBankingApp.millenniumPL"
+        const val ITSECTOR_LOGO_7 = "logo_pl_millennium_corp.png"
+        const val ITSECTOR_LOGO_7_LINK = "https://play.google.com/store/apps/details?id=pl.millennium.corpApp"
+        const val ITSECTOR_LOGO_8 = "logo_pt_big.png"
+        const val ITSECTOR_LOGO_8_LINK = "https://www.big.pt/"
+        const val ITSECTOR_LOGO_9 = "logo_pt_millennium.png"
+        const val ITSECTOR_LOGO_9_LINK = "https://play.google.com/store/apps/details?id=com.ebankit.android.pt2020"
+
         const val INESC_LOGO = "logo_inesc.png"
         const val INESC_LOGO_LIGHT = "logo_inesc_light.svg"
+
         const val FCUP_LOGO = "logo_fcup.jpeg"
         const val FCUP_LOGO_LIGHT = "logo_fcup_light.png"
         const val FCUP_PHOTO_1 = "img_fcup1.jpg"

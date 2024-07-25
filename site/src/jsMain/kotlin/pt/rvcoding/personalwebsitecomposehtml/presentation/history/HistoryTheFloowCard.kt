@@ -1,7 +1,6 @@
 package pt.rvcoding.personalwebsitecomposehtml.presentation.history
 
 import androidx.compose.runtime.*
-import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
@@ -13,11 +12,9 @@ import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
+import pt.rvcoding.personalwebsitecomposehtml.domain.ImageConfig
 import pt.rvcoding.personalwebsitecomposehtml.models.content.ContentData
-import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ContentAlignment
-import pt.rvcoding.personalwebsitecomposehtml.presentation.components.EmptySide
-import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ImageSide
-import pt.rvcoding.personalwebsitecomposehtml.presentation.components.TextSide
+import pt.rvcoding.personalwebsitecomposehtml.presentation.components.*
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 @Composable
@@ -66,14 +63,33 @@ fun HistoryTheFloowCard(colorMode: ColorMode = ColorMode.LIGHT) {
             description = ContentData.HistoryTheFloow.main.description,
             extra = {}
         )
-        ImageSide(
-            breakpoint = breakpoint,
-            expanded = expanded,
-            croppedOnCollapsed = true,
-            croppedOnExpanded = false,
-            shadowed = true,
-            imageSrc = if (expanded) Res.Image.THEFLOOW_LOGO else Res.Image.THEFLOOW_PHOTO_1
-        )
+        if (!expanded) {
+            ImageSide(
+                breakpoint = breakpoint,
+                expanded = expanded,
+                croppedOnCollapsed = true,
+                croppedOnExpanded = false,
+                shadowed = true,
+                imageSrc = if (expanded) Res.Image.THEFLOOW_LOGO else Res.Image.THEFLOOW_PHOTO_1
+            )
+        } else {
+            ImageSideWith2Images(
+                breakpoint = breakpoint,
+                expanded = expanded,
+                image1Config = ImageConfig(
+                    croppedOnCollapsed = true,
+                    croppedOnExpanded = false,
+                    shadowed = true,
+                    imageSrc = Res.Image.THEFLOOW_LOGO
+                ),
+                image2Config = ImageConfig(
+                    croppedOnCollapsed = true,
+                    croppedOnExpanded = false,
+                    shadowed = true,
+                    imageSrc = Res.Image.THEFLOOW_PHOTO_3
+                ),
+            )
+        }
         if (expanded) {
             ImageSide(
                 breakpoint = breakpoint,
