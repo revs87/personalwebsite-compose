@@ -80,10 +80,10 @@ fun HistoryITSectorCard(colorMode: ColorMode = ColorMode.LIGHT) {
                 breakpoint = breakpoint,
                 contentAlignment = ContentAlignment.Left,
                 expanded = expanded,
-                title = "",
-                subTitle = "",
-                subSubTitle = "",
-                description = ContentData.HistoryITSector.main.description,
+                title = ContentData.HistoryITSector.content1.title,
+                subTitle = ContentData.HistoryITSector.content1.subTitle,
+                subSubTitle = ContentData.HistoryITSector.content1.period,
+                description = ContentData.HistoryITSector.content1.description,
                 extra = {}
             )
             ImageSide(

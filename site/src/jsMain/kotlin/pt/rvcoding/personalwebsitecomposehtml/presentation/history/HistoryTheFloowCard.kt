@@ -85,10 +85,10 @@ fun HistoryTheFloowCard(colorMode: ColorMode = ColorMode.LIGHT) {
                 breakpoint = breakpoint,
                 contentAlignment = ContentAlignment.Left,
                 expanded = expanded,
-                title = "",
-                subTitle = "",
-                subSubTitle = "",
-                description = ContentData.HistoryTheFloow.main.description,
+                title = ContentData.HistoryTheFloow.content1.title,
+                subTitle = ContentData.HistoryTheFloow.content1.subTitle,
+                subSubTitle = ContentData.HistoryTheFloow.content1.period,
+                description = ContentData.HistoryTheFloow.content1.description,
                 extra = {}
             )
         }

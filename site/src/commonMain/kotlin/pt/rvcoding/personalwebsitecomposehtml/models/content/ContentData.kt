@@ -48,19 +48,26 @@ object ContentData {
                 title = "Sensormatic by Johnson Controls",
                 subTitle = "Android Lead  @Porto, PT",
                 period = "February 2023 – now",
-                description = mainDescription,
+                description = emptyList(),
             )
         }
-        private val mainDescription = listOf(
-            PersonalContent(Text, "Within a DDD architecture, I run B2B Android apps and libraries influent to the INDITEX group retail flow (Retail sector – Zara, Bershka, " +
-                    "Pull&Bear, Massimo Dutti, Oysho, Stradivarius, Lefties and Zara Home) embracing +40k devices all around the world."),
-            PersonalContent(BulletText, "$BULLET Physical tech used: Barcode readers, Active (Sleds) RSSI/RFID readers and passive RFID circuits."),
-            PersonalContent(BulletText, "$BULLET Hard tech used: Gradle, Github, Hilt, Koin, Jetpack Compose, TDD, Performance, INDITEX external libraries integration and management."),
-            PersonalContent(BulletText, "$BULLET Side perks: Android lead, critical/side-thinking awareness, tech debt evaluation and orchestration, passing the value to others by " +
-                    "lecturing. Responsible for product ownership, board updates and new starter interviews."),
-            PersonalContent(BulletText, "$BULLET Collaboration frameworks and tools: GitHub, DevHub, Azure, AppCenter, JFrog, Grafana, AppInsights, Jira, Agile Kanban."),
-        )
         val content1 by lazy {
+            History(
+                title = "",
+                subTitle = "Contributions",
+                period = "",
+                description = listOf(
+                    PersonalContent(Text, "Within a DDD architecture, I run B2B Android apps and libraries influent to the INDITEX group retail flow (Retail sector – Zara, Bershka, " +
+                            "Pull&Bear, Massimo Dutti, Oysho, Stradivarius, Lefties and Zara Home) embracing +40k devices all around the world."),
+                    PersonalContent(BulletText, "$BULLET Physical tech used: Barcode readers, Active (Sleds) RSSI/RFID readers and passive RFID circuits."),
+                    PersonalContent(BulletText, "$BULLET Hard tech used: Gradle, Github, Hilt, Koin, Jetpack Compose, TDD, Performance, INDITEX external libraries integration and management."),
+                    PersonalContent(BulletText, "$BULLET Side perks: Android lead, critical/side-thinking awareness, tech debt evaluation and orchestration, passing the value to others by " +
+                            "lecturing. Responsible for product ownership, board updates and new starter interviews."),
+                    PersonalContent(BulletText, "$BULLET Collaboration frameworks and tools: GitHub, DevHub, Azure, AppCenter, JFrog, Grafana, AppInsights, Jira, Agile Kanban."),
+                ),
+            )
+        }
+        val content2 by lazy {
             History(
                 title = "SINT Picking",
                 subTitle = "Android B2B App",
@@ -68,7 +75,7 @@ object ContentData {
                 description = emptyList(),
             )
         }
-        val content2 by lazy {
+        val content3 by lazy {
             History(
                 title = "Matching",
                 subTitle = "Android B2B App",
@@ -84,22 +91,29 @@ object ContentData {
                 title = "The Floow",
                 subTitle = "Senior Android Developer  @Sheffield, UK",
                 period = "May 2016 – February 2023",
-                description = mainDescription,
+                description = emptyList(),
             )
         }
-        private val mainDescription = listOf(
-            PersonalContent(Text, "Worked on Android apps for evaluating vehicle driving behaviour (using bespoke activity recognition) and engaging a driving score that " +
-                    "enables appealing insurance discounts (Insurance sector)."),
-            PersonalContent(BulletText, "$BULLET Established concrete know how into full app development based on clean architecture layers (UI – Domain – Data) and based on a set " +
-                    "of MVVM rules for connecting Business Logic and Data to the UI. Also considered coding principles such as Separation of concerns, " +
-                    "abstraction layers, dependency inversion for Repository and UseCase layers, and testing inclusion (JUnit, Mockito, Cucumber, Gherkin)."),
-            PersonalContent(BulletText, "$BULLET Deepened my knowledge in Kotlin: its data mangling power, coroutines and flows."),
-            PersonalContent(BulletText, "$BULLET Fully on board with Jetpack Compose and ViewModel integration (and w/ or w/o Material)."),
-            PersonalContent(BulletText, "$BULLET Role of problem finder to procure short term impact: analysed and identified weaknesses around app's background service against" +
-                    "multiple device brands and multiple Android versions (source: https://dontkillmyapp.com)."),
-            PersonalContent(BulletText, "$BULLET Shell and Python scripting: for multiple AARs flattening and to exploit automation under a CI/CD custom integration."),
-            PersonalContent(BulletText, "$BULLET Collaboration frameworks and tools: Firebase, Jira, Agile Scrum, Git, Bitbucket, Bamboo, Jenkins, Miro, ZeroHeight, Crowdin, ZenDesk."),
-        )
+        val content1 by lazy {
+            History(
+                title = "",
+                subTitle = "Contributions",
+                period = "",
+                description = listOf(
+                    PersonalContent(Text, "Worked on Android apps for evaluating vehicle driving behaviour (using bespoke activity recognition) and engaging a driving score that " +
+                            "enables appealing insurance discounts (Insurance sector)."),
+                    PersonalContent(BulletText, "$BULLET Established concrete know how into full app development based on clean architecture layers (UI – Domain – Data) and based on a set " +
+                            "of MVVM rules for connecting Business Logic and Data to the UI. Also considered coding principles such as Separation of concerns, " +
+                            "abstraction layers, dependency inversion for Repository and UseCase layers, and testing inclusion (JUnit, Mockito, Cucumber, Gherkin)."),
+                    PersonalContent(BulletText, "$BULLET Deepened my knowledge in Kotlin: its data mangling power, coroutines and flows."),
+                    PersonalContent(BulletText, "$BULLET Fully on board with Jetpack Compose and ViewModel integration (and w/ or w/o Material)."),
+                    PersonalContent(BulletText, "$BULLET Role of problem finder to procure short term impact: analysed and identified weaknesses around app's background service against" +
+                            "multiple device brands and multiple Android versions (source: https://dontkillmyapp.com)."),
+                    PersonalContent(BulletText, "$BULLET Shell and Python scripting: for multiple AARs flattening and to exploit automation under a CI/CD custom integration."),
+                    PersonalContent(BulletText, "$BULLET Collaboration frameworks and tools: Firebase, Jira, Agile Scrum, Git, Bitbucket, Bamboo, Jenkins, Miro, ZeroHeight, Crowdin, ZenDesk."),
+                )
+            )
+        }
     }
 
     object HistoryITSector {
@@ -108,18 +122,25 @@ object ContentData {
                 title = "IT sector",
                 subTitle = "Android Developer  @Porto, PT",
                 period = "October 2013 – April 2016",
-                description = mainDescription,
+                description = emptyList(),
             )
         }
-        private val mainDescription = listOf(
-            PersonalContent(Text, "Designed, developed, debugged, modified and deployed Android banking apps (Fintech sector) to thousands of users in Africa and PT."),
-            PersonalContent(BulletText, "$BULLET Provided mentorship and collaborative environment supplying continuous assistance for development and issue resolution."),
-            PersonalContent(BulletText, "$BULLET Led productive team of 2 developers in Android app creation."),
-            PersonalContent(BulletText, "$BULLET Modelling RESTful web services and convey offline data availability."),
-            PersonalContent(BulletText, "$BULLET Developed controllers and components from scratch."),
-            PersonalContent(BulletText, "$BULLET Worked as Outsourcer in partnership with Bank Millennium in Warsaw, Poland."),
-            PersonalContent(BulletText, "$BULLET Handled keystore and app deployments through alpha, beta and prod."),
-        )
+        val content1 by lazy {
+            History(
+                title = "",
+                subTitle = "Contributions",
+                period = "",
+                description = listOf(
+                    PersonalContent(Text, "Designed, developed, debugged, modified and deployed Android banking apps (Fintech sector) to thousands of users in Africa and PT."),
+                    PersonalContent(BulletText, "$BULLET Provided mentorship and collaborative environment supplying continuous assistance for development and issue resolution."),
+                    PersonalContent(BulletText, "$BULLET Led productive team of 2 developers in Android app creation."),
+                    PersonalContent(BulletText, "$BULLET Modelling RESTful web services and convey offline data availability."),
+                    PersonalContent(BulletText, "$BULLET Developed controllers and components from scratch."),
+                    PersonalContent(BulletText, "$BULLET Worked as Outsourcer in partnership with Bank Millennium in Warsaw, Poland."),
+                    PersonalContent(BulletText, "$BULLET Handled keystore and app deployments through alpha, beta and prod."),
+                )
+            )
+        }
     }
 
     object HistoryINESC {

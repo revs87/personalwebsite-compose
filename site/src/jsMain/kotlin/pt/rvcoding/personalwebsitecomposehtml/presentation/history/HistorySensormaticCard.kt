@@ -83,9 +83,9 @@ fun HistorySensormaticCard(colorMode: ColorMode = ColorMode.LIGHT) {
                 breakpoint = breakpoint,
                 contentAlignment = ContentAlignment.Left,
                 expanded = expanded,
-                title = "",
-                subTitle = "",
-                subSubTitle = "",
+                title = ContentData.HistorySensormatic.content1.title,
+                subTitle = ContentData.HistorySensormatic.content1.subTitle,
+                subSubTitle = ContentData.HistorySensormatic.content1.period,
                 description = ContentData.HistorySensormatic.content1.description,
                 extra = {}
             )
