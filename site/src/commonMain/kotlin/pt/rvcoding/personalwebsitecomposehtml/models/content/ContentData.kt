@@ -131,13 +131,15 @@ object ContentData {
                 subTitle = "Contributions",
                 period = "",
                 description = listOf(
-                    PersonalContent(Text, "Designed, developed, debugged, modified and deployed Android banking apps (Fintech sector) to thousands of users in Africa and PT."),
-                    PersonalContent(BulletText, "$BULLET Provided mentorship and collaborative environment supplying continuous assistance for development and issue resolution."),
-                    PersonalContent(BulletText, "$BULLET Led productive team of 2 developers in Android app creation."),
-                    PersonalContent(BulletText, "$BULLET Modelling RESTful web services and convey offline data availability."),
-                    PersonalContent(BulletText, "$BULLET Developed controllers and components from scratch."),
-                    PersonalContent(BulletText, "$BULLET Worked as Outsourcer in partnership with Bank Millennium in Warsaw, Poland."),
-                    PersonalContent(BulletText, "$BULLET Handled keystore and app deployments through alpha, beta and prod."),
+                    PersonalContent(Text, "As a seasoned Android Developer in the Fintech sector, I designed, developed, debugged, modified, and deployed banking applications that reached thousands of users across Africa and Portugal. I led a productive team of two developers in the successful creation of Android apps."),
+                    PersonalContent(Paragraph),
+                    PersonalContent(Text, "I was proficient in modeling RESTful web services to ensure seamless data exchange and provide offline data availability. I also developed controllers and components from scratch, demonstrating my ability to create robust and efficient solutions."),
+                    PersonalContent(Paragraph),
+                    PersonalContent(Text, "My experience also included working as an outsourced in partnership with Bank Millennium in Warsaw, Poland. In this role, I handled end to end UI development, from data fetching to UI population, ensuring a smooth user experience."),
+                    PersonalContent(Paragraph),
+                    PersonalContent(Text, "In my Android development experience, one of my most notable achievements was collaborating with BIM from Mozambique. I implemented effective code reuse strategies, leveraging inheritance, base classes, and utility classes to minimize redundancy and enhance maintainability.  Additionally, I managed keystore security, created engaging canvas animations, and oversaw the entire app deployment process, ensuring smooth transitions from alpha and beta testing to a successful production launch."),
+                    PersonalContent(Paragraph),
+                    PersonalContent(Text, "In the end, I fostered a collaborative work environment, providing mentorship and continuous assistance to fellow developers in resolving issues and enhancing their development skills."),
                 )
             )
         }
