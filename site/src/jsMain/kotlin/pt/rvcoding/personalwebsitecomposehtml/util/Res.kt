@@ -57,6 +57,46 @@ object Res {
         const val THEFLOOW_PHOTO_1 = "img_thefloow1.jpg"
         const val THEFLOOW_PHOTO_2 = "img_thefloow2.jpg"
         const val THEFLOOW_PHOTO_3 = "img_thefloow3.jpg"
+        const val THEFLOOW_LOGO_1 = "logo_br_liberty.png"
+        const val THEFLOOW_LOGO_1_LINK = "https://play.google.com/store/apps/details?id=br.com.libertyseguros.mobile.DirecaoEmConta_Mobi"
+        const val THEFLOOW_LOGO_2 = "logo_ie_aig_smartlane.png"
+        const val THEFLOOW_LOGO_2_LINK = "https://appadvice.com/app/aig-smartlane/1282031966"
+        const val THEFLOOW_LOGO_3 = "logo_pt_fidelidadedrive.png"
+        const val THEFLOOW_LOGO_3_LINK = "https://play.google.com/store/apps/details?id=pt.fidelidade.drive"
+        const val THEFLOOW_LOGO_4 = "logo_uk_driveplus.png"
+        const val THEFLOOW_LOGO_4_LINK = "https://play.google.com/store/apps/details?id=com.directline.driveplusv2"
+        const val THEFLOOW_LOGO_5 = "logo_uk_drivesure.png"
+        const val THEFLOOW_LOGO_5_LINK = "https://www.churchill.com/car-insurance/drivesure-telematics"
+        const val THEFLOOW_LOGO_6 = "logo_uk_greenflag.png"
+        const val THEFLOOW_LOGO_6_LINK = "https://play.google.com/store/apps/details?id=com.directline.greenflag"
+        const val THEFLOOW_LOGO_7 = "logo_uk_shotgun.png"
+        const val THEFLOOW_LOGO_7_LINK = "https://www.directline.com/shotgun"
+        const val THEFLOOW_LOGO_8 = "logo_us_csaa.png"
+        const val THEFLOOW_LOGO_8_LINK = "https://play.google.com/store/apps/details?id=com.thefloow.telematics.smarttrek"
+        const val THEFLOOW_LOGO_9 = "logo_us_yubi.png"
+        const val THEFLOOW_LOGO_9_LINK = "https://play.google.com/store/apps/details?id=com.thefloow.production.plymouthrockprac.yubi20.app"
+        val THEFLOOW_LOGO_LIST by lazy { listOf(
+            THEFLOOW_LOGO_2,
+            THEFLOOW_LOGO_3,
+            THEFLOOW_LOGO_1,
+            THEFLOOW_LOGO_4,
+            THEFLOOW_LOGO_5,
+            THEFLOOW_LOGO_6,
+            THEFLOOW_LOGO_7,
+            THEFLOOW_LOGO_8,
+            THEFLOOW_LOGO_9,
+        ) }
+        val THEFLOOW_LOGO_LINK_LIST by lazy { listOf(
+            THEFLOOW_LOGO_2_LINK,
+            THEFLOOW_LOGO_3_LINK,
+            THEFLOOW_LOGO_1_LINK,
+            THEFLOOW_LOGO_4_LINK,
+            THEFLOOW_LOGO_5_LINK,
+            THEFLOOW_LOGO_6_LINK,
+            THEFLOOW_LOGO_7_LINK,
+            THEFLOOW_LOGO_8_LINK,
+            THEFLOOW_LOGO_9_LINK,
+        ) }
 
         const val ITSECTOR_LOGO = "logo_itsector.jpg"
         const val ITSECTOR_PHOTO_1 = "img_itsector1.jpg"
@@ -78,6 +118,28 @@ object Res {
         const val ITSECTOR_LOGO_8_LINK = "https://www.big.pt/"
         const val ITSECTOR_LOGO_9 = "logo_pt_millennium.png"
         const val ITSECTOR_LOGO_9_LINK = "https://play.google.com/store/apps/details?id=com.ebankit.android.pt2020"
+        val ITSECTOR_LOGO_LIST by lazy { listOf(
+            ITSECTOR_LOGO_1,
+            ITSECTOR_LOGO_2,
+            ITSECTOR_LOGO_3,
+            ITSECTOR_LOGO_4,
+            ITSECTOR_LOGO_5,
+            ITSECTOR_LOGO_6,
+            ITSECTOR_LOGO_7,
+            ITSECTOR_LOGO_8,
+            ITSECTOR_LOGO_9,
+        ) }
+        val ITSECTOR_LOGO_LINK_LIST by lazy { listOf(
+            ITSECTOR_LOGO_1_LINK,
+            ITSECTOR_LOGO_2_LINK,
+            ITSECTOR_LOGO_3_LINK,
+            ITSECTOR_LOGO_4_LINK,
+            ITSECTOR_LOGO_5_LINK,
+            ITSECTOR_LOGO_6_LINK,
+            ITSECTOR_LOGO_7_LINK,
+            ITSECTOR_LOGO_8_LINK,
+            ITSECTOR_LOGO_9_LINK,
+        ) }
 
         const val INESC_LOGO = "logo_inesc.png"
         const val INESC_LOGO_LIGHT = "logo_inesc_light.svg"

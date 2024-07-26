@@ -13,9 +13,13 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import pt.rvcoding.personalwebsitecomposehtml.domain.ImageConfig
+import pt.rvcoding.personalwebsitecomposehtml.domain.ImageRowConfig
 import pt.rvcoding.personalwebsitecomposehtml.models.content.ContentData
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.*
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
+import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.THEFLOOW_LOGO_LINK_LIST
+import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.THEFLOOW_LOGO_LIST
+import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.THEFLOOW_PHOTO_2
 
 @Composable
 fun HistoryTheFloowCard(colorMode: ColorMode = ColorMode.LIGHT) {
@@ -91,10 +95,16 @@ fun HistoryTheFloowCard(colorMode: ColorMode = ColorMode.LIGHT) {
             )
         }
         if (expanded) {
-            ImageSide(
+            ImageSideWithRowOfImages(
                 breakpoint = breakpoint,
                 expanded = expanded,
-                imageSrc = Res.Image.THEFLOOW_PHOTO_2
+                imageConfig = ImageConfig(
+                    imageSrc = THEFLOOW_PHOTO_2
+                ),
+                imageRowConfig = ImageRowConfig(
+                    imageSrc = THEFLOOW_LOGO_LIST,
+                    imageLink = THEFLOOW_LOGO_LINK_LIST
+                )
             )
             TextSide(
                 colorMode = colorMode,
