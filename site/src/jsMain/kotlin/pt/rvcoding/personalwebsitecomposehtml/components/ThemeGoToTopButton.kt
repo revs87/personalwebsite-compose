@@ -16,6 +16,9 @@ import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.Position
 import org.jetbrains.compose.web.css.px
+import pt.rvcoding.personalwebsitecomposehtml.styles.ImageMobileStyle
+import pt.rvcoding.personalwebsitecomposehtml.styles.ImageStyle
+import pt.rvcoding.personalwebsitecomposehtml.styles.ThemeIconMobileStyle
 import pt.rvcoding.personalwebsitecomposehtml.styles.ThemeIconStyle
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 import pt.rvcoding.personalwebsitecomposehtml.util.Res.Dimens.ICON_SIZE
@@ -29,6 +32,7 @@ fun ThemeGoToTopButton(
 ) {
     if (visible) {
         val breakpoint = rememberBreakpoint()
+        val imageComponentStyle = if (breakpoint > Breakpoint.MD) ThemeIconStyle else ThemeIconMobileStyle
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -41,7 +45,7 @@ fun ThemeGoToTopButton(
             horizontalAlignment = Alignment.End
         ) {
             IconButton(
-                modifier = ThemeIconStyle.toModifier()
+                modifier = imageComponentStyle.toModifier()
                     .margin(all = if (breakpoint > Breakpoint.SM) 24.px else 16.px)
                     .styleModifier {
                         property("pointer-events", "auto")

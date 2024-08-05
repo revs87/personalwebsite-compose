@@ -73,3 +73,24 @@ val ThemeIconStyle by ComponentStyle {
             )
     }
 }
+
+val ThemeIconMobileStyle by ComponentStyle {
+    base {
+        Modifier
+            .background(
+                if (colorMode.isLight) Colors.White
+                else Res.Theme.DARK_BLUE.color
+            )
+            .transition(
+                CSSTransition(property = "background", duration = 300.ms)
+            )
+    }
+
+    active {
+        Modifier
+            .background(
+                if (colorMode.isLight) Res.Theme.SOCIAL_ICON_BACKGROUND_LIGHT.color
+                else Res.Theme.SOCIAL_ICON_BACKGROUND_DARK.color
+            )
+    }
+}

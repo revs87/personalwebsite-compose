@@ -18,6 +18,7 @@ import org.jetbrains.compose.web.css.Position
 import org.jetbrains.compose.web.css.px
 import pt.rvcoding.personalwebsitecomposehtml.models.Menu
 import pt.rvcoding.personalwebsitecomposehtml.models.Menu.*
+import pt.rvcoding.personalwebsitecomposehtml.styles.ThemeIconMobileStyle
 import pt.rvcoding.personalwebsitecomposehtml.styles.ThemeIconStyle
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 import pt.rvcoding.personalwebsitecomposehtml.util.Res.Dimens.ICON_SIZE
@@ -62,8 +63,9 @@ private fun iconButton(
     it: Menu,
     onMenuSelect: (Menu) -> Unit
 ) {
+    val imageComponentStyle = if (breakpoint > Breakpoint.MD) ThemeIconStyle else ThemeIconMobileStyle
     IconButton(
-        modifier = ThemeIconStyle.toModifier()
+        modifier = imageComponentStyle.toModifier()
             .margin(
                 top = if (breakpoint > Breakpoint.SM) 24.px else 16.px,
                 bottom = if (breakpoint > Breakpoint.SM) 0.px else 16.px,
