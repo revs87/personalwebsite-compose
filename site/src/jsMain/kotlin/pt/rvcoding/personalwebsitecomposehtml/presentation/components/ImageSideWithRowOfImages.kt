@@ -20,6 +20,7 @@ import com.varabyte.kobweb.silk.components.style.toModifier
 import org.jetbrains.compose.web.css.px
 import pt.rvcoding.personalwebsitecomposehtml.domain.ImageConfig
 import pt.rvcoding.personalwebsitecomposehtml.domain.ImageRowConfig
+import pt.rvcoding.personalwebsitecomposehtml.styles.ImageMobileStyle
 import pt.rvcoding.personalwebsitecomposehtml.styles.ImageStyle
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
@@ -32,6 +33,7 @@ fun ImageSideWithRowOfImages(
 ) {
     val cropped1 = if (expanded) imageRowConfig.croppedOnExpanded else imageRowConfig.croppedOnCollapsed
     val cropped2 = if (expanded) imageConfig.croppedOnExpanded else imageConfig.croppedOnCollapsed
+    val imageComponentStyle = if (breakpoint > Breakpoint.MD) ImageStyle else ImageMobileStyle
 
     Box(
         modifier = Modifier
@@ -61,7 +63,7 @@ fun ImageSideWithRowOfImages(
             verticalArrangement = Arrangement.SpaceAround
         ) {
             Box(
-                modifier = ImageStyle
+                modifier = imageComponentStyle
                     .toModifier()
                     .fillMaxSize(),
                 contentAlignment = Alignment.Center
@@ -99,7 +101,7 @@ fun ImageSideWithRowOfImages(
             ) {
                 imageRowConfig.imageSrc.forEach { imageSrc ->
                     Box(
-                        modifier = ImageStyle
+                        modifier = imageComponentStyle
                             .toModifier()
                             .fillMaxSize(),
                         contentAlignment = Alignment.Center

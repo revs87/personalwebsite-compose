@@ -15,6 +15,7 @@ import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.toModifier
 import org.jetbrains.compose.web.css.px
+import pt.rvcoding.personalwebsitecomposehtml.styles.ImageMobileStyle
 import pt.rvcoding.personalwebsitecomposehtml.styles.ImageStyle
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
@@ -28,6 +29,7 @@ fun ImageSide(
     imageSrc: String = Res.Image.PROFILE_PHOTO
 ) {
     val cropped = if (expanded) croppedOnExpanded else croppedOnCollapsed
+    val imageComponentStyle = if (breakpoint > Breakpoint.MD) ImageStyle else ImageMobileStyle
 
     Box(
         modifier = Modifier
@@ -52,7 +54,7 @@ fun ImageSide(
             )
     ) {
         Box(
-            modifier = ImageStyle
+            modifier = imageComponentStyle
                 .toModifier()
                 .fillMaxSize(),
             contentAlignment = Alignment.Center

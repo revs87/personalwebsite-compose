@@ -35,6 +35,7 @@ import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ContentAli
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ImageSide
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.TextSide
 import pt.rvcoding.personalwebsitecomposehtml.styles.ButtonStyle
+import pt.rvcoding.personalwebsitecomposehtml.styles.SocialIconMobileStyle
 import pt.rvcoding.personalwebsitecomposehtml.styles.SocialIconStyle
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
@@ -137,6 +138,8 @@ private fun SocialIcons(
     breakpoint: Breakpoint,
     colorMode: ColorMode
 ) {
+    val imageComponentStyle = if (breakpoint > Breakpoint.MD) SocialIconStyle else SocialIconMobileStyle
+
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -150,7 +153,7 @@ private fun SocialIcons(
         }.forEach { social ->
             social.link?.let {
                 IconButton(
-                    modifier = SocialIconStyle.toModifier(),
+                    modifier = imageComponentStyle.toModifier(),
                     colorMode = colorMode,
                     icon = social.icon,
                     link = social.link
