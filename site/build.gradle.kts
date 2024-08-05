@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "pt.rvcoding.personalwebsitecomposehtml"
-version = "1.2"
+version = "1.3-SNAPSHOT"
 
 
 //tasks.create("kobweb") {
@@ -62,6 +62,7 @@ kotlin {
             implementation(compose.runtime)
             implementation(compose.ui)
             implementation(libs.kotlinx.serialization.json)
+            implementation(libs.jetbrains.compose.animation.core)
         }
         jsMain.dependencies {
             implementation(compose.html.core)

@@ -1,6 +1,8 @@
 package pt.rvcoding.personalwebsitecomposehtml.presentation.profile
 
+import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.runtime.*
+import androidx.compose.ui.unit.dp
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.UserSelect
 import com.varabyte.kobweb.compose.css.userSelect
@@ -12,6 +14,7 @@ import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.compose.ui.thenIf
+import com.varabyte.kobweb.core.Page
 import com.varabyte.kobweb.silk.components.forms.Button
 import com.varabyte.kobweb.silk.components.forms.ButtonSize
 import com.varabyte.kobweb.silk.components.graphics.Image
@@ -35,10 +38,17 @@ import pt.rvcoding.personalwebsitecomposehtml.styles.ButtonStyle
 import pt.rvcoding.personalwebsitecomposehtml.styles.SocialIconStyle
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
+@Page("/home")
 @Composable
 fun ProfileCard(colorMode: ColorMode = ColorMode.LIGHT) {
-    var expanded by remember { mutableStateOf(true) }
     val breakpoint = rememberBreakpoint()
+    var expanded by remember { mutableStateOf(true) }
+    val cardHeight by animateDpAsState(
+        targetValue =
+            if (expanded) Res.Dimens.MAX_CARD_HEIGHT.dp
+            else Res.Dimens.MAX_CARD_HEIGHT_COLLAPSED.dp
+    )
+
     SimpleGrid(
         numColumns = numColumns(base = 1, md = 2),
         modifier = Modifier
@@ -48,11 +58,7 @@ fun ProfileCard(colorMode: ColorMode = ColorMode.LIGHT) {
             )
             .thenIf(
                 condition = breakpoint > Breakpoint.MD,
-                other = Modifier
-                    .height(
-                        if (expanded) Res.Dimens.MAX_CARD_HEIGHT.px
-                        else Res.Dimens.MAX_CARD_HEIGHT_COLLAPSED.px
-                    )
+                other = Modifier.height(cardHeight.value.px)
             )
             .boxShadow(
                 color = Colors.Black.copy(alpha = 10),

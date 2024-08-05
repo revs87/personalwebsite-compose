@@ -1,6 +1,8 @@
 package pt.rvcoding.personalwebsitecomposehtml.presentation.history
 
+import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.runtime.*
+import androidx.compose.ui.unit.dp
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
@@ -22,9 +24,15 @@ import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.THEFLOOW_LOGO_LIST
 import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.THEFLOOW_PHOTO_2
 
 @Composable
-fun HistoryTheFloowCard(colorMode: ColorMode = ColorMode.LIGHT) {
-    var expanded by remember { mutableStateOf(false) }
+fun HistoryTheFloowCard(colorMode: ColorMode = ColorMode.LIGHT, gridLines: Int = 2) {
     val breakpoint = rememberBreakpoint()
+    var expanded by remember { mutableStateOf(false) }
+    val cardHeight by animateDpAsState(
+        targetValue =
+            if (expanded) (Res.Dimens.MAX_CARD_HEIGHT * gridLines).dp
+            else Res.Dimens.MAX_CARD_HEIGHT_COLLAPSED.dp
+    )
+
     SimpleGrid(
         numColumns = numColumns(base = 1, md = 2),
         modifier = Modifier
@@ -34,11 +42,7 @@ fun HistoryTheFloowCard(colorMode: ColorMode = ColorMode.LIGHT) {
             )
             .thenIf(
                 condition = breakpoint > Breakpoint.MD,
-                other = Modifier
-                    .height(
-                        if (expanded) (Res.Dimens.MAX_CARD_HEIGHT * 2).px
-                        else Res.Dimens.MAX_CARD_HEIGHT_COLLAPSED.px
-                    )
+                other = Modifier.height(cardHeight.value.px)
             )
             .boxShadow(
                 color = Colors.Black.copy(alpha = 10),
