@@ -17,23 +17,31 @@ import com.varabyte.kobweb.compose.ui.thenIf
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.toModifier
+import org.jetbrains.compose.web.attributes.ATarget
+import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.dom.A
 import pt.rvcoding.personalwebsitecomposehtml.domain.ImageConfig
 import pt.rvcoding.personalwebsitecomposehtml.domain.ImageRowConfig
 import pt.rvcoding.personalwebsitecomposehtml.styles.ImageMobileStyle
 import pt.rvcoding.personalwebsitecomposehtml.styles.ImageStyle
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
+import pt.rvcoding.personalwebsitecomposehtml.util.Res.Dimens.MAX_CARD_HEIGHT
+import pt.rvcoding.personalwebsitecomposehtml.util.Res.Dimens.MAX_CARD_HEIGHT_EXTENDED
 
 @Composable
 fun ImageSideWithRowOfImages(
     breakpoint: Breakpoint = Breakpoint.XL,
     expanded: Boolean = true,
+    extendedHeight: Boolean = false,
     imageRowConfig: ImageRowConfig = ImageRowConfig.Default,
     imageConfig: ImageConfig = ImageConfig.Default
 ) {
     val cropped1 = if (expanded) imageRowConfig.croppedOnExpanded else imageRowConfig.croppedOnCollapsed
     val cropped2 = if (expanded) imageConfig.croppedOnExpanded else imageConfig.croppedOnCollapsed
     val imageComponentStyle = if (breakpoint > Breakpoint.MD) ImageStyle else ImageMobileStyle
+    val expandedHeight = if (extendedHeight) MAX_CARD_HEIGHT_EXTENDED else MAX_CARD_HEIGHT
+
 
     Box(
         modifier = Modifier
@@ -44,7 +52,7 @@ fun ImageSideWithRowOfImages(
                         Modifier
                             .padding(bottom = 24.px)
                             .height(size = (
-                                    if (expanded) Res.Dimens.MAX_CARD_HEIGHT
+                                    if (expanded) expandedHeight
                                     else Res.Dimens.MAX_CARD_HEIGHT_COLLAPSED
                                     ).px
                             )
@@ -99,40 +107,42 @@ fun ImageSideWithRowOfImages(
                 horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                imageRowConfig.imageSrc.forEach { imageSrc ->
+                imageRowConfig.imageSrc.forEachIndexed { index, imageSrc ->
                     Box(
                         modifier = imageComponentStyle
-                            .toModifier()
-                            .fillMaxSize(),
+                            .toModifier(),
                         contentAlignment = Alignment.Center
                     ) {
-                        Image(
-                            modifier = Modifier
-                                .then(
-                                    if (cropped1) { Modifier.fillMaxSize() }
-                                    else { Modifier.fillMaxWidth() }
-                                )
-                                .borderRadius(r = Res.Dimens.BORDER_RADIUS.px)
-                                .objectFit(if (cropped1) ObjectFit.Cover else ObjectFit.Contain)
-                                .thenIf(
-                                    condition = imageRowConfig.shadowed,
-                                    other = Modifier
-                                        .boxShadow(
-                                            color = Colors.Black.copy(alpha = 70),
-                                            blurRadius = Res.Dimens.BORDER_RADIUS.px,
-                                            spreadRadius = 3.px,
-                                            offsetX = 2.px,
-                                            offsetY = 1.px
-                                        )
-                                )
-                                .styleModifier {
-                                    userSelect(UserSelect.None)
-                                }
-                                .onClick {
-
-                                },
-                            src = imageSrc
-                        )
+                        A(
+                            href = imageRowConfig.imageLink[index],
+                            attrs = { target(ATarget.Blank) }
+                        ) {
+                            Image(
+                                modifier = Modifier
+                                    .then(
+                                        if (cropped1) { Modifier.fillMaxSize() }
+                                        else { Modifier.fillMaxWidth() }
+                                    )
+                                    .borderRadius(r = Res.Dimens.BORDER_RADIUS.px)
+                                    .objectFit(if (cropped1) ObjectFit.Cover else ObjectFit.Contain)
+                                    .thenIf(
+                                        condition = imageRowConfig.shadowed,
+                                        other = Modifier
+                                            .boxShadow(
+                                                color = Colors.Black.copy(alpha = 70),
+                                                blurRadius = Res.Dimens.BORDER_RADIUS.px,
+                                                spreadRadius = 3.px,
+                                                offsetX = 2.px,
+                                                offsetY = 1.px
+                                            )
+                                    )
+                                    .maxSize(Res.Dimens.LOGO_APP_SIZE.px)
+                                    .styleModifier {
+                                        userSelect(UserSelect.None)
+                                    },
+                                src = imageSrc
+                            )
+                        }
                     }
                 }
             }

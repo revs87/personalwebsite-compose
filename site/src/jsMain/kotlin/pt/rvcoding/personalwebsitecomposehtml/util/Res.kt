@@ -52,6 +52,24 @@ object Res {
         const val SENSORMATIC_LOGO = "logo_sensormatic.svg"
         const val SENSORMATIC_PHOTO_1 = "img_sensormatic1.jpeg"
         const val SENSORMATIC_PHOTO_2 = "img_sensormatic2.jpeg"
+        const val SENSORMATIC_APP1 = "PSINTAND.gif"
+        const val SENSORMATIC_APP2 = "MATCHING.gif"
+        const val SENSORMATIC_APP1_LOGO = "PSINTAND_logo.png"
+        const val SENSORMATIC_APP2_LOGO = "MATCHING_logo.png"
+        const val SENSORMATIC_APP1_LINK = ""
+        const val SENSORMATIC_APP2_LINK = ""
+        val SENSORMATIC_PSINTAND_LOGO_LIST by lazy { listOf(
+            SENSORMATIC_APP1_LOGO,
+        ) }
+        val SENSORMATIC_PSINTAND_LOGO_LINK_LIST by lazy { listOf(
+            SENSORMATIC_APP1_LINK,
+        ) }
+        val SENSORMATIC_MATCHING_LOGO_LIST by lazy { listOf(
+            SENSORMATIC_APP2_LOGO,
+        ) }
+        val SENSORMATIC_MATCHING_LOGO_LINK_LIST by lazy { listOf(
+            SENSORMATIC_APP2_LINK,
+        ) }
 
         const val THEFLOOW_LOGO = "logo_thefloow.jpg"
         const val THEFLOOW_PHOTO_1 = "img_thefloow1.jpg"
@@ -160,9 +178,11 @@ object Res {
         const val BORDER_RADIUS = 8
         const val MAX_CARD_WIDTH = 1200
         const val MAX_CARD_HEIGHT = 920
+        const val MAX_CARD_HEIGHT_EXTENDED = MAX_CARD_HEIGHT + (MAX_CARD_HEIGHT * 0.4).toInt()
         const val MAX_CARD_HEIGHT_COLLAPSED = 420
         const val MAX_CARD_HEIGHT_COLLAPSED_MOBILE = 280
         const val ICON_SIZE = 24
         const val ICON_SIZE_LG = 32
+        const val LOGO_APP_SIZE = 72
     }
 }

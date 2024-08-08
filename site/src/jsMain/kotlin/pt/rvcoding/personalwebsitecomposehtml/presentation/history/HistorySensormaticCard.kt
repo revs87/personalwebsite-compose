@@ -14,19 +14,36 @@ import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
+import pt.rvcoding.personalwebsitecomposehtml.domain.ImageConfig
+import pt.rvcoding.personalwebsitecomposehtml.domain.ImageRowConfig
 import pt.rvcoding.personalwebsitecomposehtml.models.content.ContentData
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ContentAlignment
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ImageSide
+import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ImageSideWithRowOfImages
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.TextSide
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
+import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.SENSORMATIC_APP1
+import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.SENSORMATIC_APP2
+import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.SENSORMATIC_MATCHING_LOGO_LINK_LIST
+import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.SENSORMATIC_MATCHING_LOGO_LIST
+import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.SENSORMATIC_PSINTAND_LOGO_LINK_LIST
+import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.SENSORMATIC_PSINTAND_LOGO_LIST
 
 @Composable
-fun HistorySensormaticCard(colorMode: ColorMode = ColorMode.LIGHT, gridLines: Int = 2) {
+fun HistorySensormaticCard(
+    colorMode: ColorMode = ColorMode.LIGHT,
+    gridLinesExpandedHeightList: List<Int> = listOf(
+        Res.Dimens.MAX_CARD_HEIGHT,
+        Res.Dimens.MAX_CARD_HEIGHT,
+        Res.Dimens.MAX_CARD_HEIGHT_EXTENDED,
+        Res.Dimens.MAX_CARD_HEIGHT_EXTENDED,
+    )
+) {
     val breakpoint = rememberBreakpoint()
     var expanded by remember { mutableStateOf(false) }
     val cardHeight by animateDpAsState(
         targetValue =
-            if (expanded) (Res.Dimens.MAX_CARD_HEIGHT * gridLines).dp
+            if (expanded) (gridLinesExpandedHeightList.sum()).dp
             else Res.Dimens.MAX_CARD_HEIGHT_COLLAPSED.dp
     )
 
@@ -92,6 +109,56 @@ fun HistorySensormaticCard(colorMode: ColorMode = ColorMode.LIGHT, gridLines: In
                 subSubTitle = ContentData.HistorySensormatic.content1.period,
                 description = ContentData.HistorySensormatic.content1.description,
                 extra = {}
+            )
+
+            TextSide(
+                colorMode = colorMode,
+                breakpoint = breakpoint,
+                contentAlignment = ContentAlignment.Left,
+                expanded = expanded,
+                title = ContentData.HistorySensormatic.content2.title,
+                subTitle = ContentData.HistorySensormatic.content2.subTitle,
+                subSubTitle = ContentData.HistorySensormatic.content2.period,
+                description = ContentData.HistorySensormatic.content2.description,
+                extra = {}
+            )
+            ImageSideWithRowOfImages(
+                breakpoint = breakpoint,
+                expanded = expanded,
+                extendedHeight = true,
+                imageConfig = ImageConfig(
+                    imageSrc = SENSORMATIC_APP1,
+                    croppedOnExpanded = false
+                ),
+                imageRowConfig = ImageRowConfig(
+                    imageSrc = SENSORMATIC_PSINTAND_LOGO_LIST,
+                    imageLink = SENSORMATIC_PSINTAND_LOGO_LINK_LIST
+                )
+            )
+
+            TextSide(
+                colorMode = colorMode,
+                breakpoint = breakpoint,
+                contentAlignment = ContentAlignment.Left,
+                expanded = expanded,
+                title = ContentData.HistorySensormatic.content3.title,
+                subTitle = ContentData.HistorySensormatic.content3.subTitle,
+                subSubTitle = ContentData.HistorySensormatic.content3.period,
+                description = ContentData.HistorySensormatic.content3.description,
+                extra = {}
+            )
+            ImageSideWithRowOfImages(
+                breakpoint = breakpoint,
+                expanded = expanded,
+                extendedHeight = true,
+                imageConfig = ImageConfig(
+                    imageSrc = SENSORMATIC_APP2,
+                    croppedOnExpanded = false
+                ),
+                imageRowConfig = ImageRowConfig(
+                    imageSrc = SENSORMATIC_MATCHING_LOGO_LIST,
+                    imageLink = SENSORMATIC_MATCHING_LOGO_LINK_LIST
+                )
             )
         }
     }
