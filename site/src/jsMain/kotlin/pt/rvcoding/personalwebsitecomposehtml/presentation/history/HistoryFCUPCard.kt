@@ -21,9 +21,13 @@ import pt.rvcoding.personalwebsitecomposehtml.presentation.components.TextSide
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 @Composable
-fun HistoryFCUPCard(colorMode: ColorMode = ColorMode.LIGHT, gridLines: Int = 2) {
+fun HistoryFCUPCard(
+    colorMode: ColorMode = ColorMode.LIGHT,
+    expanded: Boolean = false,
+    onExpand: (Boolean) -> Unit = {},
+    gridLines: Int = 2
+) {
     val breakpoint = rememberBreakpoint()
-    var expanded by remember { mutableStateOf(false) }
     val cardHeight by animateDpAsState(
         targetValue =
             if (expanded) (Res.Dimens.MAX_CARD_HEIGHT * gridLines).dp
@@ -55,7 +59,7 @@ fun HistoryFCUPCard(colorMode: ColorMode = ColorMode.LIGHT, gridLines: Int = 2) 
             .background(
                 if (colorMode.isLight) Colors.White else Res.Theme.DARK_BLUE.color
             )
-            .onClick { expanded = !expanded }
+            .onClick { onExpand.invoke(!expanded) }
     ) {
         ImageSide(
             breakpoint = breakpoint,

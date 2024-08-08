@@ -26,9 +26,13 @@ import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.ITSECTOR_LOGO_LINK_
 import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.ITSECTOR_LOGO_LIST
 
 @Composable
-fun HistoryITSectorCard(colorMode: ColorMode = ColorMode.LIGHT, gridLines: Int = 2) {
+fun HistoryITSectorCard(
+    colorMode: ColorMode = ColorMode.LIGHT,
+    expanded: Boolean = false,
+    onExpand: (Boolean) -> Unit = {},
+    gridLines: Int = 2
+) {
     val breakpoint = rememberBreakpoint()
-    var expanded by remember { mutableStateOf(false) }
     val cardHeight by animateDpAsState(
         targetValue =
             if (expanded) (Res.Dimens.MAX_CARD_HEIGHT * gridLines).dp
@@ -60,7 +64,7 @@ fun HistoryITSectorCard(colorMode: ColorMode = ColorMode.LIGHT, gridLines: Int =
             .background(
                 if (colorMode.isLight) Colors.White else Res.Theme.DARK_BLUE.color
             )
-            .onClick { expanded = !expanded }
+            .onClick { onExpand.invoke(!expanded) }
     ) {
         ImageSide(
             breakpoint = breakpoint,

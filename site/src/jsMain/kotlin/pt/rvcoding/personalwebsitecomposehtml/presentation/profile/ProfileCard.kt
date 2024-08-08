@@ -39,7 +39,7 @@ import pt.rvcoding.personalwebsitecomposehtml.styles.SocialIconMobileStyle
 import pt.rvcoding.personalwebsitecomposehtml.styles.SocialIconStyle
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
-@Page("/home")
+@Page("/profile")
 @Composable
 fun ProfileCard(colorMode: ColorMode = ColorMode.LIGHT) {
     val breakpoint = rememberBreakpoint()

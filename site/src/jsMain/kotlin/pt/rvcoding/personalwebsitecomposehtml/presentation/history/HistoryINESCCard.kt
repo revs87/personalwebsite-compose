@@ -1,7 +1,8 @@
 package pt.rvcoding.personalwebsitecomposehtml.presentation.history
 
 import androidx.compose.animation.core.animateDpAsState
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.unit.dp
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
@@ -21,9 +22,13 @@ import pt.rvcoding.personalwebsitecomposehtml.presentation.components.TextSide
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
 @Composable
-fun HistoryINESCCard(colorMode: ColorMode = ColorMode.LIGHT, gridLines: Int = 2) {
+fun HistoryINESCCard(
+    colorMode: ColorMode = ColorMode.LIGHT,
+    expanded: Boolean = false,
+    onExpand: (Boolean) -> Unit = {},
+    gridLines: Int = 2
+) {
     val breakpoint = rememberBreakpoint()
-    var expanded by remember { mutableStateOf(false) }
     val cardHeight by animateDpAsState(
         targetValue =
             if (expanded) (Res.Dimens.MAX_CARD_HEIGHT * gridLines).dp
@@ -55,7 +60,7 @@ fun HistoryINESCCard(colorMode: ColorMode = ColorMode.LIGHT, gridLines: Int = 2)
             .background(
                 if (colorMode.isLight) Colors.White else Res.Theme.DARK_BLUE.color
             )
-            .onClick { expanded = !expanded }
+            .onClick { onExpand.invoke(!expanded) }
     ) {
         TextSide(
             colorMode = colorMode,

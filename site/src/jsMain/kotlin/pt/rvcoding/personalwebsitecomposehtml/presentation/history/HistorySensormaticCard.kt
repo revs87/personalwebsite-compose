@@ -1,7 +1,8 @@
 package pt.rvcoding.personalwebsitecomposehtml.presentation.history
 
 import androidx.compose.animation.core.animateDpAsState
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.unit.dp
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
@@ -32,6 +33,8 @@ import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.SENSORMATIC_PSINTAN
 @Composable
 fun HistorySensormaticCard(
     colorMode: ColorMode = ColorMode.LIGHT,
+    expanded: Boolean = false,
+    onExpand: (Boolean) -> Unit = {},
     gridLinesExpandedHeightList: List<Int> = listOf(
         Res.Dimens.MAX_CARD_HEIGHT,
         Res.Dimens.MAX_CARD_HEIGHT,
@@ -40,7 +43,6 @@ fun HistorySensormaticCard(
     )
 ) {
     val breakpoint = rememberBreakpoint()
-    var expanded by remember { mutableStateOf(false) }
     val cardHeight by animateDpAsState(
         targetValue =
             if (expanded) (gridLinesExpandedHeightList.sum()).dp
@@ -72,7 +74,7 @@ fun HistorySensormaticCard(
             .background(
                 if (colorMode.isLight) Colors.White else Res.Theme.DARK_BLUE.color
             )
-            .onClick { expanded = !expanded }
+            .onClick { onExpand.invoke(!expanded) }
     ) {
         ImageSide(
             breakpoint = breakpoint,
