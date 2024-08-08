@@ -78,6 +78,10 @@ fun ImageSide(
                                 offsetY = 1.px
                             )
                     )
+                    .classNames(
+                        "no-drag",
+                        "no-select"
+                    )
                     .styleModifier {
                         userSelect(UserSelect.None)
                     },

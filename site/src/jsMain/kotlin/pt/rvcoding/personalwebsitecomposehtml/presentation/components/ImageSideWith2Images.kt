@@ -85,6 +85,10 @@ fun ImageSideWith2Images(
                                     offsetY = 1.px
                                 )
                         )
+                        .classNames(
+                            "no-drag",
+                            "no-select"
+                        )
                         .styleModifier {
                             userSelect(UserSelect.None)
                         },
@@ -115,6 +119,10 @@ fun ImageSideWith2Images(
                                     offsetX = 2.px,
                                     offsetY = 1.px
                                 )
+                        )
+                        .classNames(
+                            "no-drag",
+                            "no-select"
                         )
                         .styleModifier {
                             userSelect(UserSelect.None)

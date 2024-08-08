@@ -95,6 +95,10 @@ fun ImageSideWithRowOfImages(
                                     offsetY = 1.px
                                 )
                         )
+                        .classNames(
+                            "no-drag",
+                            "no-select"
+                        )
                         .styleModifier {
                             userSelect(UserSelect.None)
                         },
@@ -137,6 +141,10 @@ fun ImageSideWithRowOfImages(
                                             )
                                     )
                                     .maxSize(Res.Dimens.LOGO_APP_SIZE.px)
+                                    .classNames(
+                                        "no-drag",
+                                        "no-select"
+                                    )
                                     .styleModifier {
                                         userSelect(UserSelect.None)
                                     },
