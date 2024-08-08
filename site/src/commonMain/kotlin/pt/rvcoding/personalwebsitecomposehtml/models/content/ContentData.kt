@@ -206,7 +206,7 @@ object ContentData {
         )
         val content01 by lazy {
             History(
-                title = "Thesis",
+                title = "MSc Thesis",
                 subTitle = "",
                 period = "November 2011",
                 description = listOf(
