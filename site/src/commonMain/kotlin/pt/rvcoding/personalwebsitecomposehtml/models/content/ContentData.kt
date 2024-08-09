@@ -130,7 +130,8 @@ object ContentData {
                     PersonalContent(IndentedText, "$BULLET Deepened my knowledge in Kotlin: its data mangling power, coroutines and flows."),
                     PersonalContent(IndentedText, "$BULLET Fully on board with Jetpack Compose and ViewModel integration (and w/ or w/o Material)."),
                     PersonalContent(IndentedText, "$BULLET Role of problem finder to procure short term impact: analysed and identified weaknesses around app's background service against" +
-                            "multiple device brands and multiple Android versions (source: [[https://dontkillmyapp.com][https://dontkillmyapp.com/]])."),
+                            "multiple device brands and multiple Android versions."),
+                    PersonalContent(IndentedText, "(source: [[https://dontkillmyapp.com][https://dontkillmyapp.com/]])"),
                     PersonalContent(IndentedText, "$BULLET Shell and Python scripting: for multiple AARs flattening and to exploit automation under a CI/CD custom integration."),
                     PersonalContent(IndentedText, "$BULLET Collaboration frameworks and tools: Firebase, Jira, Agile Scrum, Git, Bitbucket, Bamboo, Jenkins, Miro, ZeroHeight, Crowdin, ZenDesk."),
                 )
