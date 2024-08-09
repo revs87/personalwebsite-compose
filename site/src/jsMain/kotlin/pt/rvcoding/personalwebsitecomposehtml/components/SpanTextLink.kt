@@ -17,6 +17,9 @@ import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.components.text.SpanText
+import org.jetbrains.compose.web.attributes.ATarget
+import org.jetbrains.compose.web.attributes.target
+import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Span
 import pt.rvcoding.personalwebsitecomposehtml.styles.MyLinkStyle
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
@@ -49,23 +52,43 @@ fun SpanTextLink(
                         )
                 )
             } else {
-                Span {
-                    Link(
-                        path = link,
-                        text = text,
-                        modifier = MyLinkStyle
-                            .toModifier()
-                            .textAlign(
-                                if (breakpoint <= Breakpoint.SM) TextAlign.Justify
-                                else TextAlign.Start
-                            )
-                            .thenIf(
-                                condition = bold,
-                                other = Modifier.fontFamily(Res.String.ROBOTO_CONDENSED)
-                            ),
-                        openInternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB,
-                        openExternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB,
-                    )
+                if (link.startsWith("/raw/")) {
+                    A(
+                        href = link,
+                        attrs = { target(ATarget.Blank) }
+                    ) {
+                        SpanText(
+                            text = text,
+                            modifier = modifier
+                                .textAlign(
+                                    if (breakpoint <= Breakpoint.SM) TextAlign.Justify
+                                    else TextAlign.Start
+                                )
+                                .thenIf(
+                                    condition = bold,
+                                    other = Modifier.fontFamily(Res.String.ROBOTO_CONDENSED)
+                                )
+                        )
+                    }
+                } else {
+                    Span {
+                        Link(
+                            path = link,
+                            text = text,
+                            modifier = MyLinkStyle
+                                .toModifier()
+                                .textAlign(
+                                    if (breakpoint <= Breakpoint.SM) TextAlign.Justify
+                                    else TextAlign.Start
+                                )
+                                .thenIf(
+                                    condition = bold,
+                                    other = Modifier.fontFamily(Res.String.ROBOTO_CONDENSED)
+                                ),
+                            openInternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB,
+                            openExternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB,
+                        )
+                    }
                 }
             }
         }

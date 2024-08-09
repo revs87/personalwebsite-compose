@@ -27,6 +27,7 @@ import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.SENSORMATIC_APP1
 import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.SENSORMATIC_APP2
 import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.SENSORMATIC_MATCHING_LOGO_LINK_LIST
 import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.SENSORMATIC_MATCHING_LOGO_LIST
+import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.SENSORMATIC_PHOTO_3
 import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.SENSORMATIC_PSINTAND_LOGO_LINK_LIST
 import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.SENSORMATIC_PSINTAND_LOGO_LIST
 
@@ -40,6 +41,7 @@ fun HistorySensormaticCard(
         Res.Dimens.MAX_CARD_HEIGHT,
         Res.Dimens.MAX_CARD_HEIGHT_EXTENDED,
         Res.Dimens.MAX_CARD_HEIGHT_EXTENDED,
+        Res.Dimens.MAX_CARD_HEIGHT,
     )
 ) {
     val breakpoint = rememberBreakpoint()
@@ -116,7 +118,7 @@ fun HistorySensormaticCard(
             TextSide(
                 colorMode = colorMode,
                 breakpoint = breakpoint,
-                contentAlignment = ContentAlignment.Left,
+                contentAlignment = ContentAlignment.Right,
                 expanded = expanded,
                 title = ContentData.HistorySensormatic.content2.title,
                 subTitle = ContentData.HistorySensormatic.content2.subTitle,
@@ -141,7 +143,7 @@ fun HistorySensormaticCard(
             TextSide(
                 colorMode = colorMode,
                 breakpoint = breakpoint,
-                contentAlignment = ContentAlignment.Left,
+                contentAlignment = ContentAlignment.Right,
                 expanded = expanded,
                 title = ContentData.HistorySensormatic.content3.title,
                 subTitle = ContentData.HistorySensormatic.content3.subTitle,
@@ -161,6 +163,23 @@ fun HistorySensormaticCard(
                     imageSrc = SENSORMATIC_MATCHING_LOGO_LIST,
                     imageLink = SENSORMATIC_MATCHING_LOGO_LINK_LIST
                 )
+            )
+
+            ImageSide(
+                breakpoint = breakpoint,
+                expanded = expanded,
+                imageSrc = SENSORMATIC_PHOTO_3
+            )
+            TextSide(
+                colorMode = colorMode,
+                breakpoint = breakpoint,
+                contentAlignment = ContentAlignment.Left,
+                expanded = expanded,
+                title = ContentData.HistorySensormatic.content4.title,
+                subTitle = ContentData.HistorySensormatic.content4.subTitle,
+                subSubTitle = ContentData.HistorySensormatic.content4.period,
+                description = ContentData.HistorySensormatic.content4.description,
+                extra = {}
             )
         }
     }

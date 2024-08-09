@@ -52,6 +52,7 @@ object Res {
         const val SENSORMATIC_LOGO = "logo_sensormatic.svg"
         const val SENSORMATIC_PHOTO_1 = "img_sensormatic1.jpeg"
         const val SENSORMATIC_PHOTO_2 = "img_sensormatic2.jpeg"
+        const val SENSORMATIC_PHOTO_3 = "img_sensormatic3.png"
         const val SENSORMATIC_APP1 = "PSINTAND.gif"
         const val SENSORMATIC_APP2 = "MATCHING.gif"
         const val SENSORMATIC_APP1_LOGO = "PSINTAND_logo.png"

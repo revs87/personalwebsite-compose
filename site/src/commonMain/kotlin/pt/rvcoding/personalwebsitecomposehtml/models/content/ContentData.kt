@@ -35,10 +35,10 @@ object ContentData {
 
                         "Here are the enduring themes that continually drive my professional pursuits:"
             ),
-            PersonalContent(BulletText, "$BULLET Designing and executing comprehensive, end-to-end features;"),
-            PersonalContent(BulletText, "$BULLET Proactively identifying and addressing challenges in alignment with the company's strategy and vision;"),
-            PersonalContent(BulletText, "$BULLET Conducting thorough reviews, maintaining, and scaling the existing code base;"),
-            PersonalContent(BulletText, "$BULLET Providing guidance through mentoring, effectively delegating tasks, and meticulously documenting processes."),
+            PersonalContent(IndentedText, "$BULLET Designing and executing comprehensive, end-to-end features;"),
+            PersonalContent(IndentedText, "$BULLET Proactively identifying and addressing challenges in alignment with the company's strategy and vision;"),
+            PersonalContent(IndentedText, "$BULLET Conducting thorough reviews, maintaining, and scaling the existing code base;"),
+            PersonalContent(IndentedText, "$BULLET Providing guidance through mentoring, effectively delegating tasks, and meticulously documenting processes."),
         )
     }
 
@@ -59,20 +59,22 @@ object ContentData {
                 description = listOf(
                     PersonalContent(Text, "Within a DDD architecture, I run B2B Android apps and libraries influent to the INDITEX group retail flow (Retail sector – Zara, Bershka, " +
                             "Pull&Bear, Massimo Dutti, Oysho, Stradivarius, Lefties and Zara Home) embracing +40k devices all around the world."),
-                    PersonalContent(BulletText, "$BULLET Physical tech used: Barcode readers, Active (Sleds) RSSI/RFID readers and passive RFID circuits."),
-                    PersonalContent(BulletText, "$BULLET Hard tech used: Gradle, Github, Hilt, Koin, Jetpack Compose, TDD, Performance, INDITEX external libraries integration and management."),
-                    PersonalContent(BulletText, "$BULLET Side perks: Android lead, critical/side-thinking awareness, tech debt evaluation and orchestration, passing the value to others by " +
+                    PersonalContent(IndentedText, "$BULLET Physical tech used: Barcode readers, Active (Sleds) RSSI/RFID readers and passive RFID circuits."),
+                    PersonalContent(IndentedText, "$BULLET Hard tech used: Gradle, Github, Hilt, Koin, Jetpack Compose, TDD, Performance, INDITEX external libraries integration and management."),
+                    PersonalContent(IndentedText, "$BULLET Side perks: Android lead, critical/side-thinking awareness, tech debt evaluation and orchestration, passing the value to others by " +
                             "lecturing. Responsible for product ownership, board updates and new starter interviews."),
-                    PersonalContent(BulletText, "$BULLET Collaboration frameworks and tools: GitHub, DevHub, Azure, AppCenter, JFrog, Grafana, AppInsights, Jira, Agile Kanban."),
+                    PersonalContent(IndentedText, "$BULLET Collaboration frameworks and tools: GitHub, DevHub, Azure, AppCenter, JFrog, Grafana, AppInsights, Jira, Agile Kanban."),
                 ),
             )
         }
         val content2 by lazy {
             History(
-                title = "SINT Picking",
+                title = "PickingSINT",
                 subTitle = "Android B2B App",
                 period = "",
-                description = emptyList(),
+                description = listOf(
+                    PersonalContent(Text, "PickingSINT is a tool designed for store colleagues who do SINT (\"Integrated Stock\") picking. PickingSINT is a key store application to improve store work productivity.")
+                ),
             )
         }
         val content3 by lazy {
@@ -80,7 +82,27 @@ object ContentData {
                 title = "Matching",
                 subTitle = "Android B2B App",
                 period = "",
-                description = emptyList(),
+                description = listOf(
+                    PersonalContent(Text, "The need arose for an application to streamline the process of matching picked clothing items with their corresponding orders, thus expediting the de-alarming and packaging stages."),
+                    PersonalContent(Text, "Previously, picking was done on a per-order basis, leading to increased time spent navigating the warehouse (organized by sections and sub-families)."),
+                    PersonalContent(Text, "This new picking process was proposed, allowing clothes from all orders to be collected in the same sequence they were stored in the warehouse."),
+                    PersonalContent(Text, "This enabled \"matching\" or pairing items with their orders after collection, optimizing the entire process."),
+                    PersonalContent(Text, "The tool aimed to address this need by providing an interface to sort completed Picking orders, facilitating item-to-order matching and simplifying subsequent de-alarming and packaging tasks."),
+                ),
+            )
+        }
+        private const val SENSORMATIC_LINK_FILE1 = "/raw/20230500_Mejoras_en_la_arquitectura_Android_v1.0.pdf"
+        val content4 by lazy {
+            History(
+                title = "Quality Assessment",
+                subTitle = "First Impressions",
+                period = "",
+                description = listOf(
+                    PersonalContent(Text, "This is a technical document about Android architecture and Best practices used in Android development."),
+                    PersonalContent(Text, "I used this opportunity to gain knowledge about the state and contents of the applications I was going to work and own upon arrival."),
+                    PersonalContent(Text, "I presented a PDF detailing my analysis, pinpointing areas of concern, potential red flags, highlighting areas for improvement, and actionable recommendations:"),
+                    PersonalContent(IndentedText, "$BULLET [[20230500_Mejoras_en_la_arquitectura_Android_v1.0.pdf][$SENSORMATIC_LINK_FILE1]]"),
+                ),
             )
         }
     }
@@ -102,15 +124,15 @@ object ContentData {
                 description = listOf(
                     PersonalContent(Text, "Worked on Android apps for evaluating vehicle driving behaviour (using bespoke activity recognition) and engaging a driving score that " +
                             "enables appealing insurance discounts (Insurance sector)."),
-                    PersonalContent(BulletText, "$BULLET Established concrete know how into full app development based on clean architecture layers (UI – Domain – Data) and based on a set " +
+                    PersonalContent(IndentedText, "$BULLET Established concrete know how into full app development based on clean architecture layers (UI – Domain – Data) and based on a set " +
                             "of MVVM rules for connecting Business Logic and Data to the UI. Also considered coding principles such as Separation of concerns, " +
                             "abstraction layers, dependency inversion for Repository and UseCase layers, and testing inclusion (JUnit, Mockito, Cucumber, Gherkin)."),
-                    PersonalContent(BulletText, "$BULLET Deepened my knowledge in Kotlin: its data mangling power, coroutines and flows."),
-                    PersonalContent(BulletText, "$BULLET Fully on board with Jetpack Compose and ViewModel integration (and w/ or w/o Material)."),
-                    PersonalContent(BulletText, "$BULLET Role of problem finder to procure short term impact: analysed and identified weaknesses around app's background service against" +
-                            "multiple device brands and multiple Android versions (source: https://dontkillmyapp.com)."),
-                    PersonalContent(BulletText, "$BULLET Shell and Python scripting: for multiple AARs flattening and to exploit automation under a CI/CD custom integration."),
-                    PersonalContent(BulletText, "$BULLET Collaboration frameworks and tools: Firebase, Jira, Agile Scrum, Git, Bitbucket, Bamboo, Jenkins, Miro, ZeroHeight, Crowdin, ZenDesk."),
+                    PersonalContent(IndentedText, "$BULLET Deepened my knowledge in Kotlin: its data mangling power, coroutines and flows."),
+                    PersonalContent(IndentedText, "$BULLET Fully on board with Jetpack Compose and ViewModel integration (and w/ or w/o Material)."),
+                    PersonalContent(IndentedText, "$BULLET Role of problem finder to procure short term impact: analysed and identified weaknesses around app's background service against" +
+                            "multiple device brands and multiple Android versions (source: [[https://dontkillmyapp.com][https://dontkillmyapp.com/]])."),
+                    PersonalContent(IndentedText, "$BULLET Shell and Python scripting: for multiple AARs flattening and to exploit automation under a CI/CD custom integration."),
+                    PersonalContent(IndentedText, "$BULLET Collaboration frameworks and tools: Firebase, Jira, Agile Scrum, Git, Bitbucket, Bamboo, Jenkins, Miro, ZeroHeight, Crowdin, ZenDesk."),
                 )
             )
         }

@@ -22,7 +22,7 @@ sealed class ContentType {
 
     @Serializable
     @SerialName("BulletText")
-    data object BulletText : ContentType()
+    data object IndentedText : ContentType()
 
     @Serializable
     @SerialName("Paragraph")

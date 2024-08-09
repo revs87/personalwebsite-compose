@@ -149,7 +149,7 @@ fun TextSide(
                 modifier = MyTextStyle
                     .toModifier()
                     .margin(
-                        left = if (content.contentType == ContentType.BulletText) 25.px else 0.px,
+                        left = if (content.contentType == ContentType.IndentedText) 25.px else 0.px,
                         bottom = if (index == description.size - 1) 36.px else 0.px
                     ),
                 text = content.content,
