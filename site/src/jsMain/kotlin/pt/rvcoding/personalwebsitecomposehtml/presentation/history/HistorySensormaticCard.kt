@@ -81,10 +81,7 @@ fun HistorySensormaticCard(
         ImageSide(
             breakpoint = breakpoint,
             expanded = expanded,
-            croppedOnCollapsed = true,
-            croppedOnExpanded = false,
-            shadowed = if (expanded) false else true,
-            imageSrc = if (expanded) Res.Image.SENSORMATIC_LOGO else Res.Image.SENSORMATIC_PHOTO_2
+            imageSrc = if (expanded) Res.Image.SENSORMATIC_PHOTO_1 else Res.Image.SENSORMATIC_PHOTO_2
         )
         TextSide(
             colorMode = colorMode,
@@ -101,7 +98,10 @@ fun HistorySensormaticCard(
             ImageSide(
                 breakpoint = breakpoint,
                 expanded = expanded,
-                imageSrc = Res.Image.SENSORMATIC_PHOTO_1
+                croppedOnCollapsed = true,
+                croppedOnExpanded = false,
+                shadowed = !expanded,
+                imageSrc = Res.Image.SENSORMATIC_LOGO
             )
             TextSide(
                 colorMode = colorMode,

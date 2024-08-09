@@ -85,24 +85,6 @@ fun HistoryTheFloowCard(
                 imageSrc = if (expanded) Res.Image.THEFLOOW_LOGO else Res.Image.THEFLOOW_PHOTO_1
             )
         } else {
-            ImageSideWith2Images(
-                breakpoint = breakpoint,
-                expanded = expanded,
-                image1Config = ImageConfig(
-                    croppedOnCollapsed = true,
-                    croppedOnExpanded = false,
-                    shadowed = true,
-                    imageSrc = Res.Image.THEFLOOW_LOGO
-                ),
-                image2Config = ImageConfig(
-                    croppedOnCollapsed = true,
-                    croppedOnExpanded = false,
-                    shadowed = true,
-                    imageSrc = Res.Image.THEFLOOW_PHOTO_3
-                ),
-            )
-        }
-        if (expanded) {
             ImageSideWithRowOfImages(
                 breakpoint = breakpoint,
                 expanded = expanded,
@@ -113,6 +95,24 @@ fun HistoryTheFloowCard(
                     imageSrc = THEFLOOW_LOGO_LIST,
                     imageLink = THEFLOOW_LOGO_LINK_LIST
                 )
+            )
+        }
+        if (expanded) {
+            ImageSideWith2Images(
+                breakpoint = breakpoint,
+                expanded = expanded,
+                image1Config = ImageConfig(
+                    croppedOnCollapsed = true,
+                    croppedOnExpanded = false,
+                    shadowed = true,
+                    imageSrc = Res.Image.THEFLOOW_PHOTO_3
+                ),
+                image2Config = ImageConfig(
+                    croppedOnCollapsed = true,
+                    croppedOnExpanded = false,
+                    shadowed = true,
+                    imageSrc = Res.Image.THEFLOOW_LOGO
+                ),
             )
             TextSide(
                 colorMode = colorMode,
