@@ -10,7 +10,9 @@ data class ImageConfig(
     val croppedOnExpanded: Boolean = true,
     val shadowed: Boolean = true,
     val sidePadding: CSSSizeValue<CSSUnit.px> = 0.px,
-    val imageSrc: String = Res.Image.PROFILE_PHOTO
+    val imageSrc: String = Res.Image.PROFILE_PHOTO,
+    val videoWidth: CSSSizeValue<CSSUnit.px> = 320.px,
+    val videoHeight: CSSSizeValue<CSSUnit.px> = 680.px
 ) {
     companion object {
         val Default by lazy { ImageConfig() }

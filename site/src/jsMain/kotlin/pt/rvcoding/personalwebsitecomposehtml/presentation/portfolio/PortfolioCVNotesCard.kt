@@ -20,12 +20,12 @@ import pt.rvcoding.personalwebsitecomposehtml.domain.ImageRowConfig
 import pt.rvcoding.personalwebsitecomposehtml.models.content.ContentData
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ContentAlignment
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ImageSide
-import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ImageSideWithRowOfImages
 import pt.rvcoding.personalwebsitecomposehtml.presentation.components.TextSide
+import pt.rvcoding.personalwebsitecomposehtml.presentation.components.VideoSideWithRowOfImages
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
-import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.PORTFOLIO_APP_CVNOTES
 import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.PORTFOLIO_APP_CVNOTES_LINK_LIST
 import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.PORTFOLIO_APP_CVNOTES_LOGO_LIST
+import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.PORTFOLIO_APP_CVNOTES_VIDEO
 
 
 @Composable
@@ -75,16 +75,29 @@ fun PortfolioCVNotesCard(
             )
             .onClick { onExpand.invoke(!expanded) }
     ) {
+        TextSide(
+            colorMode = colorMode,
+            breakpoint = breakpoint,
+            contentAlignment = ContentAlignment.Right,
+            expanded = expanded,
+            useSeparator = true,
+            title = ContentData.PortfolioCVNotes.main.title,
+            subTitle = ContentData.PortfolioCVNotes.main.subTitle,
+            description = ContentData.PortfolioCVNotes.main.description,
+            extra = {}
+        )
         if (expanded) {
-            ImageSideWithRowOfImages(
+            VideoSideWithRowOfImages(
                 breakpoint = breakpoint,
                 expanded = expanded,
                 extendedHeight = true,
                 imageConfig = ImageConfig(
-                    imageSrc = PORTFOLIO_APP_CVNOTES,
+                    imageSrc = PORTFOLIO_APP_CVNOTES_VIDEO,
                     croppedOnExpanded = false,
                     shadowed = false,
-                    sidePadding = 50.px
+                    sidePadding = 0.px,
+                    videoWidth = if (breakpoint > Breakpoint.MD) 590.px else 320.px,
+                    videoHeight = if (breakpoint > Breakpoint.MD) 1150.px else 680.px
                 ),
                 imageRowConfig = ImageRowConfig(
                     imageSrc = PORTFOLIO_APP_CVNOTES_LOGO_LIST,
@@ -98,16 +111,5 @@ fun PortfolioCVNotesCard(
                 imageSrc = Res.Image.PORTFOLIO_APP_CVNOTES_LOGO
             )
         }
-        TextSide(
-            colorMode = colorMode,
-            breakpoint = breakpoint,
-            contentAlignment = ContentAlignment.Left,
-            expanded = expanded,
-            useSeparator = true,
-            title = ContentData.PortfolioCVNotes.main.title,
-            subTitle = ContentData.PortfolioCVNotes.main.subTitle,
-            description = ContentData.PortfolioCVNotes.main.description,
-            extra = { }
-        )
     }
 }

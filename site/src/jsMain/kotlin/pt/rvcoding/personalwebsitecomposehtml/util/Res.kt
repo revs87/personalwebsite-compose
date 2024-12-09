@@ -51,7 +51,7 @@ object Res {
 
         const val ABOUTME_PHOTO = "aboutme.png"
 
-        const val PORTFOLIO_APP_CVNOTES = "cvnotes.gif"
+        const val PORTFOLIO_APP_CVNOTES_VIDEO = "cvnotes.webm"
         const val PORTFOLIO_APP_CVNOTES_LOGO = "ic_cvnotes.png"
         val PORTFOLIO_APP_CVNOTES_LOGO_LIST by lazy { listOf(
             PORTFOLIO_APP_CVNOTES_LOGO,
