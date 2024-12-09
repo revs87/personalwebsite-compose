@@ -51,6 +51,16 @@ object Res {
 
         const val ABOUTME_PHOTO = "aboutme.png"
 
+        const val PORTFOLIO_APP_CVNOTES = "cvnotes.gif"
+        const val PORTFOLIO_APP_CVNOTES_LOGO = "ic_cvnotes.png"
+        val PORTFOLIO_APP_CVNOTES_LOGO_LIST by lazy { listOf(
+            PORTFOLIO_APP_CVNOTES_LOGO,
+        ) }
+        const val PORTFOLIO_APP_CVNOTES_LINK = "https://play.google.com/store/apps/details?id=pt.rvcoding.cvnotes"
+        val PORTFOLIO_APP_CVNOTES_LINK_LIST by lazy { listOf(
+            PORTFOLIO_APP_CVNOTES_LINK,
+        ) }
+
         const val SENSORMATIC_LOGO = "logo_sensormatic.svg"
         const val SENSORMATIC_PHOTO_1 = "img_sensormatic1.jpeg"
         const val SENSORMATIC_PHOTO_2 = "img_sensormatic2.jpeg"

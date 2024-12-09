@@ -1,0 +1,113 @@
+package pt.rvcoding.personalwebsitecomposehtml.presentation.portfolio
+
+import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.unit.dp
+import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.graphics.Colors
+import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.compose.ui.thenIf
+import com.varabyte.kobweb.silk.components.layout.SimpleGrid
+import com.varabyte.kobweb.silk.components.layout.numColumns
+import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
+import com.varabyte.kobweb.silk.theme.colors.ColorMode
+import org.jetbrains.compose.web.css.percent
+import org.jetbrains.compose.web.css.px
+import pt.rvcoding.personalwebsitecomposehtml.domain.ImageConfig
+import pt.rvcoding.personalwebsitecomposehtml.domain.ImageRowConfig
+import pt.rvcoding.personalwebsitecomposehtml.models.content.ContentData
+import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ContentAlignment
+import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ImageSide
+import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ImageSideWithRowOfImages
+import pt.rvcoding.personalwebsitecomposehtml.presentation.components.TextSide
+import pt.rvcoding.personalwebsitecomposehtml.util.Res
+import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.PORTFOLIO_APP_CVNOTES
+import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.PORTFOLIO_APP_CVNOTES_LINK_LIST
+import pt.rvcoding.personalwebsitecomposehtml.util.Res.Image.PORTFOLIO_APP_CVNOTES_LOGO_LIST
+
+
+@Composable
+fun PortfolioCVNotesCard(
+    colorMode: ColorMode = ColorMode.LIGHT,
+    expanded: Boolean = false,
+    onExpand: (Boolean) -> Unit = {},
+    gridLinesExpandedHeightList: List<Int> = listOf(
+//        Res.Dimens.MAX_CARD_HEIGHT,
+//        Res.Dimens.MAX_CARD_HEIGHT,
+        Res.Dimens.MAX_CARD_HEIGHT_EXTENDED,
+//        Res.Dimens.MAX_CARD_HEIGHT_EXTENDED,
+//        Res.Dimens.MAX_CARD_HEIGHT,
+    )
+) {
+    val breakpoint = rememberBreakpoint()
+    val cardHeight by animateDpAsState(
+        targetValue =
+            if (expanded) (gridLinesExpandedHeightList.sum()).dp
+            else Res.Dimens.MAX_CARD_HEIGHT_COLLAPSED.dp
+    )
+
+    SimpleGrid(
+        numColumns = numColumns(base = 1, md = 2),
+        modifier = Modifier
+            .fillMaxWidth(
+                if (breakpoint <= Breakpoint.MD) 100.percent
+                else Res.Dimens.MAX_CARD_WIDTH.px
+            )
+            .thenIf(
+                condition = breakpoint > Breakpoint.MD,
+                other = Modifier.height(cardHeight.value.px)
+            )
+            .boxShadow(
+                color = Colors.Black.copy(alpha = 10),
+                blurRadius = if (breakpoint <= Breakpoint.MD) 18.px else 24.px,
+                spreadRadius = if (breakpoint <= Breakpoint.MD) 12.px else 18.px
+            )
+            .padding(all = 12.px)
+            .borderRadius(r = Res.Dimens.BORDER_RADIUS.px)
+            .margin(
+                top = if (breakpoint <= Breakpoint.MD) 12.px else 24.px,
+                bottom = if (breakpoint <= Breakpoint.MD) 12.px else 24.px,
+            )
+            .background(
+                if (colorMode.isLight) Colors.White else Res.Theme.DARK_BLUE.color
+            )
+            .onClick { onExpand.invoke(!expanded) }
+    ) {
+        if (expanded) {
+            ImageSideWithRowOfImages(
+                breakpoint = breakpoint,
+                expanded = expanded,
+                extendedHeight = true,
+                imageConfig = ImageConfig(
+                    imageSrc = PORTFOLIO_APP_CVNOTES,
+                    croppedOnExpanded = false,
+                    shadowed = false,
+                    sidePadding = 50.px
+                ),
+                imageRowConfig = ImageRowConfig(
+                    imageSrc = PORTFOLIO_APP_CVNOTES_LOGO_LIST,
+                    imageLink = PORTFOLIO_APP_CVNOTES_LINK_LIST
+                )
+            )
+        } else {
+            ImageSide(
+                breakpoint = breakpoint,
+                expanded = expanded,
+                imageSrc = Res.Image.PORTFOLIO_APP_CVNOTES_LOGO
+            )
+        }
+        TextSide(
+            colorMode = colorMode,
+            breakpoint = breakpoint,
+            contentAlignment = ContentAlignment.Left,
+            expanded = expanded,
+            useSeparator = true,
+            title = ContentData.PortfolioCVNotes.main.title,
+            subTitle = ContentData.PortfolioCVNotes.main.subTitle,
+            description = ContentData.PortfolioCVNotes.main.description,
+            extra = { }
+        )
+    }
+}

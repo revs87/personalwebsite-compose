@@ -17,7 +17,6 @@ import kotlinx.browser.window
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.web.dom.Div
-import org.jetbrains.compose.web.dom.Text
 import org.w3c.dom.HTMLElement
 import pt.rvcoding.personalwebsitecomposehtml.components.ThemeGoToTopButton
 import pt.rvcoding.personalwebsitecomposehtml.components.ThemeMenuHorizontalButtons
@@ -27,6 +26,7 @@ import pt.rvcoding.personalwebsitecomposehtml.models.Menu
 import pt.rvcoding.personalwebsitecomposehtml.models.Menu.*
 import pt.rvcoding.personalwebsitecomposehtml.presentation.aboutme.AboutMeCard
 import pt.rvcoding.personalwebsitecomposehtml.presentation.history.*
+import pt.rvcoding.personalwebsitecomposehtml.presentation.portfolio.PortfolioCVNotesCard
 import pt.rvcoding.personalwebsitecomposehtml.presentation.profile.ProfileCard
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
@@ -41,11 +41,21 @@ fun HomePage() {
      * It's a nag not being able to put this in a mutableMap:
      *     Its composition is skipped upon click...
      * */
+    var expandedPortfolioCVNotes by remember { mutableStateOf(false) }
     var expandedHistorySensormatic by remember { mutableStateOf(false) }
     var expandedHistoryTheFloow by remember { mutableStateOf(false) }
     var expandedHistoryITsector by remember { mutableStateOf(false) }
     var expandedHistoryINESC by remember { mutableStateOf(false) }
     var expandedHistoryFCUP by remember { mutableStateOf(false) }
+
+    fun collapseExpandables() {
+        expandedPortfolioCVNotes = false
+        expandedHistorySensormatic = false
+        expandedHistoryTheFloow = false
+        expandedHistoryITsector = false
+        expandedHistoryINESC = false
+        expandedHistoryFCUP = false
+    }
 
     LaunchedEffect(colorMode) {
         val savedTheme = localStorage.getItem(Res.String.SAVED_THEME) ?: ColorMode.LIGHT.name
@@ -68,7 +78,10 @@ fun HomePage() {
     ThemeGoToTopButton(
         colorMode = colorMode,
         visible = goToTop,
-        onClick = { window.scrollTo(x = 0.0, y = 0.0) }
+        onClick = {
+            collapseExpandables()
+            window.scrollTo(x = 0.0, y = 0.0)
+        }
     )
 
     Box(
@@ -80,7 +93,10 @@ fun HomePage() {
     ) {
         ThemeMenuVerticalButtons(
             colorMode = colorMode,
-            onMenuSelect = { menuSelected = it }
+            onMenuSelect = {
+                collapseExpandables()
+                menuSelected = it
+            }
         )
 
         Column(
@@ -109,12 +125,26 @@ fun HomePage() {
                         .overflow { y(Overflow.Auto) },
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
+                    val scope = rememberCoroutineScope()
                     when (menuSelected) {
                         PROFILE -> ProfileCard(colorMode = colorMode)
-                        PORTFOLIO -> Text("Portfolio")
-                        HISTORY -> {
-                            val scope = rememberCoroutineScope()
+                        PORTFOLIO -> {
+                            Div(
+                                attrs = { id("PortfolioCVNotesCard") }
+                            ) {
+                                PortfolioCVNotesCard(
+                                    colorMode = colorMode,
+                                    expanded = expandedPortfolioCVNotes,
+                                    onExpand = {
+                                        collapseExpandables()
+                                        expandedPortfolioCVNotes = it
 
+                                        scope.launch { scrollTo("PortfolioCVNotesCard") }
+                                    }
+                                )
+                            }
+                        }
+                        HISTORY -> {
                             Div(
                                 attrs = { id("HistorySensormaticCard") }
                             ) {
@@ -122,11 +152,8 @@ fun HomePage() {
                                     colorMode = colorMode,
                                     expanded = expandedHistorySensormatic,
                                     onExpand = {
+                                        collapseExpandables()
                                         expandedHistorySensormatic = it
-                                        expandedHistoryTheFloow = false
-                                        expandedHistoryITsector = false
-                                        expandedHistoryINESC = false
-                                        expandedHistoryFCUP = false
 
                                         scope.launch { scrollTo("HistorySensormaticCard") }
                                     }
@@ -139,11 +166,8 @@ fun HomePage() {
                                     colorMode = colorMode,
                                     expanded = expandedHistoryTheFloow,
                                     onExpand = {
-                                        expandedHistorySensormatic = false
+                                        collapseExpandables()
                                         expandedHistoryTheFloow = it
-                                        expandedHistoryITsector = false
-                                        expandedHistoryINESC = false
-                                        expandedHistoryFCUP = false
 
                                         scope.launch { scrollTo("HistoryTheFloowCard") }
                                     }
@@ -156,11 +180,8 @@ fun HomePage() {
                                     colorMode = colorMode,
                                     expanded = expandedHistoryITsector,
                                     onExpand = {
-                                        expandedHistorySensormatic = false
-                                        expandedHistoryTheFloow = false
+                                        collapseExpandables()
                                         expandedHistoryITsector = it
-                                        expandedHistoryINESC = false
-                                        expandedHistoryFCUP = false
 
                                         scope.launch { scrollTo("HistoryITSectorCard") }
                                     }
@@ -173,11 +194,8 @@ fun HomePage() {
                                     colorMode = colorMode,
                                     expanded = expandedHistoryINESC,
                                     onExpand = {
-                                        expandedHistorySensormatic = false
-                                        expandedHistoryTheFloow = false
-                                        expandedHistoryITsector = false
+                                        collapseExpandables()
                                         expandedHistoryINESC = it
-                                        expandedHistoryFCUP = false
 
                                         scope.launch { scrollTo("HistoryINESCCard") }
                                     }
@@ -190,10 +208,7 @@ fun HomePage() {
                                     colorMode = colorMode,
                                     expanded = expandedHistoryFCUP,
                                     onExpand = {
-                                        expandedHistorySensormatic = false
-                                        expandedHistoryTheFloow = false
-                                        expandedHistoryITsector = false
-                                        expandedHistoryINESC = false
+                                        collapseExpandables()
                                         expandedHistoryFCUP = it
 
                                         scope.launch { scrollTo("HistoryFCUPCard") }
@@ -203,7 +218,6 @@ fun HomePage() {
                         }
                         ABOUT_ME -> {
                             AboutMeCard(colorMode = colorMode)
-                            //Text("About me")
                         }
                     }
                 }

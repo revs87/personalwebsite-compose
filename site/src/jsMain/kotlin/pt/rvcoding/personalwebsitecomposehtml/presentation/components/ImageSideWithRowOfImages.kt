@@ -82,6 +82,7 @@ fun ImageSideWithRowOfImages(
                             if (cropped2) { Modifier.fillMaxSize() }
                             else { Modifier.fillMaxWidth() }
                         )
+                        .padding(leftRight = imageConfig.sidePadding)
                         .borderRadius(r = Res.Dimens.BORDER_RADIUS.px)
                         .objectFit(if (cropped2) ObjectFit.Cover else ObjectFit.Contain)
                         .thenIf(

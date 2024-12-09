@@ -59,7 +59,7 @@ object ContentData {
             PersonalContent(Paragraph),
             PersonalContent(Text, "Stayed for 2 years, until I fell to an old ambition of mine of meeting other work cultures. I resigned and spent a week in London. Received a paid trip for an interview in Sheffield and nailed the contract."),
             PersonalContent(Paragraph),
-            PersonalContent(Text, "Outside of the comfort zone, I lived in Sheffield for 2 years. For family reasons, I then returned to Portugal with a Remote Worker deal proposed by the CTO itself (this was in 2018)."),
+            PersonalContent(Text, "Outside of the comfort zone, I lived in Sheffield for 2 years. For family reasons, I then returned to Portugal with a Remote Worker deal proposed by the CTO himself (this was in 2018)."),
             PersonalContent(Paragraph),
             PersonalContent(Text, "We’ve ended this partnership in 2023 due to the company's lack of revenue thus entering the layoff scheme."),
             PersonalContent(Paragraph),
@@ -85,6 +85,19 @@ object ContentData {
             PersonalContent(Text,
                 "And I can say the feeling of accomplishment in professional or side projects is what continues to drive me into software development."
             ),
+        )
+    }
+
+    object PortfolioCVNotes {
+        val main by lazy {
+            Portfolio(
+                title = "CVNotes",
+                subTitle = "Android Native App",
+                description = emptyList(),
+            )
+        }
+        private val content = listOf(
+            PersonalContent(Text, "CVNotes"),
         )
     }
 
