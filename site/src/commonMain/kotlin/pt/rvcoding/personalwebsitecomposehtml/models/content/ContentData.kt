@@ -42,6 +42,52 @@ object ContentData {
         )
     }
 
+    object AboutMe {
+        val main by lazy {
+            AboutMe(
+                title = "About Me",
+                description = description1,
+                description2 = description2
+            )
+        }
+        private val description1 = listOf(
+            PersonalContent(Text, "I am Rui Vieira, a Portuguese national male from the Metropolitan Porto area."),
+            PersonalContent(Paragraph),
+            PersonalContent(Text, "After achieving 2 journal publications with a scholarship as a Researcher, I asked myself: How do I reach people with my code? The quick answer was obviously - Mobile devices."),
+            PersonalContent(Paragraph),
+            PersonalContent(Text, "First employment was in Porto city centre as a Consultant that converted later to an Android Developer."),
+            PersonalContent(Paragraph),
+            PersonalContent(Text, "Stayed for 2 years, until I fell to an old ambition of mine of meeting other work cultures. I resigned and spent a week in London. Received a paid trip for an interview in Sheffield and nailed the contract."),
+            PersonalContent(Paragraph),
+            PersonalContent(Text, "Outside of the comfort zone, I lived in Sheffield for 2 years. For family reasons, I then returned to Portugal with a Remote Worker deal proposed by the CTO itself (this was in 2018)."),
+            PersonalContent(Paragraph),
+            PersonalContent(Text, "We’ve ended this partnership in 2023 due to the company's lack of revenue thus entering the layoff scheme."),
+            PersonalContent(Paragraph),
+            PersonalContent(Text, "Started immediately as an Android Lead on B2B projects and here is where I'm professionally bounded."),
+        )
+
+        private val description2 = listOf(
+            PersonalContent(Text,
+                "With more than ten years of experience, I’ve learned this is a race of learning. If we fall behind we will struggle on advancing with development and decision making.\n" +
+                        "Mobile development is fast changing. To keep up with the new APIs thus find out what the best new practices are, is a must!\n"
+            ),
+            PersonalContent(Paragraph),
+            PersonalContent(Text,
+                "So we have to train!\n" +
+                        "For that, I work on side projects to experiment new things and deliver at least a ‘look-a-like’ final product. " +
+                        "The content in my GitHub account emboss the power of Kotlin, Jetpack Compose, Presentation Patterns as MVVM and MVI, Clean architecture, Local persistency (SavedStateHandle, DataStorePreferences, Room), Coroutines, Flows, Dependency injection (Hilt, Koin or Repository singleton pattern), Http-client (Retrofit and Ktor) or Http-server (Ktor) and applied principles of SOLID."
+            ),
+            PersonalContent(Paragraph),
+            PersonalContent(Text,
+                "In addition, I’ve indulged myself with some set of certifications, which is a common practice of mine to keep learning also on an online courses basis."
+            ),
+            PersonalContent(Paragraph),
+            PersonalContent(Text,
+                "And I can say the feeling of accomplishment in professional or side projects is what continues to drive me into software development."
+            ),
+        )
+    }
+
     object HistorySensormatic {
         val main by lazy {
             History(

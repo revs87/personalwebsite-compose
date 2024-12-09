@@ -25,6 +25,7 @@ import pt.rvcoding.personalwebsitecomposehtml.components.ThemeMenuVerticalButton
 import pt.rvcoding.personalwebsitecomposehtml.components.ThemeModeSwitchButton
 import pt.rvcoding.personalwebsitecomposehtml.models.Menu
 import pt.rvcoding.personalwebsitecomposehtml.models.Menu.*
+import pt.rvcoding.personalwebsitecomposehtml.presentation.aboutme.AboutMeCard
 import pt.rvcoding.personalwebsitecomposehtml.presentation.history.*
 import pt.rvcoding.personalwebsitecomposehtml.presentation.profile.ProfileCard
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
@@ -200,7 +201,10 @@ fun HomePage() {
                                 )
                             }
                         }
-                        ABOUT_ME -> Text("About me")
+                        ABOUT_ME -> {
+                            AboutMeCard(colorMode = colorMode)
+                            //Text("About me")
+                        }
                     }
                 }
             }

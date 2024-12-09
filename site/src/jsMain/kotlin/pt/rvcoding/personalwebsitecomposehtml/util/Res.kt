@@ -49,6 +49,8 @@ object Res {
     object Image {
         const val PROFILE_PHOTO = "img_profile.jpg"
 
+        const val ABOUTME_PHOTO = "aboutme.png"
+
         const val SENSORMATIC_LOGO = "logo_sensormatic.svg"
         const val SENSORMATIC_PHOTO_1 = "img_sensormatic1.jpeg"
         const val SENSORMATIC_PHOTO_2 = "img_sensormatic2.jpeg"

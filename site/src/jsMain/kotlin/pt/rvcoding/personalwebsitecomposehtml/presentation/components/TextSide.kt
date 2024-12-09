@@ -36,6 +36,7 @@ fun TextSide(
     colorMode: ColorMode,
     breakpoint: Breakpoint,
     contentAlignment: ContentAlignment = ContentAlignment.Left,
+    useSeparator: Boolean = true,
     expanded: Boolean,
     title: String,
     subTitle: String,
@@ -126,23 +127,25 @@ fun TextSide(
 
         if (!expanded) return@Column
 
-        Box(
-            modifier = Modifier
-                .height(4.px)
-                .width(40.px)
-                .margin(bottom = 24.px)
-                .background(
-                    if (colorMode.isLight) Res.Theme.BLUE.color
-                    else Res.Theme.LIGHT_BLUE.color
-                )
-                .align(
-                    if (breakpoint <= Breakpoint.SM) Alignment.CenterHorizontally
-                    else when (contentAlignment) {
-                        ContentAlignment.Left -> Alignment.Start
-                        ContentAlignment.Right -> Alignment.End
-                    }
-                )
-        ) {}
+        if (useSeparator) {
+            Box(
+                modifier = Modifier
+                    .height(4.px)
+                    .width(40.px)
+                    .margin(bottom = 24.px)
+                    .background(
+                        if (colorMode.isLight) Res.Theme.BLUE.color
+                        else Res.Theme.LIGHT_BLUE.color
+                    )
+                    .align(
+                        if (breakpoint <= Breakpoint.SM) Alignment.CenterHorizontally
+                        else when (contentAlignment) {
+                            ContentAlignment.Left -> Alignment.Start
+                            ContentAlignment.Right -> Alignment.End
+                        }
+                    )
+            ) {}
+        }
         description.forEachIndexed { index, content ->
             if (content.contentType == ContentType.Paragraph) { PxSpacer(16) }
             SpanTextLink(

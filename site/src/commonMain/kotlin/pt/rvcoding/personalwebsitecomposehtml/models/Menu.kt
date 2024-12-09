@@ -9,7 +9,7 @@ enum class Menu(val title: String) {
 
     companion object {
         val Default by lazy { PROFILE }
-        val Active by lazy { listOf(PROFILE, HISTORY) }
+        val Active by lazy { listOf(PROFILE, HISTORY, ABOUT_ME) }
 
         fun fromString(str: String): Menu = when (str) {
             PROFILE.title -> PROFILE
