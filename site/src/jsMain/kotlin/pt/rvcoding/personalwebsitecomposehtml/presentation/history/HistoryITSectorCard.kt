@@ -77,7 +77,7 @@ fun HistoryITSectorCard(
         TextSide(
             colorMode = colorMode,
             breakpoint = breakpoint,
-            contentAlignment = ContentAlignment.Left,
+            headerAlignment = ContentAlignment.Left,
             expanded = expanded,
             title = ContentData.HistoryITSector.main.title,
             subTitle = ContentData.HistoryITSector.main.subTitle,
@@ -89,7 +89,7 @@ fun HistoryITSectorCard(
             TextSide(
                 colorMode = colorMode,
                 breakpoint = breakpoint,
-                contentAlignment = ContentAlignment.Left,
+                headerAlignment = ContentAlignment.Left,
                 expanded = expanded,
                 title = ContentData.HistoryITSector.content1.title,
                 subTitle = ContentData.HistoryITSector.content1.subTitle,

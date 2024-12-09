@@ -72,7 +72,7 @@ fun HistoryFCUPCard(
         TextSide(
             colorMode = colorMode,
             breakpoint = breakpoint,
-            contentAlignment = ContentAlignment.Left,
+            headerAlignment = ContentAlignment.Left,
             expanded = expanded,
             title = ContentData.HistoryFCUP.main.title,
             subTitle = ContentData.HistoryFCUP.main.subTitle,
@@ -84,7 +84,7 @@ fun HistoryFCUPCard(
             TextSide(
                 colorMode = colorMode,
                 breakpoint = breakpoint,
-                contentAlignment = ContentAlignment.Right,
+                headerAlignment = ContentAlignment.Right,
                 expanded = expanded,
                 title = ContentData.HistoryFCUP.content01.title,
                 subTitle = ContentData.HistoryFCUP.content01.subTitle,
@@ -95,7 +95,7 @@ fun HistoryFCUPCard(
             TextSide(
                 colorMode = colorMode,
                 breakpoint = breakpoint,
-                contentAlignment = ContentAlignment.Left,
+                headerAlignment = ContentAlignment.Left,
                 expanded = expanded,
                 title = ContentData.HistoryFCUP.content02.title,
                 subTitle = ContentData.HistoryFCUP.content02.subTitle,

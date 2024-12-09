@@ -86,7 +86,7 @@ fun HistorySensormaticCard(
         TextSide(
             colorMode = colorMode,
             breakpoint = breakpoint,
-            contentAlignment = ContentAlignment.Left,
+            headerAlignment = ContentAlignment.Left,
             expanded = expanded,
             title = ContentData.HistorySensormatic.main.title,
             subTitle = ContentData.HistorySensormatic.main.subTitle,
@@ -106,7 +106,7 @@ fun HistorySensormaticCard(
             TextSide(
                 colorMode = colorMode,
                 breakpoint = breakpoint,
-                contentAlignment = ContentAlignment.Left,
+                headerAlignment = ContentAlignment.Left,
                 expanded = expanded,
                 title = ContentData.HistorySensormatic.content1.title,
                 subTitle = ContentData.HistorySensormatic.content1.subTitle,
@@ -118,7 +118,7 @@ fun HistorySensormaticCard(
             TextSide(
                 colorMode = colorMode,
                 breakpoint = breakpoint,
-                contentAlignment = ContentAlignment.Right,
+                headerAlignment = ContentAlignment.Right,
                 expanded = expanded,
                 title = ContentData.HistorySensormatic.content2.title,
                 subTitle = ContentData.HistorySensormatic.content2.subTitle,
@@ -143,7 +143,7 @@ fun HistorySensormaticCard(
             TextSide(
                 colorMode = colorMode,
                 breakpoint = breakpoint,
-                contentAlignment = ContentAlignment.Right,
+                headerAlignment = ContentAlignment.Right,
                 expanded = expanded,
                 title = ContentData.HistorySensormatic.content3.title,
                 subTitle = ContentData.HistorySensormatic.content3.subTitle,
@@ -173,7 +173,7 @@ fun HistorySensormaticCard(
             TextSide(
                 colorMode = colorMode,
                 breakpoint = breakpoint,
-                contentAlignment = ContentAlignment.Left,
+                headerAlignment = ContentAlignment.Left,
                 expanded = expanded,
                 title = ContentData.HistorySensormatic.content4.title,
                 subTitle = ContentData.HistorySensormatic.content4.subTitle,

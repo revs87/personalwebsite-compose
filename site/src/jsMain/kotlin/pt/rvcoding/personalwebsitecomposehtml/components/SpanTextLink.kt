@@ -8,6 +8,7 @@ import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.css.WordBreak
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.fontFamily
 import com.varabyte.kobweb.compose.ui.modifiers.textAlign
 import com.varabyte.kobweb.compose.ui.modifiers.wordBreak
@@ -21,6 +22,7 @@ import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Span
+import pt.rvcoding.personalwebsitecomposehtml.presentation.components.ContentAlignment
 import pt.rvcoding.personalwebsitecomposehtml.styles.MyLinkStyle
 import pt.rvcoding.personalwebsitecomposehtml.util.Res
 
@@ -28,6 +30,7 @@ import pt.rvcoding.personalwebsitecomposehtml.util.Res
 @Composable
 fun SpanTextLink(
     modifier: Modifier = Modifier,
+    contentAlignment: ContentAlignment = ContentAlignment.Left,
     text: String,
     bold: Boolean,
     breakpoint: Breakpoint
@@ -35,7 +38,7 @@ fun SpanTextLink(
     val list by remember { mutableStateOf(extractContentToList(text)) }
 
     Row(
-        modifier = Modifier.wordBreak(WordBreak.KeepAll)
+        modifier = Modifier.fillMaxWidth().wordBreak(WordBreak.KeepAll)
     ) {
         list.forEach { (text, link) ->
             if (link.isEmpty()) {
@@ -44,7 +47,10 @@ fun SpanTextLink(
                     modifier = modifier
                         .textAlign(
                             if (breakpoint <= Breakpoint.SM) TextAlign.Justify
-                            else TextAlign.Start
+                            else when (contentAlignment) {
+                                ContentAlignment.Left -> TextAlign.Start
+                                ContentAlignment.Right -> TextAlign.End
+                            }
                         )
                         .thenIf(
                             condition = bold,
@@ -62,7 +68,10 @@ fun SpanTextLink(
                             modifier = modifier
                                 .textAlign(
                                     if (breakpoint <= Breakpoint.SM) TextAlign.Justify
-                                    else TextAlign.Start
+                                    else when (contentAlignment) {
+                                        ContentAlignment.Left -> TextAlign.Start
+                                        ContentAlignment.Right -> TextAlign.End
+                                    }
                                 )
                                 .thenIf(
                                     condition = bold,
@@ -79,7 +88,10 @@ fun SpanTextLink(
                                 .toModifier()
                                 .textAlign(
                                     if (breakpoint <= Breakpoint.SM) TextAlign.Justify
-                                    else TextAlign.Start
+                                    else when (contentAlignment) {
+                                        ContentAlignment.Left -> TextAlign.Start
+                                        ContentAlignment.Right -> TextAlign.End
+                                    }
                                 )
                                 .thenIf(
                                     condition = bold,

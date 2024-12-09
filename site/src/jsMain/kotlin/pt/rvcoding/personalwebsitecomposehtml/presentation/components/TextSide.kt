@@ -35,6 +35,7 @@ sealed class ContentAlignment {
 fun TextSide(
     colorMode: ColorMode,
     breakpoint: Breakpoint,
+    headerAlignment: ContentAlignment = ContentAlignment.Left,
     contentAlignment: ContentAlignment = ContentAlignment.Left,
     useSeparator: Boolean = true,
     expanded: Boolean,
@@ -79,7 +80,7 @@ fun TextSide(
                     .fontWeight(FontWeight.Bold)
                     .align(
                         if (breakpoint <= Breakpoint.SM) Alignment.CenterHorizontally
-                        else when (contentAlignment) {
+                        else when (headerAlignment) {
                             ContentAlignment.Left -> Alignment.Start
                             ContentAlignment.Right -> Alignment.End
                         }
@@ -99,7 +100,7 @@ fun TextSide(
                     .fontSize(18.px)
                     .align(
                         if (breakpoint <= Breakpoint.SM) Alignment.CenterHorizontally
-                        else when (contentAlignment) {
+                        else when (headerAlignment) {
                             ContentAlignment.Left -> Alignment.Start
                             ContentAlignment.Right -> Alignment.End
                         }
@@ -116,7 +117,7 @@ fun TextSide(
                     .toModifier()
                     .align(
                         if (breakpoint <= Breakpoint.SM) Alignment.CenterHorizontally
-                        else when (contentAlignment) {
+                        else when (headerAlignment) {
                             ContentAlignment.Left -> Alignment.Start
                             ContentAlignment.Right -> Alignment.End
                         }
@@ -139,7 +140,7 @@ fun TextSide(
                     )
                     .align(
                         if (breakpoint <= Breakpoint.SM) Alignment.CenterHorizontally
-                        else when (contentAlignment) {
+                        else when (headerAlignment) {
                             ContentAlignment.Left -> Alignment.Start
                             ContentAlignment.Right -> Alignment.End
                         }
@@ -155,6 +156,7 @@ fun TextSide(
                         left = if (content.contentType == ContentType.IndentedText) 25.px else 0.px,
                         bottom = if (index == description.size - 1) 36.px else 0.px
                     ),
+                contentAlignment = contentAlignment,
                 text = content.content,
                 bold = content.contentType == ContentType.BoldText,
                 breakpoint = breakpoint

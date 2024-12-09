@@ -78,12 +78,14 @@ fun PortfolioCVNotesCard(
         TextSide(
             colorMode = colorMode,
             breakpoint = breakpoint,
+            headerAlignment = ContentAlignment.Right,
             contentAlignment = ContentAlignment.Right,
             expanded = expanded,
             useSeparator = true,
             title = ContentData.PortfolioCVNotes.main.title,
             subTitle = ContentData.PortfolioCVNotes.main.subTitle,
-            description = ContentData.PortfolioCVNotes.main.description,
+            subSubTitle = ContentData.PortfolioCVNotes.main.subSubTitle,
+            description = ContentData.PortfolioCVNotes.content,
             extra = {}
         )
         if (expanded) {
@@ -96,8 +98,8 @@ fun PortfolioCVNotesCard(
                     croppedOnExpanded = false,
                     shadowed = false,
                     sidePadding = 0.px,
-                    videoWidth = if (breakpoint > Breakpoint.MD) 590.px else 320.px,
-                    videoHeight = if (breakpoint > Breakpoint.MD) 1150.px else 680.px
+                    videoWidth = if (breakpoint > Breakpoint.MD) 590.px else 360.px,
+                    videoHeight = if (breakpoint > Breakpoint.MD) 1150.px else 720.px
                 ),
                 imageRowConfig = ImageRowConfig(
                     imageSrc = PORTFOLIO_APP_CVNOTES_LOGO_LIST,

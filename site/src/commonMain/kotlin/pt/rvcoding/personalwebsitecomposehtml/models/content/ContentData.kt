@@ -93,11 +93,19 @@ object ContentData {
             Portfolio(
                 title = "CVNotes",
                 subTitle = "Android Native App",
+                subSubTitle = "Highlights: Clean Architecture, Firebase Auth",
                 description = emptyList(),
             )
         }
-        private val content = listOf(
-            PersonalContent(Text, "CVNotes"),
+        val content = listOf(
+            PersonalContent(Text, "A snappy and customizable CV editor."),
+            PersonalContent(Paragraph),
+            PersonalContent(Text, "Contributed to self improvements of the following topics:"),
+            PersonalContent(IndentedText, "$BULLET Latest Google Play deployment restrictions;"),
+            PersonalContent(IndentedText, "$BULLET Clean Architecture application;"),
+            PersonalContent(IndentedText, "$BULLET Firebase Auth application;"),
+            PersonalContent(Paragraph),
+            PersonalContent(Text, "More info: [[Github Link][https://github.com/revs87/cvnotes-and]]"),
         )
     }
 

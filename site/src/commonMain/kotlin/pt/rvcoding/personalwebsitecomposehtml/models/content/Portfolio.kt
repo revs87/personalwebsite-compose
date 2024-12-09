@@ -8,5 +8,6 @@ import pt.rvcoding.personalwebsitecomposehtml.models.PersonalContent
 data class Portfolio(
     val title: String,
     val subTitle: String,
+    val subSubTitle: String,
     val description: List<PersonalContent>,
 )

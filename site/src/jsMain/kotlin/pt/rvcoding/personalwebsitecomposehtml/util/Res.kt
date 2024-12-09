@@ -60,6 +60,7 @@ object Res {
         val PORTFOLIO_APP_CVNOTES_LINK_LIST by lazy { listOf(
             PORTFOLIO_APP_CVNOTES_LINK,
         ) }
+        const val PORTFOLIO_APP_CVNOTES_LINK_GH = "https://github.com/revs87/cvnotes-and"
 
         const val SENSORMATIC_LOGO = "logo_sensormatic.svg"
         const val SENSORMATIC_PHOTO_1 = "img_sensormatic1.jpeg"

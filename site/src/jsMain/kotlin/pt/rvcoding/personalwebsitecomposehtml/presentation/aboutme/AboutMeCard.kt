@@ -71,7 +71,7 @@ fun AboutMeCard(
         TextSide(
             colorMode = colorMode,
             breakpoint = breakpoint,
-            contentAlignment = ContentAlignment.Left,
+            headerAlignment = ContentAlignment.Left,
             expanded = expanded,
             useSeparator = false,
             title = ContentData.AboutMe.main.title,
@@ -82,7 +82,7 @@ fun AboutMeCard(
         TextSide(
             colorMode = colorMode,
             breakpoint = breakpoint,
-            contentAlignment = ContentAlignment.Left,
+            headerAlignment = ContentAlignment.Left,
             expanded = expanded,
             useSeparator = false,
             title = "",

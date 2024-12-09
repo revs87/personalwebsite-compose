@@ -67,7 +67,7 @@ fun HistoryTheFloowCard(
         TextSide(
             colorMode = colorMode,
             breakpoint = breakpoint,
-            contentAlignment = ContentAlignment.Right,
+            headerAlignment = ContentAlignment.Right,
             expanded = expanded,
             title = ContentData.HistoryTheFloow.main.title,
             subTitle = ContentData.HistoryTheFloow.main.subTitle,
@@ -117,7 +117,7 @@ fun HistoryTheFloowCard(
             TextSide(
                 colorMode = colorMode,
                 breakpoint = breakpoint,
-                contentAlignment = ContentAlignment.Left,
+                headerAlignment = ContentAlignment.Left,
                 expanded = expanded,
                 title = ContentData.HistoryTheFloow.content1.title,
                 subTitle = ContentData.HistoryTheFloow.content1.subTitle,

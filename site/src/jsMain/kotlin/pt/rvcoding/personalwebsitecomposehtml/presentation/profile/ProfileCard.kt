@@ -80,7 +80,7 @@ fun ProfileCard(colorMode: ColorMode = ColorMode.LIGHT) {
         TextSide(
             colorMode = colorMode,
             breakpoint = breakpoint,
-            contentAlignment = ContentAlignment.Right,
+            headerAlignment = ContentAlignment.Right,
             expanded = expanded,
             title = ContentData.Profile.main.name,
             subTitle = ContentData.Profile.main.profession,

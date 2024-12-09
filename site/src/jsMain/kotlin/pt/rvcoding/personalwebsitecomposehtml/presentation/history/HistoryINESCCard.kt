@@ -65,7 +65,7 @@ fun HistoryINESCCard(
         TextSide(
             colorMode = colorMode,
             breakpoint = breakpoint,
-            contentAlignment = ContentAlignment.Right,
+            headerAlignment = ContentAlignment.Right,
             expanded = expanded,
             title = ContentData.HistoryINESC.main.title,
             subTitle = ContentData.HistoryINESC.main.subTitle,
@@ -85,7 +85,7 @@ fun HistoryINESCCard(
             TextSide(
                 colorMode = colorMode,
                 breakpoint = breakpoint,
-                contentAlignment = ContentAlignment.Right,
+                headerAlignment = ContentAlignment.Right,
                 expanded = expanded,
                 title = ContentData.HistoryINESC.content1.title,
                 subTitle = ContentData.HistoryINESC.content1.subTitle,
@@ -96,7 +96,7 @@ fun HistoryINESCCard(
             TextSide(
                 colorMode = colorMode,
                 breakpoint = breakpoint,
-                contentAlignment = ContentAlignment.Left,
+                headerAlignment = ContentAlignment.Left,
                 expanded = expanded,
                 title = ContentData.HistoryINESC.content2.title,
                 subTitle = ContentData.HistoryINESC.content2.subTitle,
